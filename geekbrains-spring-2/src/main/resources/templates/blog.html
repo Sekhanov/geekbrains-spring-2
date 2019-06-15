@@ -32,7 +32,7 @@
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
               <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Shop</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
@@ -43,7 +43,7 @@
                 </ul>
 							</li>
               <li class="nav-item active submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Blog</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item active"><a class="nav-link" href="blog.html">Blog Single</a></li>
@@ -51,7 +51,7 @@
                 </ul>
 							</li>
 							<li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
@@ -65,7 +65,7 @@
             <ul class="nav-shop">
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
               <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
-              <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>
+              <li class="nav-item"><a class="button button-header" th:href="@{/}" href="#">Buy Now</a></li>
             </ul>
           </div>
         </div>
@@ -83,7 +83,7 @@
           <h1>Our Blog</h1>
           <nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a th:href="@{/}" href="#">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Blog</li>
             </ol>
           </nav>
@@ -103,7 +103,7 @@
                 <img class="card-img rounded-0" th:src="@{/aroma/img/blog/cat-post/cat-post-3.jpg}" src="../static/aroma/img/blog/cat-post/cat-post-3.jpg" alt="post">
                 <div class="categories_details">
                     <div class="categories_text">
-                        <a href="single-blog.html">
+                        <a th:href="@{/single-blog}" href="single-blog.html">
                             <h5>Social Life</h5>
                         </a>
                         <div class="border_line"></div>
@@ -117,7 +117,7 @@
             <img class="card-img rounded-0" th:src="@{/aroma/img/blog/cat-post/cat-post-2.jpg}" src="../static/aroma/img/blog/cat-post/cat-post-2.jpg" alt="post">
             <div class="categories_details">
               <div class="categories_text">
-                <a href="single-blog.html">
+                <a th:href="@{/single-blog}" href="single-blog.html">
                     <h5>Politics</h5>
                 </a>
                 <div class="border_line"></div>
@@ -131,7 +131,7 @@
                 <img class="card-img rounded-0" th:src="@{/aroma/img/blog/cat-post/cat-post-1.jpg}" src="../static/aroma/img/blog/cat-post/cat-post-1.jpg" alt="post">
                 <div class="categories_details">
                     <div class="categories_text">
-                        <a href="single-blog.html">
+                        <a th:href="@{/single-blog}" href="single-blog.html">
                             <h5>Food</h5>
                         </a>
                         <div class="border_line"></div>
@@ -155,29 +155,29 @@
                           <div class="col-md-3">
                               <div class="blog_info text-right">
                                   <div class="post_tag">
-                                      <a href="#">Food,</a>
-                                      <a class="active" href="#">Technology,</a>
-                                      <a href="#">Politics,</a>
-                                      <a href="#">Lifestyle</a>
+                                      <a th:href="@{/}" href="#">Food,</a>
+                                      <a class="active" th:href="@{/}" href="#">Technology,</a>
+                                      <a th:href="@{/}" href="#">Politics,</a>
+                                      <a th:href="@{/}" href="#">Lifestyle</a>
                                   </div>
                                   <ul class="blog_meta list">
                                       <li>
-                                          <a href="#">Mark wiens
+                                          <a th:href="@{/}" href="#">Mark wiens
                                               <i class="lnr lnr-user"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">12 Dec, 2017
+                                          <a th:href="@{/}" href="#">12 Dec, 2017
                                               <i class="lnr lnr-calendar-full"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">1.2M Views
+                                          <a th:href="@{/}" href="#">1.2M Views
                                               <i class="lnr lnr-eye"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">06 Comments
+                                          <a th:href="@{/}" href="#">06 Comments
                                               <i class="lnr lnr-bubble"></i>
                                           </a>
                                       </li>
@@ -188,7 +188,7 @@
                               <div class="blog_post">
                                   <img th:src="@{/aroma/img/blog/main-blog/m-blog-1.jpg}" src="../static/aroma/img/blog/main-blog/m-blog-1.jpg" alt="">
                                   <div class="blog_details">
-                                      <a href="single-blog.html">
+                                      <a th:href="@{/single-blog}" href="single-blog.html">
                                           <h2>Astronomy Binoculars A Great Alternative</h2>
                                       </a>
                                       <p>MCSE boot camps have its supporters and its detractors. Some people do not understand
@@ -203,29 +203,29 @@
                           <div class="col-md-3">
                               <div class="blog_info text-right">
                                   <div class="post_tag">
-                                      <a href="#">Food,</a>
-                                      <a class="active" href="#">Technology,</a>
-                                      <a href="#">Politics,</a>
-                                      <a href="#">Lifestyle</a>
+                                      <a th:href="@{/}" href="#">Food,</a>
+                                      <a class="active" th:href="@{/}" href="#">Technology,</a>
+                                      <a th:href="@{/}" href="#">Politics,</a>
+                                      <a th:href="@{/}" href="#">Lifestyle</a>
                                   </div>
                                   <ul class="blog_meta list">
                                       <li>
-                                          <a href="#">Mark wiens
+                                          <a th:href="@{/}" href="#">Mark wiens
                                               <i class="lnr lnr-user"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">12 Dec, 2017
+                                          <a th:href="@{/}" href="#">12 Dec, 2017
                                               <i class="lnr lnr-calendar-full"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">1.2M Views
+                                          <a th:href="@{/}" href="#">1.2M Views
                                               <i class="lnr lnr-eye"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">06 Comments
+                                          <a th:href="@{/}" href="#">06 Comments
                                               <i class="lnr lnr-bubble"></i>
                                           </a>
                                       </li>
@@ -236,13 +236,13 @@
                               <div class="blog_post">
                                   <img th:src="@{/aroma/img/blog/main-blog/m-blog-2.jpg}" src="../static/aroma/img/blog/main-blog/m-blog-2.jpg" alt="">
                                   <div class="blog_details">
-                                      <a href="single-blog.html">
+                                      <a th:href="@{/single-blog}" href="single-blog.html">
                                           <h2>The Basics Of Buying A Telescope</h2>
                                       </a>
                                       <p>MCSE boot camps have its supporters and its detractors. Some people do not understand
                                           why you should have to spend money on boot camp when you can get the MCSE study
                                           materials yourself at a fraction.</p>
-                                      <a href="single-blog.html" class="button button-blog">View More</a>
+                                      <a th:href="@{/single-blog}" href="single-blog.html" class="button button-blog">View More</a>
                                   </div>
                               </div>
                           </div>
@@ -251,29 +251,29 @@
                           <div class="col-md-3">
                               <div class="blog_info text-right">
                                   <div class="post_tag">
-                                      <a href="#">Food,</a>
-                                      <a class="active" href="#">Technology,</a>
-                                      <a href="#">Politics,</a>
-                                      <a href="#">Lifestyle</a>
+                                      <a th:href="@{/}" href="#">Food,</a>
+                                      <a class="active" th:href="@{/}" href="#">Technology,</a>
+                                      <a th:href="@{/}" href="#">Politics,</a>
+                                      <a th:href="@{/}" href="#">Lifestyle</a>
                                   </div>
                                   <ul class="blog_meta list">
                                       <li>
-                                          <a href="#">Mark wiens
+                                          <a th:href="@{/}" href="#">Mark wiens
                                               <i class="lnr lnr-user"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">12 Dec, 2017
+                                          <a th:href="@{/}" href="#">12 Dec, 2017
                                               <i class="lnr lnr-calendar-full"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">1.2M Views
+                                          <a th:href="@{/}" href="#">1.2M Views
                                               <i class="lnr lnr-eye"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">06 Comments
+                                          <a th:href="@{/}" href="#">06 Comments
                                               <i class="lnr lnr-bubble"></i>
                                           </a>
                                       </li>
@@ -284,13 +284,13 @@
                               <div class="blog_post">
                                   <img th:src="@{/aroma/img/blog/main-blog/m-blog-3.jpg}" src="../static/aroma/img/blog/main-blog/m-blog-3.jpg" alt="">
                                   <div class="blog_details">
-                                      <a href="single-blog.html">
+                                      <a th:href="@{/single-blog}" href="single-blog.html">
                                           <h2>The Glossary Of Telescopes</h2>
                                       </a>
                                       <p>MCSE boot camps have its supporters and its detractors. Some people do not understand
                                           why you should have to spend money on boot camp when you can get the MCSE study
                                           materials yourself at a fraction.</p>
-                                      <a href="single-blog.html" class="button button-blog">View More</a>
+                                      <a th:href="@{/single-blog}" href="single-blog.html" class="button button-blog">View More</a>
                                   </div>
                               </div>
                           </div>
@@ -299,29 +299,29 @@
                           <div class="col-md-3">
                               <div class="blog_info text-right">
                                   <div class="post_tag">
-                                      <a href="#">Food,</a>
-                                      <a class="active" href="#">Technology,</a>
-                                      <a href="#">Politics,</a>
-                                      <a href="#">Lifestyle</a>
+                                      <a th:href="@{/}" href="#">Food,</a>
+                                      <a class="active" th:href="@{/}" href="#">Technology,</a>
+                                      <a th:href="@{/}" href="#">Politics,</a>
+                                      <a th:href="@{/}" href="#">Lifestyle</a>
                                   </div>
                                   <ul class="blog_meta list">
                                       <li>
-                                          <a href="#">Mark wiens
+                                          <a th:href="@{/}" href="#">Mark wiens
                                               <i class="lnr lnr-user"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">12 Dec, 2017
+                                          <a th:href="@{/}" href="#">12 Dec, 2017
                                               <i class="lnr lnr-calendar-full"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">1.2M Views
+                                          <a th:href="@{/}" href="#">1.2M Views
                                               <i class="lnr lnr-eye"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">06 Comments
+                                          <a th:href="@{/}" href="#">06 Comments
                                               <i class="lnr lnr-bubble"></i>
                                           </a>
                                       </li>
@@ -332,13 +332,13 @@
                               <div class="blog_post">
                                   <img th:src="@{/aroma/img/blog/main-blog/m-blog-4.jpg}" src="../static/aroma/img/blog/main-blog/m-blog-4.jpg" alt="">
                                   <div class="blog_details">
-                                      <a href="single-blog.html">
+                                      <a th:href="@{/single-blog}" href="single-blog.html">
                                           <h2>The Night Sky</h2>
                                       </a>
                                       <p>MCSE boot camps have its supporters and its detractors. Some people do not understand
                                           why you should have to spend money on boot camp when you can get the MCSE study
                                           materials yourself at a fraction.</p>
-                                      <a href="single-blog.html" class="button button-blog">View More</a>
+                                      <a th:href="@{/single-blog}" href="single-blog.html" class="button button-blog">View More</a>
                                   </div>
                               </div>
                           </div>
@@ -347,29 +347,29 @@
                           <div class="col-md-3">
                               <div class="blog_info text-right">
                                   <div class="post_tag">
-                                      <a href="#">Food,</a>
-                                      <a class="active" href="#">Technology,</a>
-                                      <a href="#">Politics,</a>
-                                      <a href="#">Lifestyle</a>
+                                      <a th:href="@{/}" href="#">Food,</a>
+                                      <a class="active" th:href="@{/}" href="#">Technology,</a>
+                                      <a th:href="@{/}" href="#">Politics,</a>
+                                      <a th:href="@{/}" href="#">Lifestyle</a>
                                   </div>
                                   <ul class="blog_meta list">
                                       <li>
-                                          <a href="#">Mark wiens
+                                          <a th:href="@{/}" href="#">Mark wiens
                                               <i class="lnr lnr-user"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">12 Dec, 2017
+                                          <a th:href="@{/}" href="#">12 Dec, 2017
                                               <i class="lnr lnr-calendar-full"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">1.2M Views
+                                          <a th:href="@{/}" href="#">1.2M Views
                                               <i class="lnr lnr-eye"></i>
                                           </a>
                                       </li>
                                       <li>
-                                          <a href="#">06 Comments
+                                          <a th:href="@{/}" href="#">06 Comments
                                               <i class="lnr lnr-bubble"></i>
                                           </a>
                                       </li>
@@ -380,13 +380,13 @@
                               <div class="blog_post">
                                   <img th:src="@{/aroma/img/blog/main-blog/m-blog-5.jpg}" src="../static/aroma/img/blog/main-blog/m-blog-5.jpg" alt="">
                                   <div class="blog_details">
-                                      <a href="single-blog.html">
+                                      <a th:href="@{/single-blog}" href="single-blog.html">
                                           <h2>Telescopes 101</h2>
                                       </a>
                                       <p>MCSE boot camps have its supporters and its detractors. Some people do not understand
                                           why you should have to spend money on boot camp when you can get the MCSE study
                                           materials yourself at a fraction.</p>
-                                      <a href="single-blog.html" class="button button-blog">View More</a>
+                                      <a th:href="@{/single-blog}" href="single-blog.html" class="button button-blog">View More</a>
                                   </div>
                               </div>
                           </div>
@@ -394,29 +394,29 @@
                       <nav class="blog-pagination justify-content-center d-flex">
                           <ul class="pagination">
                               <li class="page-item">
-                                  <a href="#" class="page-link" aria-label="Previous">
+                                  <a th:href="@{/}" href="#" class="page-link" aria-label="Previous">
                                       <span aria-hidden="true">
                                           <span class="lnr lnr-chevron-left"></span>
                                       </span>
                                   </a>
                               </li>
                               <li class="page-item">
-                                  <a href="#" class="page-link">01</a>
+                                  <a th:href="@{/}" href="#" class="page-link">01</a>
                               </li>
                               <li class="page-item active">
-                                  <a href="#" class="page-link">02</a>
+                                  <a th:href="@{/}" href="#" class="page-link">02</a>
                               </li>
                               <li class="page-item">
-                                  <a href="#" class="page-link">03</a>
+                                  <a th:href="@{/}" href="#" class="page-link">03</a>
                               </li>
                               <li class="page-item">
-                                  <a href="#" class="page-link">04</a>
+                                  <a th:href="@{/}" href="#" class="page-link">04</a>
                               </li>
                               <li class="page-item">
-                                  <a href="#" class="page-link">09</a>
+                                  <a th:href="@{/}" href="#" class="page-link">09</a>
                               </li>
                               <li class="page-item">
-                                  <a href="#" class="page-link" aria-label="Next">
+                                  <a th:href="@{/}" href="#" class="page-link" aria-label="Next">
                                       <span aria-hidden="true">
                                           <span class="lnr lnr-chevron-right"></span>
                                       </span>
@@ -445,16 +445,16 @@
                           <h4>Charlie Barber</h4>
                           <p>Senior blog writer</p>
                           <div class="social_icon">
-                              <a href="#">
+                              <a th:href="@{/}" href="#">
                                   <i class="fab fa-facebook-f"></i>
                               </a>
-                              <a href="#">
+                              <a th:href="@{/}" href="#">
                                   <i class="fab fa-twitter"></i>
                               </a>
-                              <a href="#">
+                              <a th:href="@{/}" href="#">
                                   <i class="fab fa-github"></i>
                               </a>
-                              <a href="#">
+                              <a th:href="@{/}" href="#">
                                 <i class="fab fa-behance"></i>
                               </a>
                           </div>
@@ -469,7 +469,7 @@
                           <div class="media post_item">
                               <img th:src="@{/aroma/img/blog/popular-post/post1.jpg}" src="../static/aroma/img/blog/popular-post/post1.jpg" alt="post">
                               <div class="media-body">
-                                  <a href="single-blog.html">
+                                  <a th:href="@{/single-blog}" href="single-blog.html">
                                       <h3>Space The Final Frontier</h3>
                                   </a>
                                   <p>02 Hours ago</p>
@@ -478,7 +478,7 @@
                           <div class="media post_item">
                               <img th:src="@{/aroma/img/blog/popular-post/post2.jpg}" src="../static/aroma/img/blog/popular-post/post2.jpg" alt="post">
                               <div class="media-body">
-                                  <a href="single-blog.html">
+                                  <a th:href="@{/single-blog}" href="single-blog.html">
                                       <h3>The Amazing Hubble</h3>
                                   </a>
                                   <p>02 Hours ago</p>
@@ -487,7 +487,7 @@
                           <div class="media post_item">
                               <img th:src="@{/aroma/img/blog/popular-post/post3.jpg}" src="../static/aroma/img/blog/popular-post/post3.jpg" alt="post">
                               <div class="media-body">
-                                  <a href="single-blog.html">
+                                  <a th:href="@{/single-blog}" href="single-blog.html">
                                       <h3>Astronomy Or Astrology</h3>
                                   </a>
                                   <p>03 Hours ago</p>
@@ -496,7 +496,7 @@
                           <div class="media post_item">
                               <img th:src="@{/aroma/img/blog/popular-post/post4.jpg}" src="../static/aroma/img/blog/popular-post/post4.jpg" alt="post">
                               <div class="media-body">
-                                  <a href="single-blog.html">
+                                  <a th:href="@{/single-blog}" href="single-blog.html">
                                       <h3>Asteroids telescope</h3>
                                   </a>
                                   <p>01 Hours ago</p>
@@ -505,7 +505,7 @@
                           <div class="br"></div>
                       </aside>
                       <aside class="single_sidebar_widget ads_widget">
-                          <a href="#">
+                          <a th:href="@{/}" href="#">
                               <img class="img-fluid" th:src="@{/aroma/img/blog/add.jpg}" src="../static/aroma/img/blog/add.jpg" alt="">
                           </a>
                           <div class="br"></div>
@@ -514,43 +514,43 @@
                           <h4 class="widget_title">Post Catgories</h4>
                           <ul class="list cat-list">
                               <li>
-                                  <a href="#" class="d-flex justify-content-between">
+                                  <a th:href="@{/}" href="#" class="d-flex justify-content-between">
                                       <p>Technology</p>
                                       <p>37</p>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#" class="d-flex justify-content-between">
+                                  <a th:href="@{/}" href="#" class="d-flex justify-content-between">
                                       <p>Lifestyle</p>
                                       <p>24</p>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#" class="d-flex justify-content-between">
+                                  <a th:href="@{/}" href="#" class="d-flex justify-content-between">
                                       <p>Fashion</p>
                                       <p>59</p>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#" class="d-flex justify-content-between">
+                                  <a th:href="@{/}" href="#" class="d-flex justify-content-between">
                                       <p>Art</p>
                                       <p>29</p>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#" class="d-flex justify-content-between">
+                                  <a th:href="@{/}" href="#" class="d-flex justify-content-between">
                                       <p>Food</p>
                                       <p>15</p>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#" class="d-flex justify-content-between">
+                                  <a th:href="@{/}" href="#" class="d-flex justify-content-between">
                                       <p>Architecture</p>
                                       <p>09</p>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#" class="d-flex justify-content-between">
+                                  <a th:href="@{/}" href="#" class="d-flex justify-content-between">
                                       <p>Adventure</p>
                                       <p>44</p>
                                   </a>
@@ -573,7 +573,7 @@
                                   <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email address" onfocus="this.placeholder = ''"
                                       onblur="this.placeholder = 'Enter email'">
                               </div>
-                              <a href="#" class="bbtns">Subcribe</a>
+                              <a th:href="@{/}" href="#" class="bbtns">Subcribe</a>
                           </div>
                           <p class="text-bottom">You can unsubscribe at any time</p>
                           <div class="br"></div>
@@ -582,40 +582,40 @@
                           <h4 class="widget_title">Tag Clouds</h4>
                           <ul class="list">
                               <li>
-                                  <a href="#">Technology</a>
+                                  <a th:href="@{/}" href="#">Technology</a>
                               </li>
                               <li>
-                                  <a href="#">Fashion</a>
+                                  <a th:href="@{/}" href="#">Fashion</a>
                               </li>
                               <li>
-                                  <a href="#">Architecture</a>
+                                  <a th:href="@{/}" href="#">Architecture</a>
                               </li>
                               <li>
-                                  <a href="#">Fashion</a>
+                                  <a th:href="@{/}" href="#">Fashion</a>
                               </li>
                               <li>
-                                  <a href="#">Food</a>
+                                  <a th:href="@{/}" href="#">Food</a>
                               </li>
                               <li>
-                                  <a href="#">Technology</a>
+                                  <a th:href="@{/}" href="#">Technology</a>
                               </li>
                               <li>
-                                  <a href="#">Lifestyle</a>
+                                  <a th:href="@{/}" href="#">Lifestyle</a>
                               </li>
                               <li>
-                                  <a href="#">Art</a>
+                                  <a th:href="@{/}" href="#">Art</a>
                               </li>
                               <li>
-                                  <a href="#">Adventure</a>
+                                  <a th:href="@{/}" href="#">Adventure</a>
                               </li>
                               <li>
-                                  <a href="#">Food</a>
+                                  <a th:href="@{/}" href="#">Food</a>
                               </li>
                               <li>
-                                  <a href="#">Lifestyle</a>
+                                  <a th:href="@{/}" href="#">Lifestyle</a>
                               </li>
                               <li>
-                                  <a href="#">Adventure</a>
+                                  <a th:href="@{/}" href="#">Adventure</a>
                               </li>
                           </ul>
                       </aside>
@@ -630,15 +630,15 @@
   <section class="instagram_area">
     <div class="container box_1620">
       <div class="insta_btn">
-        <a class="btn theme_btn" href="#">Follow us on instagram</a>
+        <a class="btn theme_btn" th:href="@{/}" href="#">Follow us on instagram</a>
       </div>
       <div class="instagram_image row m0">
-        <a href="#"><img th:src="@{/aroma/img/instagram/ins-1.jpg}" src="../static/aroma/img/instagram/ins-1.jpg" alt=""></a>
-        <a href="#"><img th:src="@{/aroma/img/instagram/ins-2.jpg}" src="../static/aroma/img/instagram/ins-2.jpg" alt=""></a>
-        <a href="#"><img th:src="@{/aroma/img/instagram/ins-3.jpg}" src="../static/aroma/img/instagram/ins-3.jpg" alt=""></a>
-        <a href="#"><img th:src="@{/aroma/img/instagram/ins-4.jpg}" src="../static/aroma/img/instagram/ins-4.jpg" alt=""></a>
-        <a href="#"><img th:src="@{/aroma/img/instagram/ins-5.jpg}" src="../static/aroma/img/instagram/ins-5.jpg" alt=""></a>
-        <a href="#"><img th:src="@{/aroma/img/instagram/ins-6.jpg}" src="../static/aroma/img/instagram/ins-6.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img th:src="@{/aroma/img/instagram/ins-1.jpg}" src="../static/aroma/img/instagram/ins-1.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img th:src="@{/aroma/img/instagram/ins-2.jpg}" src="../static/aroma/img/instagram/ins-2.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img th:src="@{/aroma/img/instagram/ins-3.jpg}" src="../static/aroma/img/instagram/ins-3.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img th:src="@{/aroma/img/instagram/ins-4.jpg}" src="../static/aroma/img/instagram/ins-4.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img th:src="@{/aroma/img/instagram/ins-5.jpg}" src="../static/aroma/img/instagram/ins-5.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img th:src="@{/aroma/img/instagram/ins-6.jpg}" src="../static/aroma/img/instagram/ins-6.jpg" alt=""></a>
       </div>
     </div>
   </section>
@@ -666,12 +666,12 @@
 						<div class="single-footer-widget tp_widgets">
 							<h4 class="footer_title">Quick Links</h4>
 							<ul class="list">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Product</a></li>
-								<li><a href="#">Brand</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a th:href="@{/}" href="#">Home</a></li>
+								<li><a th:href="@{/}" href="#">Shop</a></li>
+								<li><a th:href="@{/}" href="#">Blog</a></li>
+								<li><a th:href="@{/}" href="#">Product</a></li>
+								<li><a th:href="@{/}" href="#">Brand</a></li>
+								<li><a th:href="@{/}" href="#">Contact</a></li>
 							</ul>
 						</div>
 					</div>

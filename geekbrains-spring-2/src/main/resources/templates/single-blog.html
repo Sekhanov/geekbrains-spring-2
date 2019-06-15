@@ -21,7 +21,7 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+          <a class="navbar-brand logo_h" th:href="@{/index}" href="index.html"><img src="img/logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -30,43 +30,43 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" th:href="@{/index}" href="index.html">Home</a></li>
               <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Shop</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-product.html">Blog Details</a></li>
-                  <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                  <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-                  <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/category}" href="category.html">Shop Category</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/single-product}" href="single-product.html">Blog Details</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/checkout}" href="checkout.html">Product Checkout</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/confirmation}" href="confirmation.html">Confirmation</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/cart}" href="cart.html">Shopping Cart</a></li>
                 </ul>
 							</li>
               <li class="nav-item active submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Blog</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/blog}" href="blog.html">Blog</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/single-blog}" href="single-blog.html">Blog Details</a></li>
                 </ul>
 							</li>
 							<li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
-				  <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>				  
-                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
-                  <!-- <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li> -->
+				  <li class="nav-item"><a class="nav-link" th:href="@{/login}" href="login.html">Login</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/register}" href="register.html">Register</a></li>				  
+                  <li class="nav-item"><a class="nav-link" th:href="@{/tracking-order}" href="tracking-order.html">Tracking</a></li>
+            th:href="@{/<!-- <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li}"       <!-- <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li> -->
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" th:href="@{/contact}" href="contact.html">Contact</a></li>
             </ul>
 
             <ul class="nav-shop">
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
               <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
-              <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>
+              <li class="nav-item"><a class="button button-header" th:href="@{/}" href="#">Buy Now</a></li>
             </ul>
           </div>
         </div>
@@ -84,7 +84,7 @@
 					<h1>Blog Details</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a th:href="@{/}" href="#">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
             </ol>
           </nav>
@@ -110,51 +110,51 @@
 											<div class="col-lg-3  col-md-3">
 													<div class="blog_info text-right">
 															<div class="post_tag">
-																	<a href="#">Food,</a>
-																	<a class="active" href="#">Technology,</a>
-																	<a href="#">Politics,</a>
-																	<a href="#">Lifestyle</a>
+																	<a th:href="@{/}" href="#">Food,</a>
+																	<a class="active" th:href="@{/}" href="#">Technology,</a>
+																	<a th:href="@{/}" href="#">Politics,</a>
+																	<a th:href="@{/}" href="#">Lifestyle</a>
 															</div>
 															<ul class="blog_meta list">
 																	<li>
-																			<a href="#">Mark wiens
+																			<a th:href="@{/}" href="#">Mark wiens
 																					<i class="lnr lnr-user"></i>
 																			</a>
 																	</li>
 																	<li>
-																			<a href="#">12 Dec, 2017
+																			<a th:href="@{/}" href="#">12 Dec, 2017
 																					<i class="lnr lnr-calendar-full"></i>
 																			</a>
 																	</li>
 																	<li>
-																			<a href="#">1.2M Views
+																			<a th:href="@{/}" href="#">1.2M Views
 																					<i class="lnr lnr-eye"></i>
 																			</a>
 																	</li>
 																	<li>
-																			<a href="#">06 Comments
+																			<a th:href="@{/}" href="#">06 Comments
 																					<i class="lnr lnr-bubble"></i>
 																			</a>
 																	</li>
 															</ul>
 															<ul class="social-links">
 																	<li>
-																			<a href="#">
+																			<a th:href="@{/}" href="#">
 																					<i class="fab fa-facebook-f"></i>
 																			</a>
 																	</li>
 																	<li>
-																			<a href="#">
+																			<a th:href="@{/}" href="#">
 																				<i class="fab fa-twitter"></i>																				
 																			</a>
 																	</li>
 																	<li>
-																			<a href="#">
+																			<a th:href="@{/}" href="#">
 																				<i class="fab fa-github"></i>																				
 																			</a>
 																	</li>
 																	<li>
-																			<a href="#">
+																			<a th:href="@{/}" href="#">
 																				<i class="fab fa-behance"></i>																				
 																			</a>
 																	</li>
@@ -212,18 +212,18 @@
 											<div class="row">
 													<div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
 															<div class="thumb">
-																	<a href="#">
+																	<a th:href="@{/}" href="#">
 																			<img class="img-fluid" src="img/blog/prev.jpg" alt="">
 																	</a>
 															</div>
 															<div class="arrow">
-																	<a href="#">
+																	<a th:href="@{/}" href="#">
 																			<span class="lnr text-white lnr-arrow-left"></span>
 																	</a>
 															</div>
 															<div class="detials">
 																	<p>Prev Post</p>
-																	<a href="#">
+																	<a th:href="@{/}" href="#">
 																			<h4>Space The Final Frontier</h4>
 																	</a>
 															</div>
@@ -231,17 +231,17 @@
 													<div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
 															<div class="detials">
 																	<p>Next Post</p>
-																	<a href="#">
+																	<a th:href="@{/}" href="#">
 																			<h4>Telescopes 101</h4>
 																	</a>
 															</div>
 															<div class="arrow">
-																	<a href="#">
+																	<a th:href="@{/}" href="#">
 																			<span class="lnr text-white lnr-arrow-right"></span>
 																	</a>
 															</div>
 															<div class="thumb">
-																	<a href="#">
+																	<a th:href="@{/}" href="#">
 																			<img class="img-fluid" src="img/blog/next.jpg" alt="">
 																	</a>
 															</div>
@@ -258,7 +258,7 @@
 																	</div>
 																	<div class="desc">
 																			<h5>
-																					<a href="#">Emilly Blunt</a>
+																					<a th:href="@{/}" href="#">Emilly Blunt</a>
 																			</h5>
 																			<p class="date">December 4, 2017 at 3:12 pm </p>
 																			<p class="comment">
@@ -267,7 +267,7 @@
 																	</div>
 															</div>
 															<div class="reply-btn">
-																	<a href="#" class="btn-reply text-uppercase">reply</a>
+																	<a th:href="@{/}" href="#" class="btn-reply text-uppercase">reply</a>
 															</div>
 													</div>
 											</div>
@@ -279,7 +279,7 @@
 																	</div>
 																	<div class="desc">
 																			<h5>
-																					<a href="#">Elsie Cunningham</a>
+																					<a th:href="@{/}" href="#">Elsie Cunningham</a>
 																			</h5>
 																			<p class="date">December 4, 2017 at 3:12 pm </p>
 																			<p class="comment">
@@ -288,7 +288,7 @@
 																	</div>
 															</div>
 															<div class="reply-btn">
-																	<a href="#" class="btn-reply text-uppercase">reply</a>
+																	<a th:href="@{/}" href="#" class="btn-reply text-uppercase">reply</a>
 															</div>
 													</div>
 											</div>
@@ -300,7 +300,7 @@
 																	</div>
 																	<div class="desc">
 																			<h5>
-																					<a href="#">Annie Stephens</a>
+																					<a th:href="@{/}" href="#">Annie Stephens</a>
 																			</h5>
 																			<p class="date">December 4, 2017 at 3:12 pm </p>
 																			<p class="comment">
@@ -309,7 +309,7 @@
 																	</div>
 															</div>
 															<div class="reply-btn">
-																	<a href="#" class="btn-reply text-uppercase">reply</a>
+																	<a th:href="@{/}" href="#" class="btn-reply text-uppercase">reply</a>
 															</div>
 													</div>
 											</div>
@@ -321,7 +321,7 @@
 																	</div>
 																	<div class="desc">
 																			<h5>
-																					<a href="#">Maria Luna</a>
+																					<a th:href="@{/}" href="#">Maria Luna</a>
 																			</h5>
 																			<p class="date">December 4, 2017 at 3:12 pm </p>
 																			<p class="comment">
@@ -330,7 +330,7 @@
 																	</div>
 															</div>
 															<div class="reply-btn">
-																	<a href="#" class="btn-reply text-uppercase">reply</a>
+																	<a th:href="@{/}" href="#" class="btn-reply text-uppercase">reply</a>
 															</div>
 													</div>
 											</div>
@@ -342,7 +342,7 @@
 																	</div>
 																	<div class="desc">
 																			<h5>
-																					<a href="#">Ina Hayes</a>
+																					<a th:href="@{/}" href="#">Ina Hayes</a>
 																			</h5>
 																			<p class="date">December 4, 2017 at 3:12 pm </p>
 																			<p class="comment">
@@ -351,7 +351,7 @@
 																	</div>
 															</div>
 															<div class="reply-btn">
-																	<a href="#" class="btn-reply text-uppercase">reply</a>
+																	<a th:href="@{/}" href="#" class="btn-reply text-uppercase">reply</a>
 															</div>
 													</div>
 											</div>
@@ -374,7 +374,7 @@
 															<textarea class="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'"
 																	required=""></textarea>
 													</div>
-													<a href="#" class="button button-postComment button--active">Post Comment</a>
+													<a th:href="@{/}" href="#" class="button button-postComment button--active">Post Comment</a>
 											</form>
 									</div>
 							</div>
@@ -397,16 +397,16 @@
 													<h4>Charlie Barber</h4>
 													<p>Senior blog writer</p>
 													<div class="social_icon">
-                              <a href="#">
+                              <a th:href="@{/}" href="#">
                                   <i class="fab fa-facebook-f"></i>
                               </a>
-                              <a href="#">
+                              <a th:href="@{/}" href="#">
                                   <i class="fab fa-twitter"></i>
                               </a>
-                              <a href="#">
+                              <a th:href="@{/}" href="#">
                                   <i class="fab fa-github"></i>
                               </a>
-                              <a href="#">
+                              <a th:href="@{/}" href="#">
                                 <i class="fab fa-behance"></i>
                               </a>
                           </div>
@@ -421,7 +421,7 @@
 													<div class="media post_item">
 															<img src="img/blog/popular-post/post1.jpg" alt="post">
 															<div class="media-body">
-																	<a href="blog-details.html">
+																	<a th:href="@{/blog-details}" href="blog-details.html">
 																			<h3>Space The Final Frontier</h3>
 																	</a>
 																	<p>02 Hours ago</p>
@@ -430,7 +430,7 @@
 													<div class="media post_item">
 															<img src="img/blog/popular-post/post2.jpg" alt="post">
 															<div class="media-body">
-																	<a href="blog-details.html">
+																	<a th:href="@{/blog-details}" href="blog-details.html">
 																			<h3>The Amazing Hubble</h3>
 																	</a>
 																	<p>02 Hours ago</p>
@@ -439,7 +439,7 @@
 													<div class="media post_item">
 															<img src="img/blog/popular-post/post3.jpg" alt="post">
 															<div class="media-body">
-																	<a href="blog-details.html">
+																	<a th:href="@{/blog-details}" href="blog-details.html">
 																			<h3>Astronomy Or Astrology</h3>
 																	</a>
 																	<p>03 Hours ago</p>
@@ -448,7 +448,7 @@
 													<div class="media post_item">
 															<img src="img/blog/popular-post/post4.jpg" alt="post">
 															<div class="media-body">
-																	<a href="blog-details.html">
+																	<a th:href="@{/blog-details}" href="blog-details.html">
 																			<h3>Asteroids telescope</h3>
 																	</a>
 																	<p>01 Hours ago</p>
@@ -457,7 +457,7 @@
 													<div class="br"></div>
 											</aside>
 											<aside class="single_sidebar_widget ads_widget">
-													<a href="#">
+													<a th:href="@{/}" href="#">
 															<img class="img-fluid" src="img/blog/add.jpg" alt="">
 													</a>
 													<div class="br"></div>
@@ -466,43 +466,43 @@
 													<h4 class="widget_title">Post Catgories</h4>
 													<ul class="list cat-list">
 															<li>
-																	<a href="#" class="d-flex justify-content-between">
+																	<a th:href="@{/}" href="#" class="d-flex justify-content-between">
 																			<p>Technology</p>
 																			<p>37</p>
 																	</a>
 															</li>
 															<li>
-																	<a href="#" class="d-flex justify-content-between">
+																	<a th:href="@{/}" href="#" class="d-flex justify-content-between">
 																			<p>Lifestyle</p>
 																			<p>24</p>
 																	</a>
 															</li>
 															<li>
-																	<a href="#" class="d-flex justify-content-between">
+																	<a th:href="@{/}" href="#" class="d-flex justify-content-between">
 																			<p>Fashion</p>
 																			<p>59</p>
 																	</a>
 															</li>
 															<li>
-																	<a href="#" class="d-flex justify-content-between">
+																	<a th:href="@{/}" href="#" class="d-flex justify-content-between">
 																			<p>Art</p>
 																			<p>29</p>
 																	</a>
 															</li>
 															<li>
-																	<a href="#" class="d-flex justify-content-between">
+																	<a th:href="@{/}" href="#" class="d-flex justify-content-between">
 																			<p>Food</p>
 																			<p>15</p>
 																	</a>
 															</li>
 															<li>
-																	<a href="#" class="d-flex justify-content-between">
+																	<a th:href="@{/}" href="#" class="d-flex justify-content-between">
 																			<p>Architecture</p>
 																			<p>09</p>
 																	</a>
 															</li>
 															<li>
-																	<a href="#" class="d-flex justify-content-between">
+																	<a th:href="@{/}" href="#" class="d-flex justify-content-between">
 																			<p>Adventure</p>
 																			<p>44</p>
 																	</a>
@@ -525,7 +525,7 @@
 																	<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email address" onfocus="this.placeholder = ''"
 																			onblur="this.placeholder = 'Enter email'">
 															</div>
-															<a href="#" class="bbtns">Subcribe</a>
+															<a th:href="@{/}" href="#" class="bbtns">Subcribe</a>
 													</div>
 													<p class="text-bottom">You can unsubscribe at any time</p>
 													<div class="br"></div>
@@ -534,40 +534,40 @@
 													<h4 class="widget_title">Tag Clouds</h4>
 													<ul class="list">
 															<li>
-																	<a href="#">Technology</a>
+																	<a th:href="@{/}" href="#">Technology</a>
 															</li>
 															<li>
-																	<a href="#">Fashion</a>
+																	<a th:href="@{/}" href="#">Fashion</a>
 															</li>
 															<li>
-																	<a href="#">Architecture</a>
+																	<a th:href="@{/}" href="#">Architecture</a>
 															</li>
 															<li>
-																	<a href="#">Fashion</a>
+																	<a th:href="@{/}" href="#">Fashion</a>
 															</li>
 															<li>
-																	<a href="#">Food</a>
+																	<a th:href="@{/}" href="#">Food</a>
 															</li>
 															<li>
-																	<a href="#">Technology</a>
+																	<a th:href="@{/}" href="#">Technology</a>
 															</li>
 															<li>
-																	<a href="#">Lifestyle</a>
+																	<a th:href="@{/}" href="#">Lifestyle</a>
 															</li>
 															<li>
-																	<a href="#">Art</a>
+																	<a th:href="@{/}" href="#">Art</a>
 															</li>
 															<li>
-																	<a href="#">Adventure</a>
+																	<a th:href="@{/}" href="#">Adventure</a>
 															</li>
 															<li>
-																	<a href="#">Food</a>
+																	<a th:href="@{/}" href="#">Food</a>
 															</li>
 															<li>
-																	<a href="#">Lifestyle</a>
+																	<a th:href="@{/}" href="#">Lifestyle</a>
 															</li>
 															<li>
-																	<a href="#">Adventure</a>
+																	<a th:href="@{/}" href="#">Adventure</a>
 															</li>
 													</ul>
 											</aside>
@@ -583,15 +583,15 @@
   <section class="instagram_area">
     <div class="container box_1620">
       <div class="insta_btn">
-        <a class="btn theme_btn" href="#">Follow us on instagram</a>
+        <a class="btn theme_btn" th:href="@{/}" href="#">Follow us on instagram</a>
       </div>
       <div class="instagram_image row m0">
-        <a href="#"><img src="img/instagram/ins-1.jpg" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-2.jpg" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-3.jpg" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-4.jpg" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-5.jpg" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-6.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img src="img/instagram/ins-1.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img src="img/instagram/ins-2.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img src="img/instagram/ins-3.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img src="img/instagram/ins-4.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img src="img/instagram/ins-5.jpg" alt=""></a>
+        <a th:href="@{/}" href="#"><img src="img/instagram/ins-6.jpg" alt=""></a>
       </div>
     </div>
   </section>
@@ -619,12 +619,12 @@
 						<div class="single-footer-widget tp_widgets">
 							<h4 class="footer_title">Quick Links</h4>
 							<ul class="list">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Product</a></li>
-								<li><a href="#">Brand</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a th:href="@{/}" href="#">Home</a></li>
+								<li><a th:href="@{/}" href="#">Shop</a></li>
+								<li><a th:href="@{/}" href="#">Blog</a></li>
+								<li><a th:href="@{/}" href="#">Product</a></li>
+								<li><a th:href="@{/}" href="#">Brand</a></li>
+								<li><a th:href="@{/}" href="#">Contact</a></li>
 							</ul>
 						</div>
 					</div>

@@ -32,7 +32,7 @@
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
               <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
               <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Shop</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
@@ -43,7 +43,7 @@
                 </ul>
 							</li>
               <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Blog</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
@@ -51,7 +51,7 @@
                 </ul>
 							</li>
 							<li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
@@ -103,21 +103,21 @@
       <div class="owl-carousel owl-theme hero-carousel">
         <div class="hero-carousel__slide">
           <img  th:src="@{/aroma/img/home/hero-slide1.png}" src="../static/aroma/img/home/hero-slide1.png" alt="" class="img-fluid">
-          <a href="#" class="hero-carousel__slideOverlay">
+          <a th:href="@{/}" href="#" class="hero-carousel__slideOverlay">
             <h3>Wireless Headphone</h3>
             <p>Accessories Item</p>
           </a>
         </div>
         <div class="hero-carousel__slide">
           <img  th:src="@{/aroma/img/home/hero-slide2.png}" src="../static/aroma/img/home/hero-slide2.png" alt="" class="img-fluid">
-          <a href="#" class="hero-carousel__slideOverlay">
+          <a th:href="@{/}" href="#" class="hero-carousel__slideOverlay">
             <h3>Wireless Headphone</h3>
             <p>Accessories Item</p>
           </a>
         </div>
         <div class="hero-carousel__slide">
           <img  th:src="@{/aroma/img/home/hero-slide3.png}" src="../static/aroma/img/home/hero-slide3.png" alt="" class="img-fluid">
-          <a href="#" class="hero-carousel__slideOverlay">
+          <a th:href="@{/}" href="#" class="hero-carousel__slideOverlay">
             <h3>Wireless Headphone</h3>
             <p>Accessories Item</p>
           </a>
@@ -146,7 +146,7 @@
               </div>
               <div class="card-body">
                 <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
+                <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Quartz Belt Watch</a></h4>
                 <p class="card-product__price">$150.00</p>
               </div>
             </div>
@@ -163,7 +163,7 @@
               </div>
               <div class="card-body">
                 <p>Beauty</p>
-                <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
+                <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Women Freshwash</a></h4>
                 <p class="card-product__price">$150.00</p>
               </div>
             </div>
@@ -180,7 +180,7 @@
               </div>
               <div class="card-body">
                 <p>Decor</p>
-                <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+                <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Room Flash Light</a></h4>
                 <p class="card-product__price">$150.00</p>
               </div>
             </div>
@@ -197,7 +197,7 @@
               </div>
               <div class="card-body">
                 <p>Decor</p>
-                <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+                <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Room Flash Light</a></h4>
                 <p class="card-product__price">$150.00</p>
               </div>
             </div>
@@ -214,7 +214,7 @@
               </div>
               <div class="card-body">
                 <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">Man Office Bag</a></h4>
+                <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Man Office Bag</a></h4>
                 <p class="card-product__price">$150.00</p>
               </div>
             </div>
@@ -231,7 +231,7 @@
               </div>
               <div class="card-body">
                 <p>Kids Toy</p>
-                <h4 class="card-product__title"><a href="single-product.html">Charging Car</a></h4>
+                <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Charging Car</a></h4>
                 <p class="card-product__price">$150.00</p>
               </div>
             </div>
@@ -248,7 +248,7 @@
               </div>
               <div class="card-body">
                 <p>Accessories</p>
-                <h4 class="card-product__title"><a href="single-product.html">Blutooth Speaker</a></h4>
+                <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Blutooth Speaker</a></h4>
                 <p class="card-product__price">$150.00</p>
               </div> 
             </div>
@@ -265,7 +265,7 @@
               </div>
               <div class="card-body">
                 <p>Kids Toy</p>
-                <h4 class="card-product__title"><a href="#">Charging Car</a></h4>
+                <h4 class="card-product__title"><a th:href="@{/}" href="#">Charging Car</a></h4>
                 <p class="card-product__price">$150.00</p>
               </div>
             </div>
@@ -312,7 +312,7 @@
             </div>
             <div class="card-body">
               <p>Accessories</p>
-              <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
+              <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Quartz Belt Watch</a></h4>
               <p class="card-product__price">$150.00</p>
             </div>
           </div>
@@ -328,7 +328,7 @@
             </div>
             <div class="card-body">
               <p>Beauty</p>
-              <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
+              <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Women Freshwash</a></h4>
               <p class="card-product__price">$150.00</p>
             </div>
           </div>
@@ -344,7 +344,7 @@
             </div>
             <div class="card-body">
               <p>Decor</p>
-              <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+              <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Room Flash Light</a></h4>
               <p class="card-product__price">$150.00</p>
             </div>
           </div>
@@ -360,7 +360,7 @@
             </div>
             <div class="card-body">
               <p>Decor</p>
-              <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+              <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Room Flash Light</a></h4>
               <p class="card-product__price">$150.00</p>
             </div>
           </div>
@@ -376,7 +376,7 @@
             </div>
             <div class="card-body">
               <p>Accessories</p>
-              <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
+              <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Quartz Belt Watch</a></h4>
               <p class="card-product__price">$150.00</p>
             </div>
           </div>
@@ -392,7 +392,7 @@
             </div>
             <div class="card-body">
               <p>Beauty</p>
-              <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
+              <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Women Freshwash</a></h4>
               <p class="card-product__price">$150.00</p>
             </div>
           </div>
@@ -408,7 +408,7 @@
             </div>
             <div class="card-body">
               <p>Decor</p>
-              <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+              <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Room Flash Light</a></h4>
               <p class="card-product__price">$150.00</p>
             </div>
           </div>
@@ -424,7 +424,7 @@
             </div>
             <div class="card-body">
               <p>Decor</p>
-              <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
+              <h4 class="card-product__title"><a th:href="@{/single-product}" href="single-product.html">Room Flash Light</a></h4>
               <p class="card-product__price">$150.00</p>
             </div>
           </div>
@@ -449,10 +449,10 @@
               </div>
               <div class="card-body">
                 <ul class="card-blog__info">
-                  <li><a href="#">By Admin</a></li>
-                  <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                  <li><a th:href="@{/}" href="#">By Admin</a></li>
+                  <li><a th:href="@{/}" href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
                 </ul>
-                <h4 class="card-blog__title"><a href="single-blog.html">The Richland Center Shooping News and weekly shooper</a></h4>
+                <h4 class="card-blog__title"><a th:href="@{/single-blog}" href="single-blog.html">The Richland Center Shooping News and weekly shooper</a></h4>
                 <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
                 <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
               </div>
@@ -466,10 +466,10 @@
               </div>
               <div class="card-body">
                 <ul class="card-blog__info">
-                  <li><a href="#">By Admin</a></li>
-                  <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                  <li><a th:href="@{/}" href="#">By Admin</a></li>
+                  <li><a th:href="@{/}" href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
                 </ul>
-                <h4 class="card-blog__title"><a href="single-blog.html">The Shopping News also offers top-quality printing services</a></h4>
+                <h4 class="card-blog__title"><a th:href="@{/single-blog}" href="single-blog.html">The Shopping News also offers top-quality printing services</a></h4>
                 <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
                 <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
               </div>
@@ -483,10 +483,10 @@
               </div>
               <div class="card-body">
                 <ul class="card-blog__info">
-                  <li><a href="#">By Admin</a></li>
-                  <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                  <li><a th:href="@{/}" href="#">By Admin</a></li>
+                  <li><a th:href="@{/}" href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
                 </ul>
-                <h4 class="card-blog__title"><a href="single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
+                <h4 class="card-blog__title"><a th:href="@{/single-blog}" href="single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
                 <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
                 <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
               </div>
@@ -548,12 +548,12 @@
 						<div class="single-footer-widget tp_widgets">
 							<h4 class="footer_title">Quick Links</h4>
 							<ul class="list">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Product</a></li>
-								<li><a href="#">Brand</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a th:href="@{/}" href="#">Home</a></li>
+								<li><a th:href="@{/}" href="#">Shop</a></li>
+								<li><a th:href="@{/}" href="#">Blog</a></li>
+								<li><a th:href="@{/}" href="#">Product</a></li>
+								<li><a th:href="@{/}" href="#">Brand</a></li>
+								<li><a th:href="@{/}" href="#">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -609,7 +609,7 @@
 				<div class="row d-flex">
 					<p class="col-lg-12 footer-text text-center">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a th:href="@{/}" href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 				</div>
 			</div>
