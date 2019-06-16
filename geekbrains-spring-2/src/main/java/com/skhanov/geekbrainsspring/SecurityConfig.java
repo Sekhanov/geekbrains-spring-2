@@ -19,7 +19,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
+		auth
+//		.jdbcAuthentication().dataSource(dataSource);
+		.inMemoryAuthentication()		
 		.withUser("admin")
 		.password("{noop}admin")
 		.authorities("ROLE_ADMIN")
@@ -31,7 +33,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
+		http
+		.authorizeRequests()
+		.antMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN")
+		.antMatchers("/**").permitAll()
+		.and()
+		.formLogin()
+		.loginPage("/login")
+		.loginProcessingUrl("/authenticateTheUser")
+		.and()
+		.logout()
+		.logoutSuccessUrl("/");
+		
 	}
 
 	

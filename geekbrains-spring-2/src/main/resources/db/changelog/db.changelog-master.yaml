@@ -1,14 +1,15 @@
 databaseChangeLog:
   - preConditions:
-    - runningAs:
-        username: root
+      - runningAs:
+          username: root
+#          password: ckjybr
 
   - changeSet:
       id: 1
       author: skhanov
       changes:
         - createTable:
-            tableName: person
+            tableName: users
             columns:
               - column:
                   name: id
@@ -18,36 +19,115 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: firstname
-                  type: varchar(50)
-              - column:
-                  name: lastname
+                  name: username
                   type: varchar(50)
                   constraints:
+                    unique: true
                     nullable: false
               - column:
-                  name: state
-                  type: char(2)
-                             
+                  name: password
+                  type: varchar(512)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(50)
+              - column:
+                  name: last_name
+                  type: varchar(50)
+              - column:
+                  name: email
+                  type: varchar(50)
 
   - changeSet:
       id: 2
       author: skhanov
+      comment: "Create admin user"
       changes:
-        - addColumn:
-            tableName: person
+        - insert:
+            tableName: users
             columns:
               - column:
                   name: username
-                  type: varchar(8)
+                  value: "admin"
+              - column:
+                  name: password
+                  value: "{noop}admin"
 
   - changeSet:
       id: 3
-      author: nvoxland
+      author: skhanov
       changes:
-        - addLookupTable:
-            existingTableName: person
-            existingColumnName: state
-            newTableName: state
-            newColumnName: id
-            newColumnDataType: char(2)
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+
+  - changeSet:
+      id: 4
+      author: skhanov
+      comment: "Create default user roles"
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: name
+                  value: "ROLE_ADMIN"
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: name
+                  value: "ROLE_USER"
+
+
+  - changeSet:
+      id: 5
+      author: skhanov
+      changes:
+        - createTable:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    foreignKeyName: fk_user_id
+                    references: users(id)
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: int
+                  constraints:
+                    foreignKeyName: fk_role_id
+                    references: roles(id)
+                    nullable: false
+
+  - changeSet:
+      id: 6
+      author: skhanov
+      comment: "Assign ADMIN role to admin user"
+      changes:
+        - insert:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  value: 1
+              - column:
+                  name: role_id
+                  value: 1

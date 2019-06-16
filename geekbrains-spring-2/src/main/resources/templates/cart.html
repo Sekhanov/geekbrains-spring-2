@@ -1,4 +1,4 @@
- th:href="#{/}"<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
   <meta charset="UTF-8">
@@ -23,7 +23,7 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h" ht:href="@{/index}" href="index.html"><img th:src="@{/aroma/img/logo.png}" src="../static/aroma/img/logo.png" alt=""></a>
+          <a class="navbar-brand logo_h" th:href="@{/index}" href="index.html"><img th:src="@{/aroma/img/logo.png}" src="../static/aroma/img/logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -32,36 +32,36 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item"><a class="nav-link" ht:href="@{/index}" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" th:href="@{/index}" href="index.html">Home</a></li>
               <li class="nav-item active submenu dropdown">
                 <a th:href="#{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Shop</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/category}" href="category.html">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/single-product}" href="single-product.html">Product Details</a></li>
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/checkout}" href="checkout.html">Product Checkout</a></li>
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/confirmation}" href="confirmation.html">Confirmation</a></li>
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/cart}" href="cart.html">Shopping Cart</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/category}" href="category.html">Shop Category</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/single-product}" href="single-product.html">Product Details</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/checkout}" href="checkout.html">Product Checkout</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/confirmation}" href="confirmation.html">Confirmation</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/cart}" href="cart.html">Shopping Cart</a></li>
                 </ul>
 							</li>
               <li class="nav-item submenu dropdown">
                 <a th:href="#{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Blog</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/blog}" href="blog.html">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/register}" href="register.html">Register</a></li>
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/single-blog}" href="single-blog.html">Blog Details</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/blog}" href="blog.html">Blog</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/register}" href="register.html">Register</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/single-blog}" href="single-blog.html">Blog Details</a></li>
                 </ul>
 							</li>
 							<li class="nav-item submenu dropdown">
                 <a th:href="#{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/login}" href="login.html">Login</a></li>
-                  <li class="nav-item"><a class="nav-link" ht:href="@{/tracking-order}" href="tracking-order.html">Tracking</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/login}" href="login.html">Login</a></li>
+                  <li class="nav-item"><a class="nav-link" th:href="@{/tracking-order}" href="tracking-order.html">Tracking</a></li>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link" ht:href="@{/contact}" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" th:href="@{/contact}" href="contact.html">Contact</a></li>
             </ul>
 
             <ul class="nav-shop">
@@ -374,7 +374,7 @@
 				<div class="row d-flex">
 					<p class="col-lg-12 footer-text text-center">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a ht:href="@{/https://colorlib}" href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a th:href="@{/https://colorlib}" href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 				</div>
 			</div>
