@@ -1,8 +1,9 @@
+#switch to changeLog formatted in sql
+#not used
 databaseChangeLog:
   - preConditions:
       - runningAs:
           username: root
-#          password: ckjybr
 
   - changeSet:
       id: 1

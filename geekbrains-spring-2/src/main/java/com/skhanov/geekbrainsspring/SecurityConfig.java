@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth
-//		.jdbcAuthentication().dataSource(dataSource);
+		// .jdbcAuthentication().dataSource(dataSource);
 		.inMemoryAuthentication()		
 		.withUser("admin")
 		.password("{noop}admin")
