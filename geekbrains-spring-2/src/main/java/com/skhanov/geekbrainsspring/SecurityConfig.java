@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 @EnableWebSecurity
@@ -17,18 +18,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private DataSource dataSource;
 
+	@Autowired
+	private UserDetailsService userDetailsService;
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth
+		.userDetailsService(userDetailsService);
+
 		// .jdbcAuthentication().dataSource(dataSource);
-		.inMemoryAuthentication()		
-		.withUser("admin")
-		.password("{noop}admin")
-		.authorities("ROLE_ADMIN")
-		.and()
-		.withUser("user")
-		.password("{noop}user")
-		.authorities("ROLE_USER");
+
+
+		// .inMemoryAuthentication()		
+		// .withUser("admin")
+		// .password("{noop}admin")
+		// .authorities("ROLE_ADMIN")
+		// .and()
+		// .withUser("user")
+		// .password("{noop}user")
+		// .authorities("ROLE_USER");
 	}
 
 	@Override
