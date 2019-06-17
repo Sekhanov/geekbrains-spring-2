@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import com.skhanov.geekbrainsspring.persist.model.User;
 import com.skhanov.geekbrainsspring.persist.repo.RoleRepository;
 import com.skhanov.geekbrainsspring.persist.repo.UserRepository;
+import com.skhanov.geekbrainsspring.persist.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -23,12 +24,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BootAdminController {
 
     private final RoleRepository roleRepository;
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     @Autowired
-    public BootAdminController(RoleRepository roleRepository, @Lazy UserRepository userRepository) {
+    public BootAdminController(RoleRepository roleRepository, @Lazy UserService userService) {
         this.roleRepository = roleRepository;
-        this.userRepository = userRepository;
+        this.userService = userService;
     }
 
 
@@ -41,7 +42,7 @@ public class BootAdminController {
     @GetMapping("/users")
     public String showAdminUsers(Model model) {
         model.addAttribute("pageHeader", "All Users");
-        model.addAttribute("users", userRepository.findAll());
+        model.addAttribute("users", userService.findAll());
         return "admin/users";
     }
 
@@ -59,7 +60,7 @@ public class BootAdminController {
         if(bindingResult.hasErrors()) {
             return "admin/user-form";
         }
-        userRepository.save(user);
+        userService.save(user);
         return "redirect:/admin/users";
     } 
 
