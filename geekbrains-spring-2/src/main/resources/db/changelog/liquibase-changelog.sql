@@ -30,7 +30,7 @@ CREATE TABLE `users_roles` (
 
 --changeset skhanov:2
 --comment fill security tables
-INSERT INTO `users` VALUES (1,'admin','{noop}admin',NULL,NULL,NULL), (2, 'user', '{noop}user', NULL, NULL, NULL);
+INSERT INTO `users` VALUES (1,'admin','$2a$10$/z5jkuuGfN9nlynG3jhlS.YxvTjPniXS3eiQdjVp369jOdKHZKoCe','Sergey','Khanov','sekhanov@gmail.com'), (2, 'user', '$2a$10$ab8/UIVfC4cSCQgYWvbUluHKXmPxgLuxKJX7E5vGf3Qf.EaUn8Y6.', "Vasiliy", 'Pupkin', 'vashya@mail.ru');
 INSERT INTO `roles` VALUES (1,'ROLE_ADMIN'), (2,'ROLE_USER');
 INSERT INTO `users_roles` VALUES (1,1), (2,2);
 

@@ -25,6 +25,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class User implements UserDetails {
 
     private static final long serialVersionUID = -2132970684176643191L;
+    
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -11,7 +11,6 @@ public class GeekbrainsSpring2Application implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("index");
-		registry.addViewController("admin").setViewName("admin");
 		registry.addViewController("index").setViewName("index");
 		registry.addViewController("blog").setViewName("blog");
 		registry.addViewController("cart").setViewName("cart");
