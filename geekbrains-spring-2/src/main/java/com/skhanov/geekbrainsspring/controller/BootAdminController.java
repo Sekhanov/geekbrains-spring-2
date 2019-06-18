@@ -3,6 +3,7 @@ package com.skhanov.geekbrainsspring.controller;
 import javax.validation.Valid;
 
 import com.skhanov.geekbrainsspring.persist.model.User;
+import com.skhanov.geekbrainsspring.persist.repo.GoodRepository;
 import com.skhanov.geekbrainsspring.persist.repo.RoleRepository;
 import com.skhanov.geekbrainsspring.persist.service.UserService;
 
@@ -23,33 +24,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class BootAdminController {
 
+    private static final String PAGE_HEADER = "pageHeader";
+
     private final RoleRepository roleRepository;
     private final UserService userService;
+    private final GoodRepository goodRepository;
 
     @Autowired
-    public BootAdminController(RoleRepository roleRepository, @Lazy UserService userService) {
+    public BootAdminController(RoleRepository roleRepository, @Lazy UserService userService, GoodRepository goodRepository){
         this.roleRepository = roleRepository;
         this.userService = userService;
+        this.goodRepository = goodRepository;
     }
 
 
 
     @GetMapping 
     public String showAdminMain(Model model) {
-        model.addAttribute("pageHeader", "Main admin Page");
+        model.addAttribute(PAGE_HEADER, "Main admin Page");
         return "admin/main";
     }
 
     @GetMapping("/users")
-    public String showAdminUsers(Model model) {
-        model.addAttribute("pageHeader", "All Users");
+    public String showUsers(Model model) {
+        model.addAttribute(PAGE_HEADER, "All Users");
         model.addAttribute("users", userService.findAll());
         return "admin/users";
     }
 
+    @GetMapping("/goods")
+    public String showGoods(Model model) {
+        model.addAttribute(PAGE_HEADER, "All Goods");
+        model.addAttribute("goods", goodRepository.findAll());
+        return "admin/goods";
+    }
+
     @GetMapping("/users/create")
     public String createUser(Model model) {
-        model.addAttribute("pageHeader", "Create User");
+        model.addAttribute(PAGE_HEADER, "Create User");
         model.addAttribute("user", new User());
         model.addAttribute("roles", roleRepository.findAll());
         return "admin/user-form";
@@ -57,7 +69,7 @@ public class BootAdminController {
 
     @PostMapping("users")
     public String createUser(@Valid User user, Model model, BindingResult bindingResult) {
-        model.addAttribute("pageHeader", "All Users");
+        model.addAttribute(PAGE_HEADER, "All Users");
         if(bindingResult.hasErrors()) {
             return "admin/user-form";
         }
@@ -67,7 +79,7 @@ public class BootAdminController {
 
     @GetMapping("/users/edit/{id}")
     public String editUser(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("pageHeader", "Edit User");
+        model.addAttribute(PAGE_HEADER, "Edit User");
         model.addAttribute("user", userService.findById(id));
         model.addAttribute("roles", roleRepository.findAll());
         return "admin/user-form";

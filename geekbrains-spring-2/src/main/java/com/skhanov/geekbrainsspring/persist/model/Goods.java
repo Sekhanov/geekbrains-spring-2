@@ -35,7 +35,7 @@ public class Goods {
 
     @ManyToOne
     @JoinColumn(name = "goods_type_id")
-    private GoodsType goodsTypes;
+    private GoodsType goodsType;
 
     @ManyToOne
     @JoinColumn(name = "goods_brand_id")
