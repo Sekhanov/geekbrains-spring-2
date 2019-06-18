@@ -19,4 +19,6 @@ public interface UserService extends UserDetailsService {
 
     List<User> findAll();
 
+    boolean deleteUser(User user);
+
 }

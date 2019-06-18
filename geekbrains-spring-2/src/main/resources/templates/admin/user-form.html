@@ -25,6 +25,18 @@
                         <input th:field="*{password}" type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                     <div class="form-group">
+                        <label for="firstName">First name</label>
+                        <input th:field="*{firstName}" type="text" class="form-control" id="firstName" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input th:field="*{lastName}" type="text" class="form-control" id="lastName" placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input th:field="*{email}" type="text" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
                         <label for="roles">User roles</label>
                         <select multiple class="form-control" id="roles" th:field="*{roles}" required>
                             <option th:each="role : ${roles}"
