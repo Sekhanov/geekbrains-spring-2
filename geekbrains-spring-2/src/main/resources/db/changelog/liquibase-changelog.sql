@@ -36,32 +36,45 @@ INSERT INTO `users_roles` VALUES (1,1), (2,2);
 
 --changeset skhanov:3
 --comment create tables for goods
-CREATE TABLE `good_type` (
+CREATE TABLE `goods_type` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`name` varchar(50) NOT NULL,
-	PRIMARY KEY (`id`)	
+	PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
 );
 
-CREATE TABLE `good_brend` (
+CREATE TABLE `goods_brend` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`name` varchar(50) NOT NULL,
-	PRIMARY KEY (`id`)	
+	PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)	
+);
+
+CREATE TABLE `goods_color`(
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
 );
 
 CREATE TABLE `goods` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `model` varchar(100) NOT NULL,
-`description` varchar(100) NOT NULL,
-`price` varchar(11) NOT NULL,
-`good_type_id` int(11) NOT NULL,
-`good_brend_id` int(11) NOT NULL,
+`description` varchar(100),
+`price` int(11) NOT NULL,
+`image_link` varchar(512),
+`goods_type_id` int(11) NOT NULL,
+`goods_brend_id` int(11) NOT NULL,
+`goods_color_id` int(11) NOT NULL,
 PRIMARY KEY (`id`),
-CONSTRAINT `fk_good_type_goods` FOREIGN KEY (`good_type_id`) REFERENCES `good_type`(`id`),
-CONSTRAINT `fk_goot_brend_goods` FOREIGN KEY (`good_brend_id`) REFERENCES `good_brend`(`id`)
+CONSTRAINT `fk_goods_type_goods` FOREIGN KEY (`goods_type_id`) REFERENCES `goods_type`(`id`),
+CONSTRAINT `fk_goods_brend_goods` FOREIGN KEY (`goods_brend_id`) REFERENCES `goods_brend`(`id`),
+CONSTRAINT `fk_goods_color_goods` FOREIGN KEY (`goods_color_id`) REFERENCES `goods_color` (`id`)
 );
 
 --changeset skhanov:4
---comment fill good tables
-INSERT INTO `good_type` VALUES (1, 'monitor'), (2, 'keyboard'), (3, 'mouse');
-INSERT INTO `good_brend` VALUES (1, "LG"), (2, 'defender'), (3, 'samsung');
+--comment fill goods tables
+INSERT INTO `goods_type` VALUES (1, 'monitor'), (2, 'keyboard'), (3, 'mouse');
+INSERT INTO `goods_brend` VALUES (1, "LG"), (2, 'defender'), (3, 'samsung');
+INSERT INTO `goods_color` VALUES(1, 'black'), (2, 'white');
 
