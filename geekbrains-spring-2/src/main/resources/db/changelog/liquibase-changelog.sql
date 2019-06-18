@@ -43,7 +43,7 @@ CREATE TABLE `goods_type` (
   UNIQUE KEY `name` (`name`)
 );
 
-CREATE TABLE `goods_brend` (
+CREATE TABLE `goods_brand` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`name` varchar(50) NOT NULL,
 	PRIMARY KEY (`id`),
@@ -64,17 +64,18 @@ CREATE TABLE `goods` (
 `price` int(11) NOT NULL,
 `image_link` varchar(512),
 `goods_type_id` int(11) NOT NULL,
-`goods_brend_id` int(11) NOT NULL,
+`goods_brand_id` int(11) NOT NULL,
 `goods_color_id` int(11) NOT NULL,
 PRIMARY KEY (`id`),
 CONSTRAINT `fk_goods_type_goods` FOREIGN KEY (`goods_type_id`) REFERENCES `goods_type`(`id`),
-CONSTRAINT `fk_goods_brend_goods` FOREIGN KEY (`goods_brend_id`) REFERENCES `goods_brend`(`id`),
+CONSTRAINT `fk_goods_brand_goods` FOREIGN KEY (`goods_brand_id`) REFERENCES `goods_brand`(`id`),
 CONSTRAINT `fk_goods_color_goods` FOREIGN KEY (`goods_color_id`) REFERENCES `goods_color` (`id`)
 );
 
 --changeset skhanov:4
 --comment fill goods tables
 INSERT INTO `goods_type` VALUES (1, 'monitor'), (2, 'keyboard'), (3, 'mouse');
-INSERT INTO `goods_brend` VALUES (1, "LG"), (2, 'defender'), (3, 'samsung');
+INSERT INTO `goods_brand` VALUES (1, "LG"), (2, 'defender'), (3, 'samsung'), (4, 'DELL');
 INSERT INTO `goods_color` VALUES(1, 'black'), (2, 'white');
+INSERT INTO `goods` VALUES(1, 'DELL S2817Q' , 'some descr', 1000, null, 1, 4, 1);
 

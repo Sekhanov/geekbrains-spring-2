@@ -9,13 +9,13 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-
-
-
-@Data
+/**
+ * GoodsType
+ */
 @Entity
-@Table(name = "goods_color")
-public class GoodsColor {
+@Data
+@Table(name = "goods_type")
+public class GoodsType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +24,4 @@ public class GoodsColor {
 
     @Column(name = "name")
     private String name;
- 
-    
 }

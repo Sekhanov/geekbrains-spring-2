@@ -10,12 +10,10 @@ import javax.persistence.Table;
 import lombok.Data;
 
 
-
-
-@Data
 @Entity
-@Table(name = "goods_color")
-public class GoodsColor {
+@Data
+@Table(name = "goods_brand")
+public class GoodsBrand {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +22,4 @@ public class GoodsColor {
 
     @Column(name = "name")
     private String name;
- 
-    
 }
