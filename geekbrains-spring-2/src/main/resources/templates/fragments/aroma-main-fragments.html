@@ -1,80 +1,278 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aroma Shop - Blog</title>
-	<link rel="icon" th:href="@{/aroma/img/Fevicon.png}" href="../static/aroma/img/Fevicon.png" type="image/png">
-  <link rel="stylesheet" th:href="@{/aroma/vendors/bootstrap/bootstrap.min.css}" href="../static/aroma/vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" th:href="@{/aroma/vendors/fontawesome/css/all.min.css}" href="../static/aroma/vendors/fontawesome/css/all.min.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/themify-icons/themify-icons.css}" href="../static/aroma/vendors/themify-icons/themify-icons.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/linericon/style.css}" href="../static/aroma/vendors/linericon/style.css">
-  <link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.theme.default.min.css}" href="../static/aroma/vendors/owl-carousel/owl.theme.default.min.css">
-  <link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.carousel.min.css}" href="../static/aroma/vendors/owl-carousel/owl.carousel.min.css">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
-  <link rel="stylesheet" th:href="@{/aroma/css/style.css}" href="../static/aroma/css/style.css">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Aroma Shop - Blog</title>
+	<link rel="icon" th:href="@{/aroma/img/Fevicon.png}" href="../static/aroma/img/Fevicon.png" type="image/png">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/bootstrap/bootstrap.min.css}"
+		href="../static/aroma/vendors/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/fontawesome/css/all.min.css}"
+		href="../static/aroma/vendors/fontawesome/css/all.min.css">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/themify-icons/themify-icons.css}"
+		href="../static/aroma/vendors/themify-icons/themify-icons.css">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/linericon/style.css}"
+		href="../static/aroma/vendors/linericon/style.css">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.theme.default.min.css}"
+		href="../static/aroma/vendors/owl-carousel/owl.theme.default.min.css">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.carousel.min.css}"
+		href="../static/aroma/vendors/owl-carousel/owl.carousel.min.css">
+
+	<link rel="stylesheet" th:href="@{/aroma/css/style.css}" href="../static/aroma/css/style.css">
 </head>
+
 <body>
-  <!--================ Start Header Menu Area =================-->
+	<!--================ Start Header Menu Area =================-->
 	<header th:fragment="header" class="header_area">
-    <div class="main_menu">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand logo_h" th:href="@{/index}" href="index.html"><img th:src="@{/aroma/img/logo.png}" src="../static/aroma/img/logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item"><a class="nav-link" th:href="@{/index}" href="index.html">Home</a></li>
-              <li class="nav-item submenu dropdown">
-                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Shop</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" th:href="@{/category}" href="category.html">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" th:href="@{/single-product}" href="single-product.html">Product Details</a></li>
-                  <li class="nav-item"><a class="nav-link" th:href="@{/checkout}" href="checkout.html">Product Checkout</a></li>
-                  <li class="nav-item"><a class="nav-link" th:href="@{/confirmation}" href="confirmation.html">Confirmation</a></li>
-                  <li class="nav-item"><a class="nav-link" th:href="@{/cart}" href="cart.html">Shopping Cart</a></li>
-                </ul>
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<a class="navbar-brand logo_h" th:href="@{/index}" href="index.html"><img
+							th:src="@{/aroma/img/logo.png}" src="../static/aroma/img/logo.png" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+							<li class="nav-item"><a class="nav-link" th:href="@{/index}" href="index.html">Home</a></li>
+							<li class="nav-item submenu dropdown">
+								<a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+									role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" th:href="@{/category}"
+											href="category.html">Shop Category</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/single-product}"
+											href="single-product.html">Product Details</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/checkout}"
+											href="checkout.html">Product Checkout</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/confirmation}"
+											href="confirmation.html">Confirmation</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/cart}"
+											href="cart.html">Shopping Cart</a></li>
+								</ul>
 							</li>
-              <li class="nav-item active submenu dropdown">
-                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Blog</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item active"><a class="nav-link" th:href="@{/blog}" href="blog.html">Blog Single</a></li>
-                  <li class="nav-item"><a class="nav-link" th:href="@{/single-blog}" href="single-blog.html">Blog Details</a></li>
-                </ul>
+							<li class="nav-item active submenu dropdown">
+								<a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+									role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item active"><a class="nav-link" th:href="@{/blog}"
+											href="blog.html">Blog Single</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/single-blog}"
+											href="single-blog.html">Blog Details</a></li>
+								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
-                <a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" th:href="@{/login}" href="login.html">Login</a></li>
-                  <li class="nav-item"><a class="nav-link" th:href="@{/register}" href="register.html">Register</a></li>
-                  <li class="nav-item"><a class="nav-link" th:href="@{/tracking-order}" href="tracking-order.html">Tracking</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" th:href="@{/contact}" href="contact.html">Contact</a></li>
-            </ul>
+								<a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+									role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" th:href="@{/login}"
+											href="login.html">Login</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/register}"
+											href="register.html">Register</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/tracking-order}"
+											href="tracking-order.html">Tracking</a></li>
+								</ul>
+							</li>
+							<li class="nav-item"><a class="nav-link" th:href="@{/contact}"
+									href="contact.html">Contact</a></li>
+						</ul>
 
-            <ul class="nav-shop">
-              <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
-              <li class="nav-item"><a class="button button-header" th:href="@{/}" href="#">Buy Now</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-    <!--================ End Header Menu Area =================-->
-    
-  <!--================ Start footer Area  =================-->	
+						<ul class="nav-shop">
+							<li class="nav-item"><button><i class="ti-search"></i></button></li>
+							<li class="nav-item"><button><i class="ti-shopping-cart"></i><span
+										class="nav-shop__circle">3</span></button> </li>
+							<li class="nav-item"><a class="button button-header" th:href="@{/}" href="#">Buy Now</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================ End Header Menu Area =================-->
+
+	<!-- ================ start banner area ================= -->
+	<section th:fragment="banner" class="blog-banner-area" id="category">
+		<div class="container h-100">
+			<div class="blog-banner">
+				<div class="text-center">
+					<h1>Order Tracking</h1>
+					<nav aria-label="breadcrumb" class="banner-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a th:href="@{/}" href="#">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Order Tracking</li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ================ end banner area ================= -->
+
+	<!-- ================ top product area start ================= -->
+	<section th:fragment="top-product" class="related-product-area">
+		<div class="container">
+			<div class="section-intro pb-60px">
+				<p>Popular Item in the market</p>
+				<h2>Top <span class="section-intro__style">Product</span></h2>
+			</div>
+			<div class="row mt-30">
+				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+					<div class="single-search-product-wrapper">
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-1.png}"
+									src="../static/aroma/img/product/product-sm-1.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-2.png}"
+									src="../static/aroma/img/product/product-sm-2.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-3.png}"
+									src="../static/aroma/img/product/product-sm-3.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+					<div class="single-search-product-wrapper">
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-4.png}"
+									src="../static/aroma/img/product/product-sm-4.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-5.png}"
+									src="../static/aroma/img/product/product-sm-5.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-6.png}"
+									src="../static/aroma/img/product/product-sm-6.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+					<div class="single-search-product-wrapper">
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-7.png}"
+									src="../static/aroma/img/product/product-sm-7.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-8.png}"
+									src="../static/aroma/img/product/product-sm-8.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-9.png}"
+									src="../static/aroma/img/product/product-sm-9.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+					<div class="single-search-product-wrapper">
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-1.png}"
+									src="../static/aroma/img/product/product-sm-1.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-2.png}"
+									src="../static/aroma/img/product/product-sm-2.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a th:href="@{/}" href="#"><img th:src="@{/aroma/img/product/product-sm-3.png}"
+									src="../static/aroma/img/product/product-sm-3.png" alt=""></a>
+							<div class="desc">
+								<a th:href="@{/}" href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ================ top product area end ================= -->
+
+	<!-- ================ Subscribe section start ================= -->
+	<section th:fragment="subscription" class="subscribe-position">
+		<div class="container">
+			<div class="subscribe text-center">
+				<h3 class="subscribe__title">Get Update From Anywhere</h3>
+				<p>Bearing Void gathering light light his eavening unto dont afraid</p>
+				<div id="mc_embed_signup">
+					<form target="_blank"
+						action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+						method="get" class="subscribe-form form-inline mt-5 pt-1">
+						<div class="form-group ml-sm-auto">
+							<input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email"
+								onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+							<div class="info"></div>
+						</div>
+						<button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
+						<div style="position: absolute; left: -5000px;">
+							<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- ================ Subscribe section end ================= -->
+
+	<!--================ Start footer Area  =================-->
 	<footer th:fragment="footer">
 		<div class="footer-area">
 			<div class="container">
@@ -83,11 +281,12 @@
 						<div class="single-footer-widget tp_widgets">
 							<h4 class="footer_title large_title">Our Mission</h4>
 							<p>
-								So seed seed green that winged cattle in. Gathering thing made fly you're no 
+								So seed seed green that winged cattle in. Gathering thing made fly you're no
 								divided deep moved us lan Gathering thing us land years living.
 							</p>
 							<p>
-								So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved 
+								So seed seed green that winged cattle in. Gathering thing made fly you're no divided
+								deep moved
 							</p>
 						</div>
 					</div>
@@ -108,12 +307,18 @@
 						<div class="single-footer-widget instafeed">
 							<h4 class="footer_title">Gallery</h4>
 							<ul class="list instafeed d-flex flex-wrap">
-								<li><img th:src="@{/aroma/img/gallery/r1.jpg}" src="../static/aroma/img/gallery/r1.jpg" alt=""></li>
-								<li><img th:src="@{/aroma/img/gallery/r2.jpg}" src="../static/aroma/img/gallery/r2.jpg" alt=""></li>
-								<li><img th:src="@{/aroma/img/gallery/r3.jpg}" src="../static/aroma/img/gallery/r3.jpg" alt=""></li>
-								<li><img th:src="@{/aroma/img/gallery/r5.jpg}" src="../static/aroma/img/gallery/r5.jpg" alt=""></li>
-								<li><img th:src="@{/aroma/img/gallery/r7.jpg}" src="../static/aroma/img/gallery/r7.jpg" alt=""></li>
-								<li><img th:src="@{/aroma/img/gallery/r8.jpg}" src="../static/aroma/img/gallery/r8.jpg" alt=""></li>
+								<li><img th:src="@{/aroma/img/gallery/r1.jpg}" src="../static/aroma/img/gallery/r1.jpg"
+										alt=""></li>
+								<li><img th:src="@{/aroma/img/gallery/r2.jpg}" src="../static/aroma/img/gallery/r2.jpg"
+										alt=""></li>
+								<li><img th:src="@{/aroma/img/gallery/r3.jpg}" src="../static/aroma/img/gallery/r3.jpg"
+										alt=""></li>
+								<li><img th:src="@{/aroma/img/gallery/r5.jpg}" src="../static/aroma/img/gallery/r5.jpg"
+										alt=""></li>
+								<li><img th:src="@{/aroma/img/gallery/r7.jpg}" src="../static/aroma/img/gallery/r7.jpg"
+										alt=""></li>
+								<li><img th:src="@{/aroma/img/gallery/r8.jpg}" src="../static/aroma/img/gallery/r8.jpg"
+										alt=""></li>
 							</ul>
 						</div>
 					</div>
@@ -126,7 +331,7 @@
 									Head Office
 								</p>
 								<p>123, Main Street, Your City</p>
-	
+
 								<p class="sm-head">
 									<span class="fa fa-phone"></span>
 									Phone Number
@@ -135,7 +340,7 @@
 									+123 456 7890 <br>
 									+123 456 7890
 								</p>
-	
+
 								<p class="sm-head">
 									<span class="fa fa-envelope"></span>
 									Email
@@ -156,19 +361,28 @@
 				<div class="row d-flex">
 					<p class="col-lg-12 footer-text text-center">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+						Copyright &copy;<script>
+							document.write(new Date().getFullYear());
+						</script> All rights reserved | This template is made with <i class="fa fa-heart"
+							aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
 				</div>
 			</div>
-        </div>
-        <script th:src="@{/aroma/vendors/jquery/jquery-3.2.1.min.js}" src="../static/aroma/vendors/jquery/jquery-3.2.1.min.js"></script>
-        <script th:src="@{/aroma/vendors/bootstrap/bootstrap.bundle.min.js}" src="../static/aroma/vendors/bootstrap/bootstrap.bundle.min.js"></script>
-        <script th:src="@{/aroma/vendors/skrollr.min.js}" src="../static/aroma/vendors/skrollr.min.js"></script>
-        <script th:src="@{/aroma/vendors/owl-carousel/owl.carousel.min.js}" src="../static/aroma/vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}" src="../static/aroma/vendors/nice-select/jquery.nice-select.min.js"></script>
-        <script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.js}" src="../static/aroma/vendors/jquery.ajaxchimp.min.js"></script>
-        <script th:src="@{/aroma/vendors/mail-script.js}" src="../static/aroma/vendors/mail-script.js"></script>
-        <script th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
+		</div>
+		<script th:src="@{/aroma/vendors/jquery/jquery-3.2.1.min.js}"
+			src="../static/aroma/vendors/jquery/jquery-3.2.1.min.js"></script>
+		<script th:src="@{/aroma/vendors/bootstrap/bootstrap.bundle.min.js}"
+			src="../static/aroma/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+		<script th:src="@{/aroma/vendors/skrollr.min.js}" src="../static/aroma/vendors/skrollr.min.js"></script>
+		<script th:src="@{/aroma/vendors/owl-carousel/owl.carousel.min.js}"
+			src="../static/aroma/vendors/owl-carousel/owl.carousel.min.js"></script>
+		<script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}"
+			src="../static/aroma/vendors/nice-select/jquery.nice-select.min.js"></script>
+		<script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.js}"
+			src="../static/aroma/vendors/jquery.ajaxchimp.min.js"></script>
+		<script th:src="@{/aroma/vendors/mail-script.js}" src="../static/aroma/vendors/mail-script.js"></script>
+		<script th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
 	</footer>
 	<!--================ End footer Area  =================-->
 
@@ -176,4 +390,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 </body>
+
 </html>

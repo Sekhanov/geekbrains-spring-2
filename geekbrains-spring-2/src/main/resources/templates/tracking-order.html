@@ -23,21 +23,7 @@
 	<!--================ End Header Menu Area =================-->
   
 	<!-- ================ start banner area ================= -->	
-	<section class="blog-banner-area" id="category">
-		<div class="container h-100">
-			<div class="blog-banner">
-				<div class="text-center">
-					<h1>Order Tracking</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a th:href="@{/}" href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Order Tracking</li>
-            </ol>
-          </nav>
-				</div>
-			</div>
-    </div>
-	</section>
+	<section th:replace="/fragments/aroma-main-fragments :: banner" class="blog-banner-area" id="category">	</section>
 	<!-- ================ end banner area ================= -->
   
   
