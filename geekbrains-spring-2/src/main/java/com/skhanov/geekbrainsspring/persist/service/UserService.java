@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.skhanov.geekbrainsspring.persist.model.User;
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 /**
  * UserService
@@ -20,5 +22,10 @@ public interface UserService extends UserDetailsService {
     List<User> findAll();
 
     boolean deleteUser(User user);
+
+    @Override
+    default UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
+    }
 
 }

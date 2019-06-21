@@ -43,8 +43,8 @@
                         <td th:text="${good.goodsBrand.name}"></td>
                         <td th:text="${good.goodsColor.name}"></td>
                         <td>
-                            <!-- <a th:href="@{goods/edit/{id}(id=${usr.id})}" class="btn btn-icon btn-pill btn-primary" data-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-edit"></i></a>
-                            <a th:href="@{goods/delete/{id}(id=${usr.id})}" class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-trash"></i></a> -->
+                            <a th:href="@{goods/edit/{id}(id=${good.id})}" class="btn btn-icon btn-pill btn-primary" data-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-edit"></i></a>
+                            <a th:href="@{goods/delete/{id}(id=${good.id})}" class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
                         </td>
                     </tr>
                     </tbody>

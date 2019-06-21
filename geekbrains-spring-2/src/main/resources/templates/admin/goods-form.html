@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="/admin/fragments/admin-main-fragments :: head"></head>
+
+<body class="bg-light">
+
+    <nav th:replace="/admin/fragments/admin-main-fragments :: header"></nav>
+
+    <div class="d-flex">
+        <div th:replace="/admin/fragments/admin-main-fragments :: sidebar" class="sidebar sidebar-dark bg-dark"></div>
+
+        <div class="content p-4">
+            <h2 class="mb-4" th:text="${pageHeader}"></h2>
+
+
+            <form th:object="${goods}" method="post" th:action="@{/admin/goods}">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <input th:type="hidden" th:field="*{id}">
+
+                        <div class="form-group">
+                            <label for="model">model</label>
+                            <input th:field="*{model}" type="text" class="form-control" id="model" placeholder="model">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input th:field="*{description}" type="text" class="form-control" id="description"
+                                placeholder="Description">
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input th:field="*{price}" type="text" class="form-control" id="price" placeholder="Price">
+                        </div>
+                        <div class="form-group">
+                            <label for="imageLink">imageLink</label>
+                            <input th:field="*{imageLink}" type="text" class="form-control" id="imageLink"
+                                placeholder="imageLink">
+                        </div>
+                         <div class="form-group">
+                            <label for="goodsType">goods Type</label>
+                            <select class="form-control" id="goodsType" th:field="*{goodsType}" required>
+                                <option th:each="type : ${goodsType}" th:text="${type.name}" th:value="${type.id}"
+                                    th:selected="${goods.goodsType.equals(type)}"></option>
+                            </select>
+                        </div>
+                       <div class="form-group">
+                            <label for="goodsBrand">goods Brand</label>
+                            <select class="form-control" id="goodsBrand" th:field="*{goodsBrand}" required>
+                                <option th:each="brand : ${goodsBrand}" th:text="${brand.name}" th:value="${brand.id}"
+                                    th:selected="${goods.goodsBrand.equals(goods)}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="goodsColor">goods Color</label>
+                            <select class="form-control" id="goodsColor" th:field="*{goodsColor}" required>
+                                <option th:each="color : ${goodsColor}" th:text="${color.name}" th:value="${color.id}"
+                                    th:selected="${color.equals(goods.goodsColor)}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script th:src="@{/bootadmin/js/jquery.min.js}" src="../static/bootadmin/js/jquery.min.js"></script>
+    <script th:src="@{/bootadmin/js/bootstrap.bundle.min.js}" src="../static/bootadmin/js/bootstrap.bundle.min.js">
+    </script>
+    <script th:src="@{/bootadmin/js/bootadmin.min.js}" src="../static/bootadmin/js/bootadmin.min.js"></script>
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@ import com.skhanov.geekbrainsspring.persist.model.Goods;
 import com.skhanov.geekbrainsspring.persist.model.GoodsColor;
 import com.skhanov.geekbrainsspring.persist.model.Role;
 import com.skhanov.geekbrainsspring.persist.model.User;
-import com.skhanov.geekbrainsspring.persist.repo.GoodRepository;
+import com.skhanov.geekbrainsspring.persist.repo.GoodsRepository;
 import com.skhanov.geekbrainsspring.persist.repo.GoodsColorRepository;
 import com.skhanov.geekbrainsspring.persist.repo.RoleRepository;
 import com.skhanov.geekbrainsspring.persist.repo.UserRepository;
@@ -28,7 +28,7 @@ public class PersistTests {
 	@Autowired
 	private GoodsColorRepository goodsColorRepository;
 	@Autowired 
-	private GoodRepository goodRepository;
+	private GoodsRepository goodRepository;
 
 	@Test
 	public void userPersist() {
