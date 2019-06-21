@@ -42,14 +42,14 @@
                             <label for="goodsType">goods Type</label>
                             <select class="form-control" id="goodsType" th:field="*{goodsType}" required>
                                 <option th:each="type : ${goodsType}" th:text="${type.name}" th:value="${type.id}"
-                                    th:selected="${goods.goodsType.equals(type)}"></option>
+                                    th:selected="${type.equals(goods.goodsType)}"></option>
                             </select>
                         </div>
                        <div class="form-group">
                             <label for="goodsBrand">goods Brand</label>
                             <select class="form-control" id="goodsBrand" th:field="*{goodsBrand}" required>
                                 <option th:each="brand : ${goodsBrand}" th:text="${brand.name}" th:value="${brand.id}"
-                                    th:selected="${goods.goodsBrand.equals(goods)}"></option>
+                                    th:selected="${brand.equals(goods.goodsBrand)}"></option>
                             </select>
                         </div>
                         <div class="form-group">
