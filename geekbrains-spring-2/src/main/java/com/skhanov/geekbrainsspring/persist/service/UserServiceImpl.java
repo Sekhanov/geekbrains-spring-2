@@ -2,6 +2,9 @@ package com.skhanov.geekbrainsspring.persist.service;
 
 import java.util.List;
 
+import javax.transaction.TransactionScoped;
+import javax.transaction.Transactional;
+
 import com.skhanov.geekbrainsspring.persist.model.User;
 import com.skhanov.geekbrainsspring.persist.repo.UserRepository;
 
@@ -40,6 +43,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public boolean save(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
@@ -52,6 +56,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @TransactionScoped
     public boolean deleteUser(User user) {
         userRepository.delete(user);
         return true;

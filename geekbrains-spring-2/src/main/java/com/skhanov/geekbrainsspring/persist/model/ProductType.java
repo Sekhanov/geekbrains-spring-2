@@ -9,13 +9,11 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-/**
- * GoodsType
- */
+
 @Entity
 @Data
-@Table(name = "goods_type")
-public class GoodsType {
+@Table(name = "product_types")
+public class ProductType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

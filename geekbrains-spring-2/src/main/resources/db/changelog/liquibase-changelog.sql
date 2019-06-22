@@ -35,47 +35,47 @@ INSERT INTO `roles` VALUES (1,'ROLE_ADMIN'), (2,'ROLE_USER');
 INSERT INTO `users_roles` VALUES (1,1), (2,2);
 
 --changeset skhanov:3
---comment create tables for goods
-CREATE TABLE `goods_type` (
+--comment create tables for product
+CREATE TABLE `product_types` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`name` varchar(50) NOT NULL,
 	PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 );
 
-CREATE TABLE `goods_brand` (
+CREATE TABLE `product_brands` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`name` varchar(50) NOT NULL,
 	PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)	
 );
 
-CREATE TABLE `goods_color`(
+CREATE TABLE `product_colors`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 );
 
-CREATE TABLE `goods` (
+CREATE TABLE `products` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `model` varchar(100) NOT NULL,
 `description` varchar(100),
 `price` int(11) NOT NULL,
 `image_link` varchar(512),
-`goods_type_id` int(11) NOT NULL,
-`goods_brand_id` int(11) NOT NULL,
-`goods_color_id` int(11) NOT NULL,
+`product_type_id` int(11) NOT NULL,
+`product_brand_id` int(11) NOT NULL,
+`product_color_id` int(11) NOT NULL,
 PRIMARY KEY (`id`),
-CONSTRAINT `fk_goods_type_goods` FOREIGN KEY (`goods_type_id`) REFERENCES `goods_type`(`id`),
-CONSTRAINT `fk_goods_brand_goods` FOREIGN KEY (`goods_brand_id`) REFERENCES `goods_brand`(`id`),
-CONSTRAINT `fk_goods_color_goods` FOREIGN KEY (`goods_color_id`) REFERENCES `goods_color` (`id`)
+CONSTRAINT `fk_product_types_products` FOREIGN KEY (`product_type_id`) REFERENCES `product_types`(`id`),
+CONSTRAINT `fk_product_brands_products` FOREIGN KEY (`product_brand_id`) REFERENCES `product_brands`(`id`),
+CONSTRAINT `fk_product_colors_products` FOREIGN KEY (`product_color_id`) REFERENCES `product_colors` (`id`)
 );
 
 --changeset skhanov:4
---comment fill goods tables
-INSERT INTO `goods_type` VALUES (1, 'monitor'), (2, 'keyboard'), (3, 'mouse');
-INSERT INTO `goods_brand` VALUES (1, "LG"), (2, 'defender'), (3, 'samsung'), (4, 'DELL');
-INSERT INTO `goods_color` VALUES(1, 'black'), (2, 'white');
-INSERT INTO `goods` VALUES(1, 'DELL S2817Q' , 'some descr', 1000, null, 1, 4, 1);
+--comment fill product tables
+INSERT INTO `product_types` VALUES (1, 'monitor'), (2, 'keyboard'), (3, 'mouse');
+INSERT INTO `product_brands` VALUES (1, "LG"), (2, 'defender'), (3, 'samsung'), (4, 'DELL');
+INSERT INTO `product_colors` VALUES(1, 'black'), (2, 'white');
+INSERT INTO `products` VALUES(1, 'DELL S2817Q' , 'some descr', 1000, null, 1, 4, 1);
 

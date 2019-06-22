@@ -2,12 +2,12 @@ package com.skhanov.geekbrainsspring;
 
 import static org.junit.Assert.assertEquals;
 
-import com.skhanov.geekbrainsspring.persist.model.Goods;
-import com.skhanov.geekbrainsspring.persist.model.GoodsColor;
+import com.skhanov.geekbrainsspring.persist.model.Product;
+import com.skhanov.geekbrainsspring.persist.model.ProductColor;
 import com.skhanov.geekbrainsspring.persist.model.Role;
 import com.skhanov.geekbrainsspring.persist.model.User;
-import com.skhanov.geekbrainsspring.persist.repo.GoodsRepository;
-import com.skhanov.geekbrainsspring.persist.repo.GoodsColorRepository;
+import com.skhanov.geekbrainsspring.persist.repo.ProductRepository;
+import com.skhanov.geekbrainsspring.persist.repo.ProductColorRepository;
 import com.skhanov.geekbrainsspring.persist.repo.RoleRepository;
 import com.skhanov.geekbrainsspring.persist.repo.UserRepository;
 
@@ -26,9 +26,9 @@ public class PersistTests {
 	@Autowired
 	private RoleRepository roleRepository;
 	@Autowired
-	private GoodsColorRepository goodsColorRepository;
+	private ProductColorRepository goodsColorRepository;
 	@Autowired 
-	private GoodsRepository goodRepository;
+	private ProductRepository goodRepository;
 
 	@Test
 	public void userPersist() {
@@ -44,13 +44,13 @@ public class PersistTests {
 
 	@Test
 	public void goodsColorPersist() {
-		GoodsColor goodsColor = goodsColorRepository.findByName("black");
+		ProductColor goodsColor = goodsColorRepository.findByName("black");
 		assertEquals("black", goodsColor.getName());
 	}
 
 	@Test 
 	public void goodsPersist() {
-		Goods goods = goodRepository.findById(1l).get();
+		Product goods = goodRepository.findById(1l).get();
 		System.out.println(goods);
 		
 	}

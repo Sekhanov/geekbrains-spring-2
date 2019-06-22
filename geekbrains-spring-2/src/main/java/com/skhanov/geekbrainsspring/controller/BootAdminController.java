@@ -2,13 +2,13 @@ package com.skhanov.geekbrainsspring.controller;
 
 import javax.validation.Valid;
 
-import com.skhanov.geekbrainsspring.persist.model.Goods;
-import com.skhanov.geekbrainsspring.persist.model.GoodsType;
+import com.skhanov.geekbrainsspring.persist.model.Product;
+import com.skhanov.geekbrainsspring.persist.model.ProductType;
 import com.skhanov.geekbrainsspring.persist.model.User;
-import com.skhanov.geekbrainsspring.persist.repo.GoodsBrandRepository;
-import com.skhanov.geekbrainsspring.persist.repo.GoodsColorRepository;
-import com.skhanov.geekbrainsspring.persist.repo.GoodsRepository;
-import com.skhanov.geekbrainsspring.persist.repo.GoodsTypeRepository;
+import com.skhanov.geekbrainsspring.persist.repo.ProductBrandRepository;
+import com.skhanov.geekbrainsspring.persist.repo.ProductColorRepository;
+import com.skhanov.geekbrainsspring.persist.repo.ProductRepository;
+import com.skhanov.geekbrainsspring.persist.repo.ProductTypeRepository;
 import com.skhanov.geekbrainsspring.persist.repo.RoleRepository;
 import com.skhanov.geekbrainsspring.persist.service.UserService;
 
@@ -37,13 +37,13 @@ public class BootAdminController {
     @Lazy
     private UserService userService;
     @Autowired
-    private GoodsRepository goodsRepository;
+    private ProductRepository productRepository;
     @Autowired
-    private GoodsBrandRepository goodsBrandRepository;
+    private ProductBrandRepository productBrandRepository;
     @Autowired
-    private GoodsTypeRepository goodsTypeRepository;
+    private ProductTypeRepository productTypeRepository;
     @Autowired
-    private GoodsColorRepository goodsColorRepository;
+    private ProductColorRepository productColorRepository;
 
     @GetMapping
     public String showAdminMain(Model model) {
@@ -58,36 +58,35 @@ public class BootAdminController {
         return "admin/users";
     }
 
-    @GetMapping("goods")
-    public String showGoods(Model model) {
-        model.addAttribute(PAGE_HEADER, "All Goods");
-        model.addAttribute("goods", goodsRepository.findAll());
-        return "admin/goods";
+    @GetMapping("products")
+    public String showProducts(Model model) {
+        model.addAttribute(PAGE_HEADER, "All Products");
+        model.addAttribute("products", productRepository.findAll());
+        return "admin/products";
     }
 
-    @GetMapping("goods-types")
-    public String showGoodsTypes(Model model) {
-        model.addAttribute(PAGE_HEADER, "All goods Types");
-        model.addAttribute("goodsTypes", goodsTypeRepository.findAll());
-        return "admin/goods-types";
+    @GetMapping("product-types")
+    public String showProductTypes(Model model) {
+        model.addAttribute(PAGE_HEADER, "All product Types");
+        model.addAttribute("productTypes", productTypeRepository.findAll());
+        return "admin/product-types";
     }
 
-
-    @GetMapping("goods/create")
-    public String createGoods(Model model) {
-        model.addAttribute(PAGE_HEADER, "Create Goods");
-        model.addAttribute("goods", new Goods());
-        model.addAttribute("goodsType", goodsTypeRepository.findAll());
-        model.addAttribute("goodsBrand", goodsBrandRepository.findAll());
-        model.addAttribute("goodsColor", goodsColorRepository.findAll());
-        return "/admin/goods-form";
+    @GetMapping("products/create")
+    public String createProduct(Model model) {
+        model.addAttribute(PAGE_HEADER, "Create product");
+        model.addAttribute("product", new Product());
+        model.addAttribute("productTypes", productTypeRepository.findAll());
+        model.addAttribute("productBrands", productBrandRepository.findAll());
+        model.addAttribute("productColors", productColorRepository.findAll());
+        return "/admin/product-form";
     }
 
-    @GetMapping("goods-type/create")
-    public String createGoodsType(Model model) {
-        model.addAttribute(PAGE_HEADER, "Create goods-type");
-        model.addAttribute("goodsType", new GoodsType());
-        return "admin/goods-types-form";
+    @GetMapping("product-types/create")
+    public String createProductType(Model model) {
+        model.addAttribute(PAGE_HEADER, "Create product-type");
+        model.addAttribute("productType", new ProductType());
+        return "admin/product-type-form";
     }
 
     @GetMapping("users/create")
@@ -98,22 +97,22 @@ public class BootAdminController {
         return "admin/user-form";
     }
 
-    @PostMapping("goods")
-    public String persistGoods(@Valid Goods goods, BindingResult bindingResult) {
+    @PostMapping("products")
+    public String persistProduct(@Valid Product product, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "admin/goods-form";
+            return "admin/product-form";
         }
-        goodsRepository.save(goods);
-        return "redirect:/admin/goods";
+        productRepository.save(product);
+        return "redirect:/admin/products";
     }
 
-    @PostMapping("goods-types")
-    public String persistGoodsTypes(@Valid GoodsType goodsType, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
-            return "admin/goods-types-form";
+    @PostMapping("product-types")
+    public String persistProductType(@Valid ProductType productType, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "admin/product-type-form";
         }
-        goodsTypeRepository.save(goodsType);
-        return "redirect:/admin/goods-types";
+        productTypeRepository.save(productType);
+        return "redirect:/admin/product-types";
     }
 
     @PostMapping("users")
@@ -134,21 +133,21 @@ public class BootAdminController {
         return "admin/user-form";
     }
 
-    @GetMapping("goods/edit/{id}")
-    public String editGoods(Model model, @PathVariable("id") Long id) {
-        model.addAttribute(PAGE_HEADER, "Edit Goods");
-        model.addAttribute("goods", goodsRepository.findById(id).get());
-        model.addAttribute("goodsType", goodsTypeRepository.findAll());
-        model.addAttribute("goodsBrand", goodsBrandRepository.findAll());
-        model.addAttribute("goodsColor", goodsColorRepository.findAll());
-        return "admin/goods-form";
+    @GetMapping("products/edit/{id}")
+    public String editProduct(Model model, @PathVariable("id") Long id) {
+        model.addAttribute(PAGE_HEADER, "Edit product");
+        model.addAttribute("product", productRepository.findById(id).get());
+        model.addAttribute("productTypes", productTypeRepository.findAll());
+        model.addAttribute("productBrands", productBrandRepository.findAll());
+        model.addAttribute("productColor", productColorRepository.findAll());
+        return "admin/product-form";
     }
 
-    @GetMapping("goods-types/edit/{id}")
-    public String editGoodsTypes(Model model, @PathVariable("id") Long id) {
-        model.addAttribute(PAGE_HEADER, "edit goods type");
-        model.addAttribute("goodsType", goodsTypeRepository.findById(id).get());
-        return "admin/goods-types-form";
+    @GetMapping("product-types/edit/{id}")
+    public String editProductType(Model model, @PathVariable("id") Long id) {
+        model.addAttribute(PAGE_HEADER, "edit product type");
+        model.addAttribute("productType", productTypeRepository.findById(id).get());
+        return "admin/product-type-form";
     }
 
     @GetMapping("users/delete/{id}")
@@ -157,16 +156,16 @@ public class BootAdminController {
         return "redirect:/admin/users";
     }
 
-    @GetMapping("goods-types/delete/{id}")
-    public String deleteGoodsType(@PathVariable("id") Long id) {
-        goodsTypeRepository.delete(goodsTypeRepository.findById(id).get());
-        return "redirect:/admin/goods-types";
+    @GetMapping("product-types/delete/{id}")
+    public String deleteProductType(@PathVariable("id") Long id) {
+        productTypeRepository.delete(productTypeRepository.findById(id).get());
+        return "redirect:/admin/product-types";
     }
 
-    @GetMapping("goods/delete/{id}")
-    public String deleteGoods(@PathVariable("id") Long id) {
-        goodsRepository.delete(goodsRepository.findById(id).get());
-        return "redirect:/admin/goods";
+    @GetMapping("products/delete/{id}")
+    public String deleteProduct(@PathVariable("id") Long id) {
+        productRepository.delete(productRepository.findById(id).get());
+        return "redirect:/admin/products";
     }
 
 }

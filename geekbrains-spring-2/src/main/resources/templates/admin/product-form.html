@@ -15,7 +15,7 @@
             <h2 class="mb-4" th:text="${pageHeader}"></h2>
 
 
-            <form th:object="${goods}" method="post" th:action="@{/admin/goods}">
+            <form th:object="${product}" method="post" th:action="@{/admin/products}">
                 <div class="card mb-4">
                     <div class="card-body">
                         <input th:type="hidden" th:field="*{id}">
@@ -39,24 +39,24 @@
                                 placeholder="imageLink">
                         </div>
                          <div class="form-group">
-                            <label for="goodsType">goods Type</label>
-                            <select class="form-control" id="goodsType" th:field="*{goodsType}" required>
-                                <option th:each="type : ${goodsType}" th:text="${type.name}" th:value="${type.id}"
-                                    th:selected="${type.equals(goods.goodsType)}"></option>
+                            <label for="productType">product Type</label>
+                            <select class="form-control" id="productType" th:field="*{productType}" required>
+                                <option th:each="type : ${productTypes}" th:text="${type.name}" th:value="${type.id}"
+                                    th:selected="${type.equals(product.productType)}"></option>
                             </select>
                         </div>
                        <div class="form-group">
-                            <label for="goodsBrand">goods Brand</label>
-                            <select class="form-control" id="goodsBrand" th:field="*{goodsBrand}" required>
-                                <option th:each="brand : ${goodsBrand}" th:text="${brand.name}" th:value="${brand.id}"
-                                    th:selected="${brand.equals(goods.goodsBrand)}"></option>
+                            <label for="productBrand">product Brand</label>
+                            <select class="form-control" id="productBrand" th:field="*{productBrand}" required>
+                                <option th:each="brand : ${productBrands}" th:text="${brand.name}" th:value="${brand.id}"
+                                    th:selected="${brand.equals(product.productBrand)}"></option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="goodsColor">goods Color</label>
-                            <select class="form-control" id="goodsColor" th:field="*{goodsColor}" required>
-                                <option th:each="color : ${goodsColor}" th:text="${color.name}" th:value="${color.id}"
-                                    th:selected="${color.equals(goods.goodsColor)}"></option>
+                            <label for="productColor">product Color</label>
+                            <select class="form-control" id="productColor" th:field="*{productColor}" required>
+                                <option th:each="color : ${productColors}" th:text="${color.name}" th:value="${color.id}"
+                                    th:selected="${color.equals(product.productColor)}"></option>
                             </select>
                         </div>
                     </div>

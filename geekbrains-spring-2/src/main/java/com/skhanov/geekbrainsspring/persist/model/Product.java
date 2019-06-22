@@ -13,8 +13,8 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "goods")
-public class Goods {
+@Table(name = "products")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,16 +34,16 @@ public class Goods {
     private String imageLink;
 
     @ManyToOne
-    @JoinColumn(name = "goods_type_id")
-    private GoodsType goodsType;
+    @JoinColumn(name = "product_type_id")
+    private ProductType productType;
 
     @ManyToOne
-    @JoinColumn(name = "goods_brand_id")
-    private GoodsBrand goodsBrand;
+    @JoinColumn(name = "product_brand_id")
+    private ProductBrand productBrand;
 
     @ManyToOne
-    @JoinColumn(name = "goods_color_id")
-    private GoodsColor goodsColor;
+    @JoinColumn(name = "product_color_id")
+    private ProductColor productColor;
 
 
 
