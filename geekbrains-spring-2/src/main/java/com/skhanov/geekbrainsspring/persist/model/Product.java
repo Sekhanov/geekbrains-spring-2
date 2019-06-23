@@ -48,7 +48,7 @@ public class Product {
     @JoinColumn(name = "product_color_id")
     private ProductColor productColor;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "products_pictures", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "picture_id"))
     private List<Picture> pictures;
 

@@ -1,5 +1,7 @@
 package com.skhanov.geekbrainsspring.controller;
 
+import javax.transaction.Transactional;
+
 import com.skhanov.geekbrainsspring.persist.model.Product;
 import com.skhanov.geekbrainsspring.persist.repo.ProductBrandRepository;
 import com.skhanov.geekbrainsspring.persist.repo.ProductColorRepository;
@@ -15,10 +17,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
+@SessionAttributes("product")
 @RequestMapping("admin/products")
 public class BootAdminProductController {
 
@@ -69,18 +73,9 @@ public class BootAdminProductController {
         return "redirect:/admin/products";
     }
 
-    // @PostMapping
-    // public String persistProduct(Product product, BindingResult bindingResult) {
-    //     // if (bindingResult.hasErrors()) {            
-    //     //     return "admin/product-form";
-    //     // }
-    //     productService.save(product);
-    //     return "redirect:/admin/products";
-    // }
-
     @PostMapping
-    public String adminUpsertProduct(Model model, RedirectAttributes redirectAttributes, Product product) {
-        model.addAttribute("activePage", "Products");
+    public String persistProduct(Model model, RedirectAttributes redirectAttributes, Product product) {
+        model.addAttribute(PAGE_HEADER, "Products");
 
         try {
             productService.save(product);

@@ -2,8 +2,10 @@ package com.skhanov.geekbrainsspring.persist.model;
 
 import java.util.List;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +32,7 @@ public class Picture {
     private String name;
 
     @Lob
-    // @Basic(fetch = FetchType.LAZY)  
+    @Basic(fetch = FetchType.LAZY)  
     @Column(name = "picture_data") 
     private byte[] data;
 
