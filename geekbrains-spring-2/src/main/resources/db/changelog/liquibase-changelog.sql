@@ -30,9 +30,9 @@ CREATE TABLE `users_roles` (
 
 --changeset skhanov:2
 --comment fill security tables
-INSERT INTO `users` VALUES (1,'admin','$2a$10$/z5jkuuGfN9nlynG3jhlS.YxvTjPniXS3eiQdjVp369jOdKHZKoCe','Sergey','Khanov','sekhanov@gmail.com'), (2, 'user', '$2a$10$ab8/UIVfC4cSCQgYWvbUluHKXmPxgLuxKJX7E5vGf3Qf.EaUn8Y6.', "Vasiliy", 'Pupkin', 'vashya@mail.ru');
+INSERT INTO `users` VALUES (1,'admin','$2a$10$/z5jkuuGfN9nlynG3jhlS.YxvTjPniXS3eiQdjVp369jOdKHZKoCe','Sergey','Khanov','sekhanov@gmail.com'), (2, 'user', '$2a$10$ab8/UIVfC4cSCQgYWvbUluHKXmPxgLuxKJX7E5vGf3Qf.EaUn8Y6.', "Vasiliy", 'Pupkin', 'vashya@mail.ru'), (3, '1', '$2a$10$ZOfkJZQq9/TBQscSsQzgsO/ifmg7D7syBJm4kcf2yswXC.hxGyWZO','1','1','1');
 INSERT INTO `roles` VALUES (1,'ROLE_ADMIN'), (2,'ROLE_USER');
-INSERT INTO `users_roles` VALUES (1,1), (2,2);
+INSERT INTO `users_roles` VALUES (1,1), (2,2), (3,1);
 
 --changeset skhanov:3
 --comment create tables for product
@@ -62,7 +62,6 @@ CREATE TABLE `products` (
 `model` varchar(100) NOT NULL,
 `description` varchar(100),
 `price` int(11) NOT NULL,
-`image_link` varchar(512),
 `product_type_id` int(11) NOT NULL,
 `product_brand_id` int(11) NOT NULL,
 `product_color_id` int(11) NOT NULL,
@@ -72,10 +71,26 @@ CONSTRAINT `fk_product_brands_products` FOREIGN KEY (`product_brand_id`) REFEREN
 CONSTRAINT `fk_product_colors_products` FOREIGN KEY (`product_color_id`) REFERENCES `product_colors` (`id`)
 );
 
+CREATE TABLE `pictures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content_type` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `picture_data` mediumblob,
+  PRIMARY KEY (`id`)
+  );
+
+  CREATE TABLE `products_pictures` (
+`product_id` int(11) NOT NULL,
+`picture_id` int(11) NOT NULL,
+PRIMARY KEY (`product_id`, `picture_id`),
+CONSTRAINT `if_product_pictures_product` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`),
+CONSTRAINT `fk_product_pictures_pictures` FOREIGN KEY (`picture_id`) REFERENCES `pictures`(`id`)
+); 
+
 --changeset skhanov:4
 --comment fill product tables
 INSERT INTO `product_types` VALUES (1, 'monitor'), (2, 'keyboard'), (3, 'mouse');
 INSERT INTO `product_brands` VALUES (1, "LG"), (2, 'defender'), (3, 'samsung'), (4, 'DELL');
 INSERT INTO `product_colors` VALUES(1, 'black'), (2, 'white');
-INSERT INTO `products` VALUES(1, 'DELL S2817Q' , 'some descr', 1000, null, 1, 4, 1);
+INSERT INTO `products` VALUES(1, 'DELL S2817Q' , 'some descr', 1000, 1, 4, 1);
 
