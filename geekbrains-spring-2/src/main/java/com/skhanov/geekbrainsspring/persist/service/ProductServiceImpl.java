@@ -19,9 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepository productRepository;
-    @Autowired
-    private PictureRepository pictureRepository;
+    private ProductRepository productRepository; 
 
     @Override
     @Transactional

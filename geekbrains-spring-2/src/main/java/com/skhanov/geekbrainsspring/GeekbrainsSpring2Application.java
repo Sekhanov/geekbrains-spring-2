@@ -20,7 +20,7 @@ public class GeekbrainsSpring2Application implements WebMvcConfigurer {
 		registry.addViewController("contact").setViewName("contact");
 		registry.addViewController("register").setViewName("register");
 		registry.addViewController("single-blog").setViewName("single-blog");
-		// registry.addViewController("single-product").setViewName("single-product");
+		// registry.addViewController("single-product").setViewName("single-product")
 		registry.addViewController("tracking-order").setViewName("tracking-order");
 		registry.addViewController("admin").setViewName("redirect:admin/main");
 		registry.addViewController("admin/main").setViewName("admin/main");		
