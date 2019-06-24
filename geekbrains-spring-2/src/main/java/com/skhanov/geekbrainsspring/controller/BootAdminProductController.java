@@ -1,7 +1,5 @@
 package com.skhanov.geekbrainsspring.controller;
 
-import javax.transaction.Transactional;
-
 import com.skhanov.geekbrainsspring.persist.model.Product;
 import com.skhanov.geekbrainsspring.persist.repo.ProductBrandRepository;
 import com.skhanov.geekbrainsspring.persist.repo.ProductColorRepository;
