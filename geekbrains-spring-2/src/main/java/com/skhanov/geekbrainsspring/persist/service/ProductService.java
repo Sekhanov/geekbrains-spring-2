@@ -16,4 +16,6 @@ public interface ProductService {
     List<Product> findAll();
 
     boolean deleteById(Long id);
+
+    boolean deleteProductPicture(Long id, Product product);
 }

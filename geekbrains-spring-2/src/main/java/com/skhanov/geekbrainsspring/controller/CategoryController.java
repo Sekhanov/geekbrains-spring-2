@@ -2,7 +2,6 @@ package com.skhanov.geekbrainsspring.controller;
 
 import com.skhanov.geekbrainsspring.persist.repo.ProductBrandRepository;
 import com.skhanov.geekbrainsspring.persist.repo.ProductColorRepository;
-import com.skhanov.geekbrainsspring.persist.repo.ProductRepository;
 import com.skhanov.geekbrainsspring.persist.repo.ProductTypeRepository;
 import com.skhanov.geekbrainsspring.persist.service.ProductService;
 

@@ -41,8 +41,8 @@
                         <td th:text="${product.productBrand.name}"></td>
                         <td th:text="${product.productColor.name}"></td>
                         <td>
-                            <a th:href="@{products/edit/{id}(id=${product.id})}" class="btn btn-icon btn-pill btn-primary" data-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-edit"></i></a>
-                            <a th:href="@{products/delete/{id}(id=${product.id})}" class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
+                            <a th:href="@{/admin/products/edit/{id}(id=${product.id})}" class="btn btn-icon btn-pill btn-primary" data-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-edit"></i></a>
+                            <a th:href="@{/admin/products/delete/{id}(id=${product.id})}" class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
                         </td>
                     </tr>
                     </tbody>

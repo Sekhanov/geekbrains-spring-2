@@ -89,8 +89,8 @@ CONSTRAINT `fk_product_pictures_pictures` FOREIGN KEY (`picture_id`) REFERENCES 
 
 --changeset skhanov:4
 --comment fill product tables
-INSERT INTO `product_types` VALUES (1, 'monitor'), (2, 'keyboard'), (3, 'mouse');
-INSERT INTO `product_brands` VALUES (1, "LG"), (2, 'defender'), (3, 'samsung'), (4, 'DELL');
-INSERT INTO `product_colors` VALUES(1, 'black'), (2, 'white');
-INSERT INTO `products` VALUES(1, 'DELL S2817Q' , 'some descr', 1000, 1, 4, 1);
+INSERT INTO `product_types` VALUES (1, 'Monitor'), (2, 'Keyboard'), (3, 'Mouse'), (4, 'Smartphone');
+INSERT INTO `product_brands` VALUES (1, "LG"), (2, 'Defender'), (3, 'Samsung'), (4, 'DELL');
+INSERT INTO `product_colors` VALUES(1, 'black'), (2, 'white'), (3, 'red'), (4, 'blue');
+INSERT INTO `products` VALUES(1, '24MK600M-W' , 'some descr', 1000, 1, 1, 1);
 

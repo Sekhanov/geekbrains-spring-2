@@ -58,7 +58,7 @@
                     <div class="form-group">
                         <label for="newPictures">Product image</label>
                         <input th:field="*{newPictures}" type="file" class="form-control" id="newPictures"
-                               placeholder="Upload new product picture" multiple required>
+                            placeholder="Upload new product picture" multiple required>
                     </div>
 
                     <div class="card-footer bg-white">
@@ -73,6 +73,7 @@
                         <div class="card-header">Picture</div>
                         <img class="card-img-bottom" th:src="@{/picture/{pictureId}(pictureId=${pict.id})}"
                             width="40%" />
+                        <div class="card-footer"><form th:action="@{/admin/products/deletePicture/{pictureId}(pictureId=${pict.id})}"><button class="btn btn-danger">delete picture</button></form></div>
                     </div>
                 </div>
             </div>

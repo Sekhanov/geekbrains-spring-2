@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 
 import com.skhanov.geekbrainsspring.persist.model.Picture;
 import com.skhanov.geekbrainsspring.persist.model.Product;
+import com.skhanov.geekbrainsspring.persist.repo.PictureRepository;
 import com.skhanov.geekbrainsspring.persist.repo.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+    @Autowired
+    private PictureRepository pictureRepository;
 
     @Override
     @Transactional
@@ -58,5 +61,17 @@ public class ProductServiceImpl implements ProductService {
         return true;
     }
 
-    
+    @Override
+    public boolean deleteProductPicture(Long id, Product product) {
+        Picture picture = null;
+        for (Picture p : product.getPictures()) {
+            if(p.getId() == id) {
+                picture = p;
+            }
+        }
+        product.getPictures().remove(picture);  
+        productRepository.save(product);
+        return false;
+    }
+
 }

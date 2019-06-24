@@ -87,4 +87,10 @@ public class BootAdminProductController {
         return "redirect:/admin/products";
     }
 
+    @GetMapping("deletePicture/{id}")
+    public String deleteProductPicture(@PathVariable("id") Long id, Product product){
+        productService.deleteProductPicture(id, product);        
+        return "redirect:/admin/products";
+    }
+
 }
