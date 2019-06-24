@@ -79,6 +79,7 @@
           </div>
         </div>
         <div class="col-xl-9 col-lg-8 col-md-7">
+
           <!-- Start Filter Bar -->
           <div class="filter-bar d-flex flex-wrap align-items-center">
             <div class="sorting">
@@ -105,6 +106,7 @@
             </div>
           </div>
           <!-- End Filter Bar -->
+
           <!-- Start Products -->
           <section class="lattest-product-area pb-40 category-list">
             <div class="row">
@@ -120,13 +122,14 @@
                   </div>
                   <div class="card-body">
                     <p th:text="${product.productBrand.name}">Accessories</p>
-                    <h4 class="card-product__title"><a th:text="${product.model}" th:href="@{/}" href="#">Quartz Belt Watch</a></h4>
+                    <h4 class="card-product__title"><a th:text="${product.model}" th:href="@{/single-product/{productId}(productId=${product.id})}" href="#">Quartz Belt Watch</a></h4>
                     <p th:text="${'$' + product.price}"class="card-product__price">150.00</p>
                   </div>
                 </div>
               </div>
           </section>
           <!-- End Products -->
+
         </div>
       </div>
     </div>
