@@ -32,7 +32,7 @@
                         <td th:text="${productBrand.name}">Admin</td>
                         <td>
                             <a th:href="@{/admin/product-brands/edit/{id}(id=${productBrand.id})}" class="btn btn-icon btn-pill btn-primary" data-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-edit"></i></a>
-                            <a th:href="@{product-brands`/delete/{id}(id=${productBrand.id})}" class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
+                            <a th:href="@{/admin/product-brands/delete/{id}(id=${productBrand.id})}" class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
                         </td>
                     </tr>
                     </tbody>
