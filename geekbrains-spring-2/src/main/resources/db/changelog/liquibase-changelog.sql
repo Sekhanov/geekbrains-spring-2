@@ -60,7 +60,8 @@ CREATE TABLE `product_colors`(
 CREATE TABLE `products` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `model` varchar(100) NOT NULL,
-`description` varchar(100),
+`short_description` varchar(500),
+`description` varchar(2000),
 `price` int(11) NOT NULL,
 `product_type_id` int(11) NOT NULL,
 `product_brand_id` int(11) NOT NULL,
@@ -92,5 +93,9 @@ CONSTRAINT `fk_product_pictures_pictures` FOREIGN KEY (`picture_id`) REFERENCES 
 INSERT INTO `product_types` VALUES (1, 'Monitor'), (2, 'Keyboard'), (3, 'Mouse'), (4, 'Smartphone');
 INSERT INTO `product_brands` VALUES (1, "LG"), (2, 'Defender'), (3, 'Samsung'), (4, 'DELL');
 INSERT INTO `product_colors` VALUES(1, 'black'), (2, 'white'), (3, 'red'), (4, 'blue');
-INSERT INTO `products` VALUES(1, '24MK600M-W' , 'some descr', 1000, 1, 1, 1);
+INSERT INTO `products` VALUES(1, '24MK600M-W' , 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eum tenetur magnam ab. Delectus aliquid iste, tempora deleniti nesciunt quidem voluptatem, provident fugit magnam esse ad. Cumque tenetur blanditiis est.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eum tenetur magnam ab. Delectus aliquid iste, tempora deleniti nesciunt quidem voluptatem, provident fugit magnam esse ad. Cumque tenetur blanditiis est.
+Voluptas aliquam laborum eaque autem corrupti incidunt, quam ab et eos! Doloribus hic repellendus cumque, deleniti soluta odio eius, molestias corrupti explicabo ad consequuntur vitae excepturi culpa in. Obcaecati, repellat!
+Veritatis, est magni soluta molestiae, exercitationem ratione provident veniam, accusantium quia deserunt cumque sequi alias sit ducimus beatae voluptates distinctio dolores in placeat delectus quod vel cum pariatur. Eligendi, dignissimos.
+Odit, autem odio dolorem assumenda aperiam similique ab labore fugiat ipsa officiis nisi, eaque id omnis accusamus pariatur officia ipsum dolor repellat modi voluptates veniam? Animi recusandae autem praesentium quod?
+Architecto voluptas harum fuga beatae suscipit nemo, voluptatum neque. Facilis optio, ratione aut distinctio deleniti cum animi autem amet facere, veniam rerum est architecto, et minus at ducimus voluptate id!', 1000, 1, 1, 1);
 

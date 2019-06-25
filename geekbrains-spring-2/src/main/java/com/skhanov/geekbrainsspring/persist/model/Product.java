@@ -30,6 +30,9 @@ public class Product {
     @Column(name = "model")
     private String model;
 
+    @Column(name = "short_description")
+    private String shortDescription;
+
     @Column(name = "description")
     private String description;
 
@@ -125,6 +128,14 @@ public class Product {
 
     public void setNewPictures(MultipartFile[] newPictures) {
         this.newPictures = newPictures;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
 

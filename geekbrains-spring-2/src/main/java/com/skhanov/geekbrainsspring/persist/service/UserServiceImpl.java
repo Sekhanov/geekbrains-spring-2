@@ -62,5 +62,11 @@ public class UserServiceImpl implements UserService {
         return true;
     }
 
+    @Override
+    public boolean deleteById(Long id) {
+        userRepository.deleteById(id);
+        return true;
+    }
+
     
 }

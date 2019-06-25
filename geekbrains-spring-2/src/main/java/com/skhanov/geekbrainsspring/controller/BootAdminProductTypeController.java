@@ -3,11 +3,9 @@ package com.skhanov.geekbrainsspring.controller;
 import javax.validation.Valid;
 
 import com.skhanov.geekbrainsspring.persist.model.ProductType;
-import com.skhanov.geekbrainsspring.persist.repo.ProductTypeRepository;
-import com.skhanov.geekbrainsspring.persist.service.UserService;
+import com.skhanov.geekbrainsspring.persist.service.ProductTypeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,17 +21,12 @@ public class BootAdminProductTypeController {
     private static final String PAGE_HEADER = "pageHeader";
 
     @Autowired
-    @Lazy
-    private UserService userService;
-
-    @Autowired
-    private ProductTypeRepository productTypeRepository;
-
+    private ProductTypeService productTypeService;
 
     @GetMapping
     public String showProductTypes(Model model) {
         model.addAttribute(PAGE_HEADER, "All product Types");
-        model.addAttribute("productTypes", productTypeRepository.findAll());
+        model.addAttribute("productTypes", productTypeService.findAll());
         return "admin/product-types";
     }
 
@@ -47,13 +40,13 @@ public class BootAdminProductTypeController {
     @GetMapping("edit/{id}")
     public String editProductType(Model model, @PathVariable("id") Long id) {
         model.addAttribute(PAGE_HEADER, "edit product type");
-        model.addAttribute("productType", productTypeRepository.findById(id).get());
+        model.addAttribute("productType", productTypeService.findById(id));
         return "admin/product-type-form";
     }
 
     @GetMapping("delete/{id}")
     public String deleteProductType(@PathVariable("id") Long id) {
-        productTypeRepository.delete(productTypeRepository.findById(id).get());
+        productTypeService.deleteById(id);
         return "redirect:/admin/product-types";
     }
 
@@ -62,8 +55,9 @@ public class BootAdminProductTypeController {
         if (bindingResult.hasErrors()) {
             return "admin/product-type-form";
         }
-        productTypeRepository.save(productType);
+        productTypeService.save(productType);
         return "redirect:/admin/product-types";
     }
 
+    
 }

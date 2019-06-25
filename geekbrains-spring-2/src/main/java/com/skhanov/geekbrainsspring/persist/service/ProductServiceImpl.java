@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 
 import com.skhanov.geekbrainsspring.persist.model.Picture;
 import com.skhanov.geekbrainsspring.persist.model.Product;
-import com.skhanov.geekbrainsspring.persist.repo.PictureRepository;
 import com.skhanov.geekbrainsspring.persist.repo.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
