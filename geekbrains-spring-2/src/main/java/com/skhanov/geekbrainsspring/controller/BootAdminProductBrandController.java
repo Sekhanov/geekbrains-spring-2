@@ -3,7 +3,6 @@ package com.skhanov.geekbrainsspring.controller;
 import javax.validation.Valid;
 
 import com.skhanov.geekbrainsspring.persist.model.ProductBrand;
-import com.skhanov.geekbrainsspring.persist.model.ProductType;
 import com.skhanov.geekbrainsspring.persist.service.ProductBrandService;
 
 import org.springframework.beans.factory.annotation.Autowired;
