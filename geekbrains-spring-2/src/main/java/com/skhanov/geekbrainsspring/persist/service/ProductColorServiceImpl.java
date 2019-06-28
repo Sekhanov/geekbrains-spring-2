@@ -6,7 +6,8 @@ import com.skhanov.geekbrainsspring.persist.model.ProductColor;
 import com.skhanov.geekbrainsspring.persist.repo.ProductColorRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
+@Service
 public class ProductColorServiceImpl implements ProductColorService {
 
     @Autowired
