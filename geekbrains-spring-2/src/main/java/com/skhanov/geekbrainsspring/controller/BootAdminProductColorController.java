@@ -1,5 +1,6 @@
 package com.skhanov.geekbrainsspring.controller;
 
+import com.skhanov.geekbrainsspring.aspect.LogAfterExMethod;
 import com.skhanov.geekbrainsspring.persist.model.ProductColor;
 import com.skhanov.geekbrainsspring.persist.service.ProductColorService;
 
@@ -23,6 +24,7 @@ public class BootAdminProductColorController {
     private ProductColorService productColorService;
 
     @GetMapping
+    @LogAfterExMethod
     public String showProductColors(Model model) {
         model.addAttribute(PAGE_HEADER, "product colors");
         model.addAttribute("productColors", productColorService.findAll());
