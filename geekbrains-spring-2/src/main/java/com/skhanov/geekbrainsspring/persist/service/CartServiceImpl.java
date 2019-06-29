@@ -12,7 +12,7 @@ import org.springframework.web.context.annotation.SessionScope;
 /**
  * CartServiceImpl
  */
-@Service
+@Service("cartService")
 @SessionScope
 public class CartServiceImpl implements CartService {
 
@@ -27,7 +27,10 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public void addItem(Long id) {
-        items.add(productService.findById(id));
+        boolean isItem = items.stream().anyMatch(p -> p.getId() == id);
+        if(!isItem) {
+            items.add(productService.findById(id));
+        }
     }
 
     @Override
@@ -40,7 +43,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public List<Product> getAllProducts() {
+    public List<Product> getAllItems() {
         return items;
     }
 

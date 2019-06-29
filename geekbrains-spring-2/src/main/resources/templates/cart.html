@@ -57,19 +57,19 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <tr>
+                          <tr th:each="item : ${@cartService.getAllItems()}">
                               <td>
                                   <div class="media">
                                       <div class="d-flex">
-                                          <img th:src="@{/aroma/img/cart/cart1.png}" src="../static/aroma/img/cart/cart1.png" alt="">
+                                          <img width="100px" th:src="@{/picture/{pictureId} (pictureId=${item.pictures.get(0).id})}" src="../static/aroma/img/cart/cart1.png" alt="">
                                       </div>
                                       <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
+                                          <p th:text="${item.shortDescription}">Minimalistic shop for multipurpose use</p>
                                       </div>
                                   </div>
                               </td>
                               <td>
-                                  <h5>$360.00</h5>
+                                  <h5>$[[${item.price}]]</h5>
                               </td>
                               <td>
                                   <div class="product_count">
@@ -85,7 +85,7 @@
                                   <h5>$720.00</h5>
                               </td>
                           </tr>
-                          <tr>
+                          <!-- <tr>
                               <td>
                                   <div class="media">
                                       <div class="d-flex">
@@ -112,8 +112,8 @@
                               <td>
                                   <h5>$720.00</h5>
                               </td>
-                          </tr>
-                          <tr>
+                          </tr> -->
+                          <!-- <tr>
                               <td>
                                   <div class="media">
                                       <div class="d-flex">
@@ -140,7 +140,7 @@
                               <td>
                                   <h5>$720.00</h5>
                               </td>
-                          </tr>
+                          </tr> -->
                           <tr class="bottom_button">
                               <td>
                                   <a class="button" th:href="#{/}" href="#">Update Cart</a>

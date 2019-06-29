@@ -13,7 +13,7 @@ public interface CartService {
 
     void removeItem(Long id);
 
-    List<Product> getAllProducts();
+    List<Product> getAllItems();
 
     int getItemCount();
 
