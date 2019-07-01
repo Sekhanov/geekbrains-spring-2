@@ -69,78 +69,24 @@
                                   </div>
                               </td>
                               <td>
-                                  <h5>$[[${item.price}]]</h5>
+                                 <!-- <h5 id="price">[[${item.price}]]</h5> -->
+                                 <h5 th:text="${item.price}" id="price">1</h5>
                               </td>
                               <td>
                                   <div class="product_count">
                                       <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
                                           class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;" id="add-items-count"
                                           class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst > 0 ) result.value--;" id="reduce-item-count"
                                           class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
                                   </div>
                               </td>
                               <td>
-                                  <h5>$720.00</h5>
+                                  <h5 th:id="${item.id} + 'qwer'" id="totalPrice">
+                                  5000</h5>
                               </td>
                           </tr>
-                          <!-- <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img th:src="@{/aroma/img/cart/cart2.png}" src="../static/aroma/img/cart/cart2.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$360.00</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                          class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$720.00</h5>
-                              </td>
-                          </tr> -->
-                          <!-- <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img th:src="@{/aroma/img/cart/cart3.png}" src="../static/aroma/img/cart/cart3.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$360.00</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                          class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$720.00</h5>
-                              </td>
-                          </tr> -->
                           <tr class="bottom_button">
                               <td>
                                   <a class="button" th:href="#{/}" href="#">Update Cart</a>
@@ -247,6 +193,16 @@
   <script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}" src="../static/aroma/vendors/nice-select/jquery.nice-select.min.js"></script>
   <script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.js}" src="../static/aroma/vendors/jquery.ajaxchimp.min.js"></script>
   <script th:src="@{/aroma/vendors/mail-script.js}" src="../static/aroma/vendors/mail-script.js"></script>
-  <script th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
+  <script; th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
+  <!-- <script> 
+    function updateItemTotalPrice() {
+        let price = document.getElementById('price').innerHTML;
+        let itemQuantity = document.getElementById('sst').value;
+        document.getElementById('totalPrice').innerHTML = price * itemQuantity;
+    } 
+    updateItemTotalPrice();   
+    document.getElementById('add-items-count').addEventListener('click', updateItemTotalPrice);
+    document.getElementById('reduce-item-count').addEventListener('click', updateItemTotalPrice);
+    </script> -->
 </body>
 </html>
