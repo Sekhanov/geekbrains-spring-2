@@ -1,7 +1,7 @@
 package com.skhanov.geekbrainsspring.persist.service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.skhanov.geekbrainsspring.persist.model.Product;
 
@@ -19,10 +19,10 @@ public class CartServiceImpl implements CartService {
     @Autowired
     private ProductService productService;
 
-    private List<Product> items;
+    private Set<Product> items;
 
     public CartServiceImpl() {
-        items = new ArrayList<>();
+        items = new HashSet<>();
     }
 
     @Override
@@ -43,7 +43,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public List<Product> getAllItems() {
+    public  Set<Product>  getAllItems() {
         return items;
     }
 

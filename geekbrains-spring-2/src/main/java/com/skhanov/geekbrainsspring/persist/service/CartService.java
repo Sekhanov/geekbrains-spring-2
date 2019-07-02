@@ -1,6 +1,6 @@
 package com.skhanov.geekbrainsspring.persist.service;
 
-import java.util.List;
+import java.util.Set;
 
 import com.skhanov.geekbrainsspring.persist.model.Product;
 
@@ -13,7 +13,7 @@ public interface CartService {
 
     void removeItem(Long id);
 
-    List<Product> getAllItems();
+    Set<Product> getAllItems();
 
     int getItemCount();
 

@@ -104,9 +104,19 @@ Architecto voluptas harum fuga beatae suscipit nemo, voluptatum neque. Facilis o
 --create table for orders
 CREATE TABLE `orders` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
-`product_id` int(11) NOT NULL,
-`quantity` int(11) NOT NUll,
 `order_time` timestamp NOT NULL,
+`user_id` int(11) NOT NULL,
 PRIMARY KEY (`id`),
-CONSTRAINT `fk_orders_products` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
+CONSTRAINT `fk_orders_users` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 );
+
+CREATE TABLE `order_items` (
+  `id` int(11) NOT NUll AUTO_INCREMENT,
+  `order_id` int(11) NOT NUll,
+  `product_id` int(11) NOT NUll,
+  `quantity` int(11) NOT NUll,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `order_items_orders` FOREIGN KEY (`order_id`) REFERENCES `orders`(`id`),
+  CONSTRAINT `order_items_products` FOREIGN KEY (`product_id`) REFERENCES
+  `products`(`id`)
+)
