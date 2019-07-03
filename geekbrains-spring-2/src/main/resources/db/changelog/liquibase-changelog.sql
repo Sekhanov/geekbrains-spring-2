@@ -99,3 +99,24 @@ Veritatis, est magni soluta molestiae, exercitationem ratione provident veniam, 
 Odit, autem odio dolorem assumenda aperiam similique ab labore fugiat ipsa officiis nisi, eaque id omnis accusamus pariatur officia ipsum dolor repellat modi voluptates veniam? Animi recusandae autem praesentium quod?
 Architecto voluptas harum fuga beatae suscipit nemo, voluptatum neque. Facilis optio, ratione aut distinctio deleniti cum animi autem amet facere, veniam rerum est architecto, et minus at ducimus voluptate id!', 1000, 1, 1, 1);
 
+
+--changeset skhanov:5
+--create table for orders
+CREATE TABLE `orders` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`order_time` timestamp NOT NULL,
+`user_id` int(11) NOT NULL,
+PRIMARY KEY (`id`),
+CONSTRAINT `fk_orders_users` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
+);
+
+CREATE TABLE `order_items` (
+  `id` int(11) NOT NUll AUTO_INCREMENT,
+  `order_id` int(11) NOT NUll,
+  `product_id` int(11) NOT NUll,
+  `quantity` int(11) NOT NUll,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `order_items_orders` FOREIGN KEY (`order_id`) REFERENCES `orders`(`id`),
+  CONSTRAINT `order_items_products` FOREIGN KEY (`product_id`) REFERENCES
+  `products`(`id`)
+)

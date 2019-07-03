@@ -56,175 +56,122 @@
                               <th scope="col">Total</th>
                           </tr>
                       </thead>
-                      <tbody>
-                          <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img th:src="@{/aroma/img/cart/cart1.png}" src="../static/aroma/img/cart/cart1.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$360.00</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                          class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$720.00</h5>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img th:src="@{/aroma/img/cart/cart2.png}" src="../static/aroma/img/cart/cart2.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$360.00</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                          class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$720.00</h5>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img th:src="@{/aroma/img/cart/cart3.png}" src="../static/aroma/img/cart/cart3.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$360.00</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                          class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$720.00</h5>
-                              </td>
-                          </tr>
-                          <tr class="bottom_button">
-                              <td>
-                                  <a class="button" th:href="#{/}" href="#">Update Cart</a>
-                              </td>
-                              <td>
-
-                              </td>
-                              <td>
-
-                              </td>
-                              <td>
-                                  <div class="cupon_text d-flex align-items-center">
-                                      <input type="text" placeholder="Coupon Code">
-                                      <a class="primary-btn" th:href="#{/}" href="#">Apply</a>
-                                      <a class="button" th:href="#{/}" href="#">Have a Coupon?</a>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-
-                              </td>
-                              <td>
-
-                              </td>
-                              <td>
-                                  <h5>Subtotal</h5>
-                              </td>
-                              <td>
-                                  <h5>$2160.00</h5>
-                              </td>
-                          </tr>
-                          <tr class="shipping_area">
-                              <td class="d-none d-md-block">
-
-                              </td>
-                              <td>
-
-                              </td>
-                              <td>
-                                  <h5>Shipping</h5>
-                              </td>
-                              <td>
-                                  <div class="shipping_box">
-                                      <ul class="list">
-                                          <li><a th:href="#{/}" href="#">Flat Rate: $5.00</a></li>
-                                          <li><a th:href="#{/}" href="#">Free Shipping</a></li>
-                                          <li><a th:href="#{/}" href="#">Flat Rate: $10.00</a></li>
-                                          <li class="active"><a th:href="#{/}" href="#">Local Delivery: $2.00</a></li>
-                                      </ul>
-                                      <h6>Calculate Shipping <i class="fa fa-caret-down" aria-hidden="true"></i></h6>
-                                      <select class="shipping_select">
-                                          <option value="1">Bangladesh</option>
-                                          <option value="2">India</option>
-                                          <option value="4">Pakistan</option>
-                                      </select>
-                                      <select class="shipping_select">
-                                          <option value="1">Select a State</option>
-                                          <option value="2">Select a State</option>
-                                          <option value="4">Select a State</option>
-                                      </select>
-                                      <input type="text" placeholder="Postcode/Zipcode">
-                                      <a class="gray_btn" th:href="#{/}" href="#">Update Details</a>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr class="out_button_area">
-                              <td class="d-none-l">
-
-                              </td>
-                              <td class="">
-
-                              </td>
-                              <td>
-
-                              </td>
-                              <td>
-                                  <div class="checkout_btn_inner d-flex align-items-center">
-                                      <a class="gray_btn" th:href="#{/}" href="#">Continue Shopping</a>
-                                      <a class="primary-btn ml-2" th:href="#{/}" href="#">Proceed to checkout</a>
-                                  </div>
-                              </td>
-                          </tr>
-                      </tbody>
+                     <form th:object="${order}" th:action="@{/cart}" action="">
+                            <tbody>
+                                    <tr th:each="item : ${order.orderItems}">
+                                        <td>
+                                            <div class="media">
+                                                <div class="d-flex">
+                                                    <img th:if="${item.product.pictures.size() > 0}"  width="100px" th:src="@{/picture/{pictureId} (pictureId=${item.product.pictures.get(0).id})}" src="../static/aroma/img/cart/cart1.png" alt="">
+                                                </div>
+                                                <div class="media-body">
+                                                    <p th:text="${item.product.shortDescription}">Minimalistic shop for multipurpose use</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>                                           
+                                           <h5 th:text="${item.product.price}" id="price">1</h5>                                 
+                                        </td>
+                                        <td>
+                                            <div class="product_count">
+                                                <input  type="text" name="qty" id="sst" title="Quantity:"
+                                                    class="input-text qty">
+                                                <!-- <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;" id="add-items-count"
+                                                    class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
+                                                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst > 0 ) result.value--;" id="reduce-item-count"
+                                                    class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button> -->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h5 id="totalPrice">
+                                            5000</h5>
+                                        </td>
+                                    </tr>
+                                    <tr class="bottom_button">
+                                        <td>
+                                            <a class="button" th:href="#{/}" href="#">Update Cart</a>
+                                        </td>
+                                        <td>
+          
+                                        </td>
+                                        <td>
+          
+                                        </td>
+                                        <td>
+                                            <div class="cupon_text d-flex align-items-center">
+                                                <input type="text" placeholder="Coupon Code">
+                                                <a class="primary-btn" th:href="#{/}" href="#">Apply</a>
+                                                <a class="button" th:href="#{/}" href="#">Have a Coupon?</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+          
+                                        </td>
+                                        <td>
+          
+                                        </td>
+                                        <td>
+                                            <h5>Subtotal</h5>
+                                        </td>
+                                        <td>
+                                            <h5>$2160.00</h5>
+                                        </td>
+                                    </tr>
+                                    <tr class="shipping_area">
+                                        <td class="d-none d-md-block">
+          
+                                        </td>
+                                        <td>
+          
+                                        </td>
+                                        <td>
+                                            <h5>Shipping</h5>
+                                        </td>
+                                        <td>
+                                            <div class="shipping_box">
+                                                <ul class="list">
+                                                    <li><a th:href="#{/}" href="#">Flat Rate: $5.00</a></li>
+                                                    <li><a th:href="#{/}" href="#">Free Shipping</a></li>
+                                                    <li><a th:href="#{/}" href="#">Flat Rate: $10.00</a></li>
+                                                    <li class="active"><a th:href="#{/}" href="#">Local Delivery: $2.00</a></li>
+                                                </ul>
+                                                <h6>Calculate Shipping <i class="fa fa-caret-down" aria-hidden="true"></i></h6>
+                                                <select class="shipping_select">
+                                                    <option value="1">Bangladesh</option>
+                                                    <option value="2">India</option>
+                                                    <option value="4">Pakistan</option>
+                                                </select>
+                                                <select class="shipping_select">
+                                                    <option value="1">Select a State</option>
+                                                    <option value="2">Select a State</option>
+                                                    <option value="4">Select a State</option>
+                                                </select>
+                                                <input type="text" placeholder="Postcode/Zipcode">
+                                                <a class="gray_btn" th:href="#{/}" href="#">Update Details</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="out_button_area">
+                                        <td class="d-none-l">
+          
+                                        </td>
+                                        <td class="">
+          
+                                        </td>
+                                        <td>
+          
+                                        </td>
+                                        <td>
+                                            <div class="checkout_btn_inner d-flex align-items-center">
+                                                <a class="gray_btn" th:href="#{/}" href="#">Continue Shopping</a>
+                                                <a class="primary-btn ml-2" th:href="#{/}" href="#">Proceed to checkout</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                     </form>
                   </table>
               </div>
           </div>
@@ -247,6 +194,16 @@
   <script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}" src="../static/aroma/vendors/nice-select/jquery.nice-select.min.js"></script>
   <script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.js}" src="../static/aroma/vendors/jquery.ajaxchimp.min.js"></script>
   <script th:src="@{/aroma/vendors/mail-script.js}" src="../static/aroma/vendors/mail-script.js"></script>
-  <script th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
+  <script; th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
+  <!-- <script> 
+    function updateItemTotalPrice() {
+        let price = document.getElementById('price').innerHTML;
+        let itemQuantity = document.getElementById('sst').value;
+        document.getElementById('totalPrice').innerHTML = price * itemQuantity;
+    } 
+    updateItemTotalPrice();   
+    document.getElementById('add-items-count').addEventListener('click', updateItemTotalPrice);
+    document.getElementById('reduce-item-count').addEventListener('click', updateItemTotalPrice);
+    </script> -->
 </body>
 </html>

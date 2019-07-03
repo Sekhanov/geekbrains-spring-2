@@ -70,27 +70,30 @@
 							</li>
 							<li class="nav-item"><a class="nav-link" th:href="@{/contact}"
 									href="contact.html">Contact</a></li>
-							<li class="nav-item submenu dropdown">
-								<a th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+							<li  class="nav-item submenu dropdown">
+								<a sec:authorize="isAuthenticated()" sec:authentication="name"  th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+									role="button" aria-haspopup="true" aria-expanded="false">User</a>
+								<a sec:authorize="!isAuthenticated()" th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
 									role="button" aria-haspopup="true" aria-expanded="false">User</a>
 								<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" th:href="@{/admin}"
+									<li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item"><a class="nav-link" th:href="@{/admin}"
 											href="login.html">Admin</a></li>
-									<li class="nav-item"><a class="nav-link" th:href="@{/login}"
+									<li sec:authorize="!isAuthenticated()" class="nav-item"><a class="nav-link" th:href="@{/login}"
 											href="login.html">Login</a></li>
 									<li class="nav-item"><a class="nav-link" th:href="@{/register}"
 											href="register.html">Register</a></li>
 									<li class="nav-item"><a class="nav-link" th:href="@{/tracking-order}"
 											href="tracking-order.html">Tracking</a></li>
+									<li sec:authorize="isAuthenticated()" class="nav-item"><a href="#" class="nav-link" th:href="@{/logout}">Logout</a></li>
 								</ul>
-							</li>
+							</li>							
 						</ul>
 
-						<ul class="nav-shop">
+						<ul sec:authorize="isAuthenticated()" class="nav-shop">
 							<li class="nav-item"><button><i class="ti-search"></i></button></li>
-							<li class="nav-item"><button><i class="ti-shopping-cart"></i><span
-										class="nav-shop__circle">3</span></button> </li>
-							<li class="nav-item"><a class="button button-header" th:href="@{/}" href="#">Buy Now</a>
+							<li class="nav-item"><button><a th:href="@{/cart}" class="ti-shopping-cart"></a><a
+								 th:text="${@cartService.getItemCount()}"	class="nav-shop__circle" th:href="@{/cart}">3</a></button> </li>
+							<li class="nav-item"><a class="button button-header" th:href="@{/cart}" href="#">Buy Now</a>
 							</li>
 						</ul>
 					</div>

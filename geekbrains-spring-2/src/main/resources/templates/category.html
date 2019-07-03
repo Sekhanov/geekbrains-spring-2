@@ -116,7 +116,7 @@
                     <img th:if="${product.pictures.size() > 0}" class="card-img" th:src="@{/picture/{pictureId} (pictureId=${product.pictures.get(0).id})}" src="../static/aroma/img/product/product1.png" alt="">
                     <ul class="card-product__imgOverlay">
                       <li><form th:action="@{/}"><button><i class="ti-search"></i></button></form></li>
-                      <li><form th:action="@{/}"><button><i class="ti-shopping-cart"></i></button></form></li>
+                      <li><form th:action="${@cartService.addItem(product.id)}"><button><i class="ti-shopping-cart"></i></button></form></li>
                       <li><form th:action="@{/}"><button><i class="ti-heart"></i></button></form></li>
                     </ul>
                   </div>
