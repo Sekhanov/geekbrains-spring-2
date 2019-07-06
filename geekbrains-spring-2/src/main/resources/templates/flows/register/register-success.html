@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aroma Shop - Login</title>
+	<link rel="icon" th:href="@{/aroma/img/Fevicon.png}" href="../static/aroma/img/Fevicon.png" type="image/png">
+  <link rel="stylesheet" th:href="@{/aroma/vendors/bootstrap/bootstrap.min.css}" href="../static/aroma/vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" th:href="@{/aroma/vendors/fontawesome/css/all.min.css}" href="../static/aroma/vendors/fontawesome/css/all.min.css">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/themify-icons/themify-icons.css}" href="../static/aroma/vendors/themify-icons/themify-icons.css">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/linericon/style.css}" href="../static/aroma/vendors/linericon/style.css">
+  <link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.theme.default.min.css}" href="../static/aroma/vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.carousel.min.css}" href="../static/aroma/vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" th:href="@{/aroma/vendors/nice-select/nice-select.css}" href="../static/aroma/vendors/nice-select/nice-select.css">
+  <link rel="stylesheet" th:href="@{/aroma/vendors/nouislider/nouislider.min.css}" href="../static/aroma/vendors/nouislider/nouislider.min.css">
+
+  <link rel="stylesheet" th:href="@{/aroma/css/style.css}" href="../static/aroma/css/style.css">
+</head>
+<body>
+	<!--================ Start Header Menu Area =================-->
+	<header th:replace="/fragments/aroma-main-fragments :: header" class="header_area"></header>
+	<!--================ End Header Menu Area =================-->
+  
+  <!-- ================ start banner area ================= -->	
+  <!-- <section th:replace="/fragments/aroma-main-fragments :: banner" class="blog-banner-area" id="category">	</section> -->
+	<!-- ================ end banner area ================= -->
+  
+  <!--================Login Box Area =================-->
+	<section class="login_box_area section-margin">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<div class="hover">
+							<h4>Already have an account?</h4>
+							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+							<a class="button button-account" th:href="@{/login}" href="login.html">Login Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner register_form_inner">
+						<h3>Create an account</h3>
+						<form class="row login_form" action="#/" id="register_form" >
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="email" name="email" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
+              </div>
+              <div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+              </div>
+              <div class="col-md-12 form-group">
+								<input type="text" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm Password'">
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="creat_account">
+									<input type="checkbox" id="f-option2" name="selector">
+									<label for="f-option2">Keep me logged in</label>
+								</div>
+							</div>
+							<div class="col-md-12 form-group">
+								<button type="submit" value="submit" class="button button-register w-100">Register</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
+
+
+
+  <!--================ Start footer Area  =================-->	
+  <footer th:replace="/fragments/aroma-main-fragments :: footer" class="footer"></footer>
+	<!--================ End footer Area  =================-->
+
+
+
+  <script th:src="@{/aroma/vendors/jquery/jquery-3.2.1.min.js}" src="../static/aroma/vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script th:src="@{/aroma/vendors/bootstrap/bootstrap.bundle.min.js}" src="../static/aroma/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script th:src="@{/aroma/vendors/skrollr.min.js}" src="../static/aroma/vendors/skrollr.min.js"></script>
+  <script th:src="@{/aroma/vendors/owl-carousel/owl.carousel.min.js}" src="../static/aroma/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}" src="../static/aroma/vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.js}" src="../static/aroma/vendors/jquery.ajaxchimp.min.js"></script>
+  <script th:src="@{/aroma/vendors/mail-script.js}" src="../static/aroma/vendors/mail-script.js"></script>
+  <script th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
+</body>
+</html>

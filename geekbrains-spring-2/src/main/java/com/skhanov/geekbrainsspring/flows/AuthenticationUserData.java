@@ -1,8 +1,12 @@
 package com.skhanov.geekbrainsspring.flows;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.NotBlank;
 
-public class AuthenticationUserData {
+public class AuthenticationUserData implements Serializable {
+
+    private static final long serialVersionUID = -7522203740433195855L;
 
     @NotBlank
     private String userName;

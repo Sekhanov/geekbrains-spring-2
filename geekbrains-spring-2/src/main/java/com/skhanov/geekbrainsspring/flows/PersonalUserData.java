@@ -1,12 +1,16 @@
 package com.skhanov.geekbrainsspring.flows;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 /**
  * PersonalUserData
  */
-public class PersonalUserData {
+public class PersonalUserData implements Serializable {
+
+    private static final long serialVersionUID = 6688785387925444981L;
 
     @NotBlank
     private String firstName;

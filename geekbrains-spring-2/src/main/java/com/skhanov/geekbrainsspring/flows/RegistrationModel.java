@@ -1,9 +1,13 @@
 package com.skhanov.geekbrainsspring.flows;
 
+import java.io.Serializable;
+
 /**
  * RegistrationModel
  */
-public class RegistrationModel {
+public class RegistrationModel implements Serializable {
+
+    private static final long serialVersionUID = 5146550045474366706L;
 
     private AuthenticationUserData authenticationUserData;
 

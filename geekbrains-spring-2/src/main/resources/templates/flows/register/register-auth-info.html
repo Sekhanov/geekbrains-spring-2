@@ -54,22 +54,25 @@
 				<div class="col-lg-6">
 					<div class="login_form_inner register_form_inner">
 						<h3>Create an account</h3>
-						<form class="row login_form" th:action="@{'~' + ${flowExecutionUrl} + '&_eventId_validateRegister1'}"
+						<form class="row login_form" th:object="${authenticationUserData}" th:action="@{'~' + ${flowExecutionUrl} + '&_eventId_validate-auth-info'}"
 							method="POST" enctype="multipart/form-data" id="register_form">
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Username"
+								<input type="text" class="form-control" id="name" name="name" th:field="*{userName}" placeholder="Username"
 									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
 							</div>
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></small>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="password" name="password"
+								<input type="text" class="form-control" id="password" name="password" th:field="*{password}"
 									placeholder="Password" onfocus="this.placeholder = ''"
 									onblur="this.placeholder = 'Password'">
 							</div>
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
+								<input type="text" class="form-control" id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}"
 									placeholder="Confirm Password" onfocus="this.placeholder = ''"
 									onblur="this.placeholder = 'Confirm Password'">
 							</div>
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></small>
 							<div class="col-md-12 form-group">
 								<button type="submit" value="submit"
 									class="button button-register w-100">Next</button>
