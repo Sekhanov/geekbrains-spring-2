@@ -24,7 +24,9 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 public class WebFlowWithMvcConfig extends AbstractFlowConfiguration {
 
 	@Autowired
-	private LocalValidatorFactoryBean localValidatorFacotryBean;
+	private LocalValidatorFactoryBean localValidatorFactoryBean;
+	@Autowired
+	private SpringTemplateEngine springTemplateEngine;
 
 	@Bean
 	public FlowDefinitionRegistry flowRegistry() {
@@ -45,7 +47,7 @@ public class WebFlowWithMvcConfig extends AbstractFlowConfiguration {
 	public FlowBuilderServices flowBuilderServices() {
 		return getFlowBuilderServicesBuilder() //
 				.setViewFactoryCreator(this.mvcViewFactoryCreator()) // Important!
-				.setValidator(this.localValidatorFacotryBean).build();
+				.setValidator(this.localValidatorFactoryBean).build();
 	}
 	// ----------------------------------------------------------
 
@@ -78,7 +80,7 @@ public class WebFlowWithMvcConfig extends AbstractFlowConfiguration {
 	public AjaxThymeleafViewResolver thymeleafViewResolver() {
 		AjaxThymeleafViewResolver viewResolver = new AjaxThymeleafViewResolver();
 		viewResolver.setViewClass(FlowAjaxThymeleafView.class);
-		viewResolver.setTemplateEngine(this.templateEngine());
+		viewResolver.setTemplateEngine(springTemplateEngine);
 		viewResolver.setCharacterEncoding("UTF-8");
 		return viewResolver;
 	}
@@ -93,14 +95,6 @@ public class WebFlowWithMvcConfig extends AbstractFlowConfiguration {
 		templateResolver.setTemplateMode("HTML5");
 		templateResolver.setCharacterEncoding("UTF-8");
 		return templateResolver;
-	}
-
-	@Bean
-	@Description("Thymeleaf template engine with Spring integration")
-	public SpringTemplateEngine templateEngine() {
-		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-		templateEngine.setTemplateResolver(this.templateResolver());
-		return templateEngine;
 	}
 }
 
