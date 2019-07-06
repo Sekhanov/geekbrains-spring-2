@@ -24,13 +24,18 @@
 
     <view-state id="register-personal-info" view="flows/register/register-personal-info" model="personalUserData">
         <transition on="register-auth-info" to="register-auth-info"></transition>
-        <transition on="confirm" to="confirm"></transition>     
+        <transition on="validate-personal-info" to="validate-personal-info"></transition>     
         <on-exit>
             <evaluate expression="registerFlowHandler.addPersonalUserInfo(flowScope.registrationModel, personalUserData)"></evaluate>
         </on-exit>
     </view-state>
 
-    <view-state id="confirm" view="flows/register/register-confirm">
+    <action-state id="validate-personal-info">
+        <transition on="success" to="confirm"></transition>
+        <transition on="failure" to="register-personal-info"></transition>
+    </action-state>
+
+    <view-state id="confirm" view="flows/register/register-confirm" model="flowScope.registerModel">
         <transition on="register-auth-info" to="register-auth-info"></transition>
         <transition on="register-personal-info" to="register-personal-info"></transition>
         <transition on="submit" to="submit"></transition>

@@ -49,7 +49,7 @@ public class RegisterFlowHandler {
                     .build());
             return FAILURE;
         }
-        if(!userService.findByUserName(authenticationUserData.getUserName()).equals(null)) {
+        if(userService.findByUserName(authenticationUserData.getUserName()) != null) {
             messageContext.addMessage(new MessageBuilder()
             .error()
             .source("userName")

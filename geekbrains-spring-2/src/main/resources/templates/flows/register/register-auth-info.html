@@ -54,11 +54,13 @@
 				<div class="col-lg-6">
 					<div class="login_form_inner register_form_inner">
 						<h3>Create an account</h3>
-						<form class="row login_form" th:object="${authenticationUserData}" th:action="@{'~' + ${flowExecutionUrl} + '&_eventId_validate-auth-info'}"
-							method="POST" enctype="multipart/form-data" id="register_form">
+						<form class="row login_form" th:object="${authenticationUserData}"
+							th:action="@{'~' + ${flowExecutionUrl} + '&_eventId_validate-auth-info'}" method="POST"
+							enctype="multipart/form-data" id="register_form">
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" th:field="*{userName}" placeholder="Username"
-									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+								<input type="text" class="form-control" id="name" name="name" th:field="*{userName}"
+									placeholder="Username" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Username'">
 							</div>
 							<small class="form-text text-danger" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></small>
 							<div class="col-md-12 form-group">
@@ -75,7 +77,7 @@
 							<small class="form-text text-danger" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></small>
 							<div class="col-md-12 form-group">
 								<button type="submit" value="submit"
-									class="button button-register w-100">Next</button>
+									class="button btn-primary w-100">Next</button>
 							</div>
 						</form>
 					</div>
