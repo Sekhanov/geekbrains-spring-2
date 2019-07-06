@@ -11,12 +11,12 @@ import com.skhanov.geekbrainsspring.persist.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * RegisterFlowHandler
  */
-@Service
+@Component
 public class RegisterFlowHandler {
 
     private static final String SUCCESS = "success";
@@ -58,6 +58,10 @@ public class RegisterFlowHandler {
             );
             return FAILURE;
         }
+        return SUCCESS;
+    }
+
+    public String validatePersonalUserInfo() {
         return SUCCESS;
     }
 

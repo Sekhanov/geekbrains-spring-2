@@ -19,6 +19,7 @@ public class PersonalUserData implements Serializable {
     private String lastName;
 
     @NotBlank
+    @Email
     private String email;
 
     

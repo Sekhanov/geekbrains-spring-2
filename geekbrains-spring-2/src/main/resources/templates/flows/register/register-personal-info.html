@@ -53,10 +53,9 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="login_form_inner register_form_inner">
-						<h3>Create an account</h3>
-						<form th:object="${personalUserData}" class="row login_form"
-							th:action="@{'~' + ${flowExecutionUrl} + '&_eventId_validate-personal-info'}" id="register_form">
-							<div class="col-md-12 form-group">
+						<h3>Personal Data:</h3>
+						<form th:object="${personalUserData}" class="row login_form"  th:action="@{'~' + ${flowExecutionUrl}}" method="POST">
+						<div class="col-md-12 form-group">
 								<input th:field="*{firstName}" type="text" class="form-control" id="name" name="name"
 									placeholder="firstName" onfocus="this.placeholder = ''"
 									onblur="this.placeholder = 'firstName'">
@@ -75,8 +74,10 @@
 							</div>
 							<small class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
 							<div class="col-md-12 form-group">
-								<!-- <button type="submit" value="back" class="button btn-secondary w-40" name="_eventId_register-auth-info">Back</button>								 -->
-								<button type="submit" value="submit" class="button btn-primary w-40">Next (Confirm)</button>
+								<button type="submit" value="back" class="button btn-secondary w-40" name="_eventId_register-auth-info">Back</button>	
+															
+
+								<button name="_eventId_confirm" type="submit" class="button btn-primary w-40">Next</button>
 								
 						</form>
 					</div>

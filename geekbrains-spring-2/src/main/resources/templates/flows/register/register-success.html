@@ -53,25 +53,11 @@
 				</div>
 				<div class="col-lg-6">
 						<div class="login_form_inner register_form_inner">
-							<h3>Confirm data:</h3>
-							<form th:object="${registrationModel}" class="row login_form"  th:action="@{/login}">								
+							<h3>User successfully registered:</h3>
+							<form class="row login_form"  th:action="@{'~' + ${flowExecutionUrl}}" method="POST">								
 									<div class="row">
-											<div class="col">Username:</div>
-											<div class="col">[[${registrationModel.authenticationUserData.userName}]]</div>
-											<div class="w-100"></div>	
-											<div class="col">First name:</div>
-											<div class="col">[[${registrationModel.personalUserData.firstName}]]</div>
-											<div class="w-100"></div>	
-											<div class="col">LastName:</div>
-											<div class="col">[[${registrationModel.personalUserData.LastName}]]</div>
-											<div class="w-100"></div>	
-											<div class="col">Email:</div>
-											<div class="col">[[${registrationModel.personalUserData.email}]]</div>
-											<div class="w-100"></div>	
-											<br>
-											<div class="col"><button type="submit" value="back" class="button btn-secondary w-40" name="_eventId_register-personal-info">Back</button>	</div>
 											<div class="col">	
-													<button name="_eventId_submit" type="submit" class="button btn-primary w-40">Submit</button></div>
+													<button name="_eventId_login" type="submit" class="button btn-primary w-40">Login</button></div>
 									</div>
 	
 																
