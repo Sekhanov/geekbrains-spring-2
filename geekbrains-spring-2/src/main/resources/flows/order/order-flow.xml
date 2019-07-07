@@ -2,12 +2,51 @@
 <flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow.xsd">
     
-    <var name="User" class="com.skhanov.geekbrainsspring.persist.model.User" />   
+    <var name="productCart" class="com.skhanov.geekbrainsspring.flows.order.ProductCart" /> 
+    <var name="payment" class="com.skhanov.geekbrainsspring.flows.order.Payment" /> 
+    <var name="deliveryInfo" class="com.skhanov.geekbrainsspring.flows.order.DeliveryInfo" /> 
+        
+    <on-start>
+        <evaluate expression="orderFlowHandler.init()" result="flowScope.orderModel"></evaluate>
+        <evaluate expression="orderFlowHandler.fillProductCart(productCart)"></evaluate>
+    </on-start>
     
-    <view-state id="register1" view="flows/register/register1" model="User">
+    <view-state id="cart" view="flows/order/cart" model="productCart">
+        <!-- <transition on="validate-auth-info" to="validate-auth-info"></transition>
+        <on-exit>
+            <evaluate expression="registerFlowHandler.addAuthUserInfo(flowScope.registrationModel, authenticationUserData)"></evaluate>
+        </on-exit> -->
+    </view-state>  
 
+    <!-- <action-state id="validate-auth-info">
+        <evaluate expression="registerFlowHandler.validateAuthUserInfo(authenticationUserData, messageContext)"></evaluate>
+        <transition on="success" to="register-personal-info"></transition>
+        <transition on="failure" to="register-auth-info"></transition>
+    </action-state> -->
+
+    <!-- <view-state id="register-personal-info" view="flows/register/register-personal-info" model="personalUserData">
+        <transition on="register-auth-info" to="register-auth-info" validate="false"></transition>
+        <transition on="confirm" to="confirm"></transition>
+        <on-exit>
+            <evaluate expression="registerFlowHandler.addPersonalUserInfo(flowScope.registrationModel, personalUserData)"></evaluate>
+        </on-exit>
+    </view-state> -->
+
+    <!-- <view-state id="confirm" view="flows/register/register-confirm" model="flowScope.registerModel">
+        <transition on="register-auth-info" to="register-auth-info"></transition>
+        <transition on="register-personal-info" to="register-personal-info"></transition>
+        <transition on="submit" to="submit"></transition>
     </view-state>
-    
 
-    
+    <action-state id="submit">
+        <evaluate expression="registerFlowHandler.saveNewUser(flowScope.registrationModel)"></evaluate>
+        <transition on="success" to="success"></transition>
+    </action-state>
+
+    <end-state id="success" view="flows/register/register-success"/>
+    <end-state id="home" view="externalRedirect:contextRelative:/"></end-state>
+
+    <global-transitions>
+        <transition on="home" to="home" validate="false"></transition>
+    </global-transitions> -->
 </flow>

@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "com.skhanov.geekbrainsspring.App",
+            "projectName": "geekbrains-spring-2"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-GeekbrainsSpring2Application<geekbrains-spring-2>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
