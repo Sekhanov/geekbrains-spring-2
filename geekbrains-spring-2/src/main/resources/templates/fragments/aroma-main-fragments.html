@@ -54,8 +54,8 @@
 											href="checkout.html">Product Checkout</a></li>
 									<li class="nav-item"><a class="nav-link" th:href="@{/confirmation}"
 											href="confirmation.html">Confirmation</a></li>
-									<li class="nav-item"><a class="nav-link" th:href="@{/cart}"
-											href="cart.html">Shopping Cart</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/order}"
+											href="order.html">Shopping Cart</a></li>
 								</ul>
 							</li>
 							<li class="nav-item active submenu dropdown">
@@ -91,9 +91,9 @@
 
 						<ul sec:authorize="isAuthenticated()" class="nav-shop">
 							<li class="nav-item"><button><i class="ti-search"></i></button></li>
-							<li class="nav-item"><button><a th:href="@{/cart}" class="ti-shopping-cart"></a><a
-								 th:text="${@cartService.getItemCount()}"	class="nav-shop__circle" th:href="@{/cart}">3</a></button> </li>
-							<li class="nav-item"><a class="button button-header" th:href="@{/cart}" href="#">Buy Now</a>
+							<li class="nav-item"><button><a th:href="@{/order}" class="ti-shopping-cart"></a><a
+								 th:text="${@cartService.getItemCount()}"	class="nav-shop__circle" th:href="@{/order}">3</a></button> </li>
+							<li class="nav-item"><a class="button button-header" th:href="@{/order}" href="#">Buy Now</a>
 							</li>
 						</ul>
 					</div>

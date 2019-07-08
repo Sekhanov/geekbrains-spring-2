@@ -14,6 +14,8 @@ public class DeliveryInfo implements Serializable {
     private String street;
 
     private Integer house;
+
+    private String phone;
     
 
     /**
@@ -56,6 +58,21 @@ public class DeliveryInfo implements Serializable {
      */
     public void setHouse(Integer house) {
         this.house = house;
+    }
+
+
+    /**
+     * @return String return the phone
+     */
+    public String getPhone() {
+        return phone;
+    }
+
+    /**
+     * @param phone the phone to set
+     */
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
 }

@@ -12,10 +12,13 @@ public class Payment implements Serializable {
     public enum PaymentType {
         VISA, 
         MASTER_CARD, 
-        CASH
+        MIR
     }
 
     private PaymentType paymentType;
+    private String cartNumber;
+
+
 
 
     /**
@@ -30,6 +33,21 @@ public class Payment implements Serializable {
      */
     public void setPaymentType(PaymentType paymentType) {
         this.paymentType = paymentType;
+    }
+
+
+    /**
+     * @return String return the cartNumber
+     */
+    public String getCartNumber() {
+        return cartNumber;
+    }
+
+    /**
+     * @param cartNumber the cartNumber to set
+     */
+    public void setCartNumber(String cartNumber) {
+        this.cartNumber = cartNumber;
     }
 
 }

@@ -1,7 +1,7 @@
 package com.skhanov.geekbrainsspring.flows.order;
 
 
-import java.util.Set;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import com.skhanov.geekbrainsspring.flows.order.ProductCart.ProductCartItem;
@@ -29,18 +29,39 @@ public class OrderFlowHandler {
     }
 
     public void fillProductCart(ProductCart productCart) {
-        Set<ProductCartItem> productCartItems = cartService.getAllItems().stream().map(e -> {
+        List<ProductCartItem> productCartItems = cartService.getAllItems().stream().map(e -> {
             ProductCartItem productCartItem = new ProductCartItem();
+            productCartItem.setId(e.getId());
             if(e.getNewPictures() != null) {
                 productCartItem.setMainPicture(e.getNewPictures()[0]);
             }            
-            productCartItem.setProductName(e.getProductBrand() + " " +  e.getModel());
+            productCartItem.setProductName(e.getProductBrand().getName() + " " +  e.getModel());
             productCartItem.setQuantity(1);
             productCartItem.setShortDescription(e.getShortDescription());
-            return productCartItem;
-        }).collect(Collectors.toSet());
+            productCartItem.setPrice(e.getPrice().intValue());
+            productCartItem.setItemTotalPrice();
+            return productCartItem;            
+        }).collect(Collectors.toList());
 
         productCart.setProductCartItems(productCartItems);
+        productCart.setCartTotalPrice();
     } 
+
+    public void cartUpdate(ProductCart productCart) {
+        productCart.getProductCartItems().forEach(e -> e.setItemTotalPrice());
+        productCart.setCartTotalPrice();
+    }
+
+    public void addCartInfo(OrderModel orderModel, ProductCart productCart) {
+        orderModel.setProductCart(productCart);
+    }
+
+    public void addDeliveryInfo(OrderModel orderModel, DeliveryInfo deliveryInfo) {
+        orderModel.setDeliveryInfo(deliveryInfo);
+    }
+
+    public void addPaymentInfo(OrderModel orderModel, Payment payment) {
+        orderModel.setPayment(payment);
+    }
     
 }
