@@ -34,24 +34,24 @@
         <transition on="confirm" to="confirm"></transition>
         <transition on="delivery" to="deliviey"></transition>
         <on-exit>
-            <evaluate expression="orderFlowHandler.addPaymentInfo(flowScope.orderModel, paymentInfo)"></evaluate>
+            <evaluate expression="orderFlowHandler.addPaymentInfo(flowScope.orderModel, payment)"></evaluate>
         </on-exit>
     </view-state>
     
-    <!-- <view-state id="confirm" view="flows/order/order-confirm" model="flowScope.registerModel">
+    <view-state id="confirm" view="flows/order/order-confirm" model="flowScope.registerModel">
         <transition on="submin" to="submin"></transition>
         <transition on="payment" to="payment"></transition>        
     </view-state>
 
-    <action-state id="submit">
+    <!-- <action-state id="submit">
         <evaluate expression="!!!"></evaluate>
         <transition on="success" to="success"></transition>
-    </action-state>
+    </action-state> -->
 
     <end-state id="success" view="flows/order/register-success"/>
     <end-state id="home" view="externalRedirect:contextRelative:/"></end-state>
 
     <global-transitions>
         <transition on="home" to="home" validate="false"></transition>
-    </global-transitions> -->
+    </global-transitions>
 </flow>

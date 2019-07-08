@@ -41,31 +41,7 @@
         <div class="container">
             <div class="cart_inner">
                 <div class="table-responsive">
-                    <form th:object="${payment}" th:action="@{'~' + ${flowExecutionUrl}}" method="POST">
-                        <h2 class="display-5">Enter payment info</h2>
-                        <br>
-                        <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputGroupSelect01">Type of card</label>
-                                </div>
-                                
-                                <select class="custom-select" id="inputGroupSelect01">
-                                        <option th:each="state : ${T(com.skhanov.geekbrainsspring.flows.order.Payment.PaymentType).values()}"
-                                        th:value="${state}"
-                                        th:text="${state}">
-                                </option>
-                                </select>
-                              </div>
-                              <br>
-                              <br>
-                        <div class="form-group">
-                            <input th:field="*{cartNumber}" type="text" class="form-control" id="cartNumber" placeholder="cartNumber">
-                        </div> 
-                        <br>
-                        <button name="_eventId_delivery" type="submit" class="btn btn-secondary float-left">Back</button>
-                        <button name="_eventId_confirm" type="submit"
-                            class="btn btn-primary float-right">Submit</button>
-                    </form>
+                    order confirm
                 </div>
             </div>
         </div>
