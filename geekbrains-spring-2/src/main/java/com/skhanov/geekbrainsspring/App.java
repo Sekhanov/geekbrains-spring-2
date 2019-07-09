@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class GeekbrainsSpring2Application implements WebMvcConfigurer {
+public class App implements WebMvcConfigurer {
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
@@ -27,7 +27,7 @@ public class GeekbrainsSpring2Application implements WebMvcConfigurer {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(GeekbrainsSpring2Application.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 }

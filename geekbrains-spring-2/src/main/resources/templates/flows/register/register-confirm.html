@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="/fragments/aroma-main-fragments :: head(title = 'registration')"></head>
+
+<body>
+	<!--================ Start Header Menu Area =================-->
+	<header th:replace="/fragments/aroma-main-fragments :: header" class="header_area"></header>
+	<!--================ End Header Menu Area =================-->
+
+	<!-- ================ start banner area ================= -->
+	<!-- <section th:replace="/fragments/aroma-main-fragments :: banner" class="blog-banner-area" id="category">	</section> -->
+	<!-- ================ end banner area ================= -->
+
+	<!--================Login Box Area =================-->
+	<section class="login_box_area section-margin">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<div class="hover">
+							<h4>Already have an account?</h4>
+							<p>There are advances being made in science and technology everyday, and a good example of
+								this is the</p>
+							<a class="button button-account" th:href="@{/login}" href="login.html">Login Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner register_form_inner">
+						<h3>Confirm data:</h3>
+						<form th:object="${registrationModel}" class="row login_form" th:action="@{/login}">
+							<div class="row">
+								<div class="col">Username:</div>
+								<div class="col">[[${registrationModel.authenticationUserData.userName}]]</div>
+								<div class="w-100"></div>
+								<div class="col">First name:</div>
+								<div class="col">[[${registrationModel.personalUserData.firstName}]]</div>
+								<div class="w-100"></div>
+								<div class="col">LastName:</div>
+								<div class="col">[[${registrationModel.personalUserData.LastName}]]</div>
+								<div class="w-100"></div>
+								<div class="col">Email:</div>
+								<div class="col">[[${registrationModel.personalUserData.email}]]</div>
+								<div class="w-100"></div>
+								<br>
+								<div class="col"><button type="submit" value="back" class="button btn-secondary w-40"
+										name="_eventId_register-personal-info">Back</button> </div>
+								<div class="col">
+									<button name="_eventId_submit" type="submit"
+										class="button btn-primary w-40">Submit</button></div>
+							</div>
+
+
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Login Box Area =================-->
+
+
+
+	<!--================ Start footer Area  =================-->
+	<footer th:replace="/fragments/aroma-main-fragments :: footer" class="footer"></footer>
+	<!--================ End footer Area  =================-->
+
+
+
+	<div th:replace="/fragments/aroma-main-fragments :: scripts"></div>
+</body>
+
+</html>

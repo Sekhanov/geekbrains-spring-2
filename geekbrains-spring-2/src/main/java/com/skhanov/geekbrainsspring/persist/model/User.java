@@ -24,27 +24,25 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Table(name = "users")
 public class User implements UserDetails {
 
-    private static final long serialVersionUID = -2132970684176643191L;
-
-    
+    private static final long serialVersionUID = -2132970684176643191L;    
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+    
     @Column(name = "username")
     private String userName;
-
+    
     @Column(name = "password")
     private String password;
-
+    
     @Column(name = "first_name")
     private String firstName;
-
+    
     @Column(name = "last_name")
     private String lastName;
-
+    
     @Column(name = "email")
     private String email;
 

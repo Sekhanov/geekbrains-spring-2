@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+    <head th:replace="/fragments/aroma-main-fragments :: head(title = 'order')"></head>
+
+<body>
+    <!--================ Start Header Menu Area =================-->
+    <header th:replace="/fragments/aroma-main-fragments :: header" class="header_area"></header>
+    <!--================ End Header Menu Area =================-->
+
+    <!-- ================ start banner area ================= -->
+    <section class="blog-banner-area" id="category">
+        <div class="container h-100">
+            <div class="blog-banner">
+                <div class="text-center">
+                    <h1>Shopping Cart</h1>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a th:href="#{/}" href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ end banner area ================= -->
+
+
+
+    <!--================Cart Area =================-->
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                       <form th:object="${productCart.productCartItems}" th:action="@{'~' + ${flowExecutionUrl}}" method="POST">
+                            <tbody>
+                                    <tr th:each="item, itemIndex : ${productCart.productCartItems}">
+                                        <td>
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <p th:text="${item.productName}">Minimalistic shop for multipurpose use</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <p th:text="${item.shortDescription}">Minimalistic shop for multipurpose use
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <!-- <h5 id="price">[[${item.price}]]</h5> -->
+                                            <h5 th:text="${item.price}" id="price">1</h5>
+                                        </td>
+                                        <td>
+                                            <div class="product_count">
+                                                <input th:field="${productCart.productCartItems[__${itemIndex.index}__].quantity}" type="text" name="qty" id="sst" maxlength="12" value="1"
+                                                    title="Quantity:" class="input-text qty">
+                                                <button
+                                                    onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;"
+                                                    id="add-items-count" class="increase items-count" type="button"><i
+                                                        class="lnr lnr-chevron-up"></i></button>
+                                                <button
+                                                    onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst > 0 ) result.value--;"
+                                                    id="reduce-item-count" class="reduced items-count" type="button"><i
+                                                        class="lnr lnr-chevron-down"></i></button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h5 th:text="${item.itemTotalPrice}">5000</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+        
+                                        </td>
+                                        <td class="float-right">
+                                            <button class="button" type="submit">Update</button>
+                                        </td>
+                                        <td>
+        
+                                        </td>
+                                        <td>
+                                            <h5>Total:</h5>
+                                        </td>
+                                        <td>
+                                            <h5 th:text="${productCart.cartTotalPrice}">2160.00 cartTotalPrice</h5>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="out_button_area">
+                                        <td class="d-none-l"><button name="_eventId_cart" class="gray_btn" type="submit">back</button></td>
+        
+                                        </td>
+        
+                                        </td>
+                                        <td>
+        
+                                        </td>
+                                        <td>
+        
+                                        </td>
+                                        <td>
+        
+                                        </td>
+                                        <td>
+                                            <button name="_eventId_delivery" class="button" type="submit">next</button>
+                                        </td>
+        
+                                    </tr>
+                                </tbody>
+                       </form>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Cart Area =================-->
+
+
+
+    <!--================ Start footer Area  =================-->
+    <footer th:replace="/fragments/aroma-main-fragments :: footer" class="footer"></footer>
+    <!--================ End footer Area  =================-->
+
+
+
+    <div th:replace="/fragments/aroma-main-fragments :: scripts"></div>
+
+</body>
+
+</html>

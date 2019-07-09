@@ -2,26 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
-<head th:fragment="head">
+<head th:fragment="head(title)">
 	<meta charset="UTF-8">
-	<title>qwer</title>
+	<title th:text="${title}"></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">	
-	<link rel="icon" th:href="@{/aroma/img/Fevicon.png}" href="../static/aroma/img/Fevicon.png" type="image/png">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/bootstrap/bootstrap.min.css}"
-		href="../static/aroma/vendors/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/fontawesome/css/all.min.css}"
-		href="../static/aroma/vendors/fontawesome/css/all.min.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/themify-icons/themify-icons.css}"
-		href="../static/aroma/vendors/themify-icons/themify-icons.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/linericon/style.css}"
-		href="../static/aroma/vendors/linericon/style.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.theme.default.min.css}"
-		href="../static/aroma/vendors/owl-carousel/owl.theme.default.min.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.carousel.min.css}"
-		href="../static/aroma/vendors/owl-carousel/owl.carousel.min.css">
-
-	<link rel="stylesheet" th:href="@{/aroma/css/style.css}" href="../static/aroma/css/style.css">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" th:href="@{/aroma/img/Fevicon.png}">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/bootstrap/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/fontawesome/css/all.min.css}">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/themify-icons/themify-icons.css}">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/nice-select/nice-select.css}">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/linericon/style.css}">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.theme.default.min.css}">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.carousel.min.css}">
+	<link rel="stylesheet" th:href="@{/aroma/vendors/nouislider/nouislider.min.css}">
+	<link rel="stylesheet" th:href="@{/aroma/css/style.css}">
+	<!-- chat -->
+	<link th:href="@{/websocket/css/main.css}" rel="stylesheet" />
 </head>
 
 <body>
@@ -50,12 +47,8 @@
 											href="category.html">Shop Category</a></li>
 									<!-- <li class="nav-item"><a class="nav-link" th:href="@{/single-product}"
 											href="single-product.html">Product Details</a></li> -->
-									<li class="nav-item"><a class="nav-link" th:href="@{/checkout}"
-											href="checkout.html">Product Checkout</a></li>
-									<li class="nav-item"><a class="nav-link" th:href="@{/confirmation}"
-											href="confirmation.html">Confirmation</a></li>
-									<li class="nav-item"><a class="nav-link" th:href="@{/cart}"
-											href="cart.html">Shopping Cart</a></li>
+									<li class="nav-item"><a class="nav-link" th:href="@{/order}"
+											href="order.html">Shopping Cart</a></li>
 								</ul>
 							</li>
 							<li class="nav-item active submenu dropdown">
@@ -70,30 +63,36 @@
 							</li>
 							<li class="nav-item"><a class="nav-link" th:href="@{/contact}"
 									href="contact.html">Contact</a></li>
-							<li  class="nav-item submenu dropdown">
-								<a sec:authorize="isAuthenticated()" sec:authentication="name"  th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
-									role="button" aria-haspopup="true" aria-expanded="false">User</a>
-								<a sec:authorize="!isAuthenticated()" th:href="@{/}" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
-									role="button" aria-haspopup="true" aria-expanded="false">User</a>
+							<li class="nav-item submenu dropdown">
+								<a sec:authorize="isAuthenticated()" sec:authentication="name" th:href="@{/}" href="#"
+									class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+									aria-haspopup="true" aria-expanded="false">User</a>
+								<a sec:authorize="!isAuthenticated()" th:href="@{/}" href="#"
+									class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+									aria-haspopup="true" aria-expanded="false">User</a>
 								<ul class="dropdown-menu">
-									<li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item"><a class="nav-link" th:href="@{/admin}"
-											href="login.html">Admin</a></li>
-									<li sec:authorize="!isAuthenticated()" class="nav-item"><a class="nav-link" th:href="@{/login}"
-											href="login.html">Login</a></li>
+									<li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item"><a class="nav-link"
+											th:href="@{/admin}" href="login.html">Admin</a></li>
+									<li sec:authorize="!isAuthenticated()" class="nav-item"><a class="nav-link"
+											th:href="@{/login}" href="login.html">Login</a></li>
+											
+									<li class="nav-item"><a class="nav-link" href="#chat-modal" data-toggle="modal" data-target="#chat-modal">chat</a></li>
+
 									<li class="nav-item"><a class="nav-link" th:href="@{/register}"
 											href="register.html">Register</a></li>
-									<li class="nav-item"><a class="nav-link" th:href="@{/tracking-order}"
-											href="tracking-order.html">Tracking</a></li>
-									<li sec:authorize="isAuthenticated()" class="nav-item"><a href="#" class="nav-link" th:href="@{/logout}">Logout</a></li>
+									<li sec:authorize="isAuthenticated()" class="nav-item"><a href="#" class="nav-link"
+											th:href="@{/logout}">Logout</a></li>
 								</ul>
-							</li>							
+							</li>
 						</ul>
 
 						<ul sec:authorize="isAuthenticated()" class="nav-shop">
 							<li class="nav-item"><button><i class="ti-search"></i></button></li>
-							<li class="nav-item"><button><a th:href="@{/cart}" class="ti-shopping-cart"></a><a
-								 th:text="${@cartService.getItemCount()}"	class="nav-shop__circle" th:href="@{/cart}">3</a></button> </li>
-							<li class="nav-item"><a class="button button-header" th:href="@{/cart}" href="#">Buy Now</a>
+							<li class="nav-item"><button><a th:href="@{/order}" class="ti-shopping-cart"></a><a
+										th:text="${@cartService.getItemCount()}" class="nav-shop__circle"
+										th:href="@{/order}">3</a></button> </li>
+							<li class="nav-item"><a class="button button-header" th:href="@{/order}" href="#">Buy
+									Now</a>
 							</li>
 						</ul>
 					</div>
@@ -375,23 +374,25 @@
 				</div>
 			</div>
 		</div>
-		<script th:src="@{/aroma/vendors/jquery/jquery-3.2.1.min.js}"
-			src="../static/aroma/vendors/jquery/jquery-3.2.1.min.js"></script>
-		<script th:src="@{/aroma/vendors/bootstrap/bootstrap.bundle.min.js}"
-			src="../static/aroma/vendors/bootstrap/bootstrap.bundle.min.js"></script>
-		<script th:src="@{/aroma/vendors/skrollr.min.js}" src="../static/aroma/vendors/skrollr.min.js"></script>
-		<script th:src="@{/aroma/vendors/owl-carousel/owl.carousel.min.js}"
-			src="../static/aroma/vendors/owl-carousel/owl.carousel.min.js"></script>
-		<script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}"
-			src="../static/aroma/vendors/nice-select/jquery.nice-select.min.js"></script>
-		<script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.js}"
-			src="../static/aroma/vendors/jquery.ajaxchimp.min.js"></script>
-		<script th:src="@{/aroma/vendors/mail-script.js}" src="../static/aroma/vendors/mail-script.js"></script>
-		<script th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
 	</footer>
 	<!--================ End footer Area  =================-->
 
+	<div th:fragment="scripts">
+		<script th:src="@{/aroma/vendors/jquery/jquery-3.2.1.min.js}"></script>
+		<script th:src="@{/aroma/vendors/bootstrap/bootstrap.bundle.min.js}"></script>
+		<script th:src="@{/aroma/vendors/skrollr.min.js}"></script>
+		<script th:src="@{/aroma/vendors/owl-carousel/owl.carousel.min.js}"></script>
+		<script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}"></script>
+		<script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.js}"></script>
+		<script th:src="@{/aroma/vendors/mail-script.js}"></script>
+		<script th:src="@{/aroma/js/main.js}"></script>
+		<!-- chat -->
+		<script th:src="@{/websocket/js/script.js}"></script>
+		<script th:src="@{/websocket/js/sockjs.min.js}"></script>
+		<script th:src="@{/websocket/js/stomp.min.js}"></script>
+		<!-- chat -->
 
+	</div>
 
 
 </body>
