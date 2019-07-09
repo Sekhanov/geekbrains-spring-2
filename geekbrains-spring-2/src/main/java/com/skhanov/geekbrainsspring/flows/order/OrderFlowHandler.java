@@ -16,8 +16,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderFlowHandler {
     
-    private static final String SUCCESS = "success"; 
-    private static final String FAILURE = "failure";  
+    // private static final String SUCCESS = "success"; 
+    // private static final String FAILURE = "failure";  
     
     
     @Autowired
