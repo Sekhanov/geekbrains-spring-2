@@ -43,10 +43,10 @@
         <transition on="payment" to="payment"></transition>        
     </view-state>
 
-    <!-- <action-state id="submit">
-        <evaluate expression="!!!"></evaluate>
+    <action-state id="submit">
+        <evaluate expression="orderFlowHandler.saveOrder(flowScope.orderModel)"></evaluate>
         <transition on="success" to="success"></transition>
-    </action-state> -->
+    </action-state>
 
     <end-state id="success" view="flows/order/register-success"/>
     <end-state id="home" view="externalRedirect:contextRelative:/"></end-state>

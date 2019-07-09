@@ -15,11 +15,10 @@
 	<link rel="stylesheet" th:href="@{/aroma/vendors/linericon/style.css}">
 	<link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.theme.default.min.css}">
 	<link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.carousel.min.css}">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/nouislider/nouislider.min.css}"
-		>
+	<link rel="stylesheet" th:href="@{/aroma/vendors/nouislider/nouislider.min.css}">
 	<link rel="stylesheet" th:href="@{/aroma/css/style.css}">
 	<!-- chat -->
-	<!-- <link th:href="@{/websocket/css/main.css}" rel="stylesheet"/> -->
+	<link th:href="@{/websocket/css/main.css}" rel="stylesheet" />
 </head>
 
 <body>
@@ -76,6 +75,9 @@
 											th:href="@{/admin}" href="login.html">Admin</a></li>
 									<li sec:authorize="!isAuthenticated()" class="nav-item"><a class="nav-link"
 											th:href="@{/login}" href="login.html">Login</a></li>
+											
+									<li class="nav-item"><a class="nav-link" href="#chat-modal" data-toggle="modal" data-target="#chat-modal">chat</a></li>
+
 									<li class="nav-item"><a class="nav-link" th:href="@{/register}"
 											href="register.html">Register</a></li>
 									<li sec:authorize="isAuthenticated()" class="nav-item"><a href="#" class="nav-link"
@@ -378,7 +380,7 @@
 	<div th:fragment="scripts">
 		<script th:src="@{/aroma/vendors/jquery/jquery-3.2.1.min.js}"></script>
 		<script th:src="@{/aroma/vendors/bootstrap/bootstrap.bundle.min.js}"></script>
-		<script th:src="@{/aroma/vendors/skrollr.min.js}" ></script>
+		<script th:src="@{/aroma/vendors/skrollr.min.js}"></script>
 		<script th:src="@{/aroma/vendors/owl-carousel/owl.carousel.min.js}"></script>
 		<script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}"></script>
 		<script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.js}"></script>

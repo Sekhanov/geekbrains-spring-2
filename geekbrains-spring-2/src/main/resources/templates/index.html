@@ -2,8 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head th:replace = "/fragments/aroma-main-fragments :: head(title = 'main page')"></head>
 <body>
+       
   <!--================ Start Header Menu Area =================-->
-	<header th:replace="/fragments/aroma-main-fragments :: header" class="header_area"></header>
+  <div  th:replace="/fragments/chat-fragment :: chat"></div> 
+  <header th:replace="/fragments/aroma-main-fragments :: header" class="header_area"></header>  
 	<!--================ End Header Menu Area =================-->
 
   <main class="site-main">

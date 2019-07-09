@@ -63,5 +63,9 @@ public class OrderFlowHandler {
     public void addPaymentInfo(OrderModel orderModel, Payment payment) {
         orderModel.setPayment(payment);
     }
+
+    public void saveOrder(OrderModel orderModel) {
+        //TODO save order to databse
+    }
     
 }
