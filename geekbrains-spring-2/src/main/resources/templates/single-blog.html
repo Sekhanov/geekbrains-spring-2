@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aroma Shop - Blog Details</title>
-  <link rel="icon" th:href="@{/aroma/img/Fevicon.png}" href="../static/aroma/img/Fevicon.png" type="image/png">
-  <link rel="stylesheet" th:href="@{/aroma/vendors/bootstrap/bootstrap.min.css}" href="../static/aroma/vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" th:href="@{/aroma/vendors/fontawesome/css/all.min.css}" href="../static/aroma/vendors/fontawesome/css/all.min.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/themify-icons/themify-icons.css}" href="../static/aroma/vendors/themify-icons/themify-icons.css">
-	<link rel="stylesheet" th:href="@{/aroma/vendors/linericon/style.css}" href="../static/aroma/vendors/linericon/style.css">
-  <link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.theme.default.min.css}" href="../static/aroma/vendors/owl-carousel/owl.theme.default.min.css">
-  <link rel="stylesheet" th:href="@{/aroma/vendors/owl-carousel/owl.carousel.min.css}" href="../static/aroma/vendors/owl-carousel/owl.carousel.min.css">
-
-  <link rel="stylesheet" th:href="@{/aroma/css/style.css}" href="../static/aroma/css/style.css">
-</head>
+<head th:replace="/fragments/aroma-main-fragments :: head(title = 'single blog')"></head>
 <body>
   <!--================ Start Header Menu Area =================-->
   <header th:replace="/fragments/aroma-main-fragments :: header" class="header_area"></header>
@@ -535,13 +521,6 @@
 
 
 
-  <script th:src="@{/aroma/vendors/jquery/jquery-3.2.1.min.js}" src="../static/aroma/vendors/jquery/jquery-3.2.1.min.js"></script>
-  <script th:src="@{/aroma/vendors/bootstrap/bootstrap.bundle.min.js}" src="../static/aroma/vendors/bootstrap/bootstrap.bundle.min.js"></script>
-  <script th:src="@{/aroma/vendors/skrollr.min.js}" src="../static/aroma/vendors/skrollr.min.js"></script>
-  <script th:src="@{/aroma/vendors/owl-carousel/owl.carousel.min.js}" src="../static/aroma/vendors/owl-carousel/owl.carousel.min.js"></script>
-  <script th:src="@{/aroma/vendors/nice-select/jquery.nice-select.min.js}" src="../static/aroma/vendors/nice-select/jquery.nice-select.min.js"></script>
-  <script th:src="@{/aroma/vendors/jquery.ajaxchimp.min.j"}" src="../static/aroma/vendors/jquery.ajaxchimp.min.js"></script>
-  <script th:src="@{/aroma/vendors/mail-script.js}" src="../static/aroma/vendors/mail-script.js"></script>
-  <script th:src="@{/aroma/js/main.js}" src="../static/aroma/js/main.js"></script>
+	<div th:replace="/fragments/aroma-main-fragments :: scripts"></div>
 </body>
 </html>
