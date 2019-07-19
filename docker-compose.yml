@@ -1,0 +1,31 @@
+version: '3.7'
+services: 
+  mysql:
+    image: mysql:latest     
+    environment: 
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}    
+      MYSQL_USER: ${DATABASE_USER}  
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}     
+    expose:  
+      - "3306"
+  web:
+    image: maven:latest
+    build: ./geekbrains-spring-2/
+    working_dir: /geekbrains-spring-2/
+    volumes:
+      - ./geekbrains-spring-2:/geekbrains-spring-2
+      - ~/.m2:/root/.m2
+    ports: 
+      - "8080:8080"
+    environment: 
+      JDBC_DATABASE_URL: jdbc:mysql://mysql:3306/${DATABASE_NAME}?useSSL=false&allowPublicKeyRetrieval=true
+      JDBC_DATABASE_USERNAME: ${DATABASE_USER}
+      JDBC_DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      HIBERNATE_DIALECT: org.hibernate.dialect.MySQL5InnoDBDialect
+    command: mvn clean spring-boot:run
+    depends_on: 
+      - mysql
+
+
+    
