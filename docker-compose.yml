@@ -10,7 +10,8 @@ services:
       MYSQL_PASSWORD: ${DATABASE_PASSWORD}     
     expose:  
       - "3306"
-  web:    
+  web:  
+    image: maven:3.6.1-ibmjava-8-alpine  
     build: ./geekbrains-spring-2/
     working_dir: /geekbrains-spring-2/
     

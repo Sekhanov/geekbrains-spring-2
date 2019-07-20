@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+
+  - include:
+      file: db.changelog-lesson-1.yaml
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: lesson_1
+      author: sekhanov
+      changes:
+        - tagDatabase:
+            tag: lesson_1
