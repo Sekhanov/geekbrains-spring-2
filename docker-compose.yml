@@ -1,3 +1,4 @@
+# позволяет развернуть локальную версию сервисов докер
 version: '3.7'
 services: 
   mysql:
@@ -9,10 +10,10 @@ services:
       MYSQL_PASSWORD: ${DATABASE_PASSWORD}     
     expose:  
       - "3306"
-  web:
-    image: maven:latest
+  web:    
     build: ./geekbrains-spring-2/
     working_dir: /geekbrains-spring-2/
+    
     volumes:
       - ./geekbrains-spring-2:/geekbrains-spring-2
       - ~/.m2:/root/.m2
