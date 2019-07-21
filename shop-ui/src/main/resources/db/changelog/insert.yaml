@@ -35,6 +35,9 @@ databaseChangeLog:
             tableName: users
             columns:
               - column:
+                  name: id
+                  value: 2               
+              - column:
                   name: username
                   value: "user"
               - column:
@@ -58,6 +61,9 @@ databaseChangeLog:
             tableName: roles
             columns:
               - column:
+                  name: id
+                  value: 1               
+              - column:
                   name: name
                   value: "ROLE_ADMIN"
   - changeSet:
@@ -68,6 +74,9 @@ databaseChangeLog:
         - insert:
             tableName: roles
             columns:
+              - column:
+                  name: id
+                  value: 2               
               - column:
                   name: name
                   value: "ROLE_USER"         
@@ -92,7 +101,7 @@ databaseChangeLog:
       changes:
         - insert:
             tableName: users_roles
-            columns:
+            columns:            
               - column:
                   name: user_id
                   value: 2                              
