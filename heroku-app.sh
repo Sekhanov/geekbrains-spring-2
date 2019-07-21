@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+mvn clean package -DskipTests
 docker login
 heroku login
 heroku container:login
