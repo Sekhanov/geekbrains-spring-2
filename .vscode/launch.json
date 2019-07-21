@@ -1,12 +1,11 @@
 {
     "configurations": [
-        
         {
             "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
             "mainClass": "com.skhanov.geekbrainsspring.App",
-            "projectName": "geekbrains-spring-2"
+            "projectName": "shop-ui"
         }
     ]
 }

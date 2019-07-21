@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="/fragments/aroma-main-fragments :: head(title = 'catalog')"></head>
+<body>
+  <!--================ Start Header Menu Area =================-->
+  <header th:replace="/fragments/aroma-main-fragments :: header" class="header_area"></header>
+	<!--================ End Header Menu Area =================-->
+
+	<!-- ================ start banner area ================= -->	
+	<section th:replace="/fragments/aroma-main-fragments :: banner" class="blog-banner-area" id="category">	</section>
+	<!-- ================ end banner area ================= -->
+
+
+	<!-- ================ category section start ================= -->		  
+  <section class="section-margin--small mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-5">
+          <div class="sidebar-categories">
+            <div class="head">Product type</div>
+            <ul class="main-categories">
+              <li class="common-filter">
+                <form action="#">
+                  <ul>
+                    <li th:each="productType : ${productTypes}"  class="filter-list"><input class="pixel-radio" type="radio" id="men" name="brand"><label th:text="${productType.name}" for="men">Men<span> (3600)</span></label></li>
+                  </ul>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-filter">
+            <div class="top-filter-head">Product Filters</div>
+            <div class="common-filter">
+              <div class="head">Brands</div>
+              <form action="#">
+                <ul>
+                  <li th:each="productBrand : ${productBrands}" class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label th:text="${productBrand.name}" for="apple">Apple<span>(29)</span></label></li>
+                </ul>
+              </form>
+            </div>
+            <div class="common-filter">
+              <div class="head">Color</div>
+              <form action="#">
+                <ul>
+                  <li th:each="productColor : ${productColors}" class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label th:text="${productColor.name}" for="black">Black<span>(29)</span></label></li>
+                </ul>
+              </form>
+            </div>
+            <div class="common-filter">
+              <div class="head">Price</div>
+              <div class="price-range-area">
+                <div id="price-range"></div>
+                <div class="value-wrapper d-flex">
+                  <div class="price">Price:</div>
+                  <span>$</span>
+                  <div id="lower-value"></div>
+                  <div class="to">to</div>
+                  <span>$</span>
+                  <div id="upper-value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-8 col-md-7">
+
+          <!-- Start Filter Bar -->
+          <div class="filter-bar d-flex flex-wrap align-items-center">
+            <div class="sorting">
+              <select>
+                <option value="1">Default sorting</option>
+                <option value="1">Default sorting</option>
+                <option value="1">Default sorting</option>
+              </select>
+            </div>
+            <div class="sorting mr-auto">
+              <select>
+                <option value="1">Show 12</option>
+                <option value="1">Show 12</option>
+                <option value="1">Show 12</option>
+              </select>
+            </div>
+            <div>
+              <div class="input-group filter-bar-search">
+                <input type="text" placeholder="Search">
+                <div class="input-group-append">
+                  <button type="button"><i class="ti-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Filter Bar -->
+
+          <!-- Start Products -->
+          <section class="lattest-product-area pb-40 category-list">
+            <div class="row">
+              <div th:each="product : ${products}" class="col-md-6 col-lg-4">
+                <div class="card text-center card-product">
+                  <div class="card-product__img">                    
+                    <img th:if="${product.pictures.size() > 0}" class="card-img" th:src="@{/picture/{pictureId} (pictureId=${product.pictures.get(0).id})}" src="../static/aroma/img/product/product1.png" alt="">
+                    <ul class="card-product__imgOverlay">
+                      <li><form th:action="@{/}"><button><i class="ti-search"></i></button></form></li>
+                      <li><form th:action="${@cartService.addItem(product.id)}"><button><i class="ti-shopping-cart"></i></button></form></li>
+                      <li><form th:action="@{/}"><button><i class="ti-heart"></i></button></form></li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <p th:text="${product.productBrand.name}">Accessories</p>
+                    <h4 class="card-product__title"><a th:text="${product.model}" th:href="@{/single-product/{productId}(productId=${product.id})}" href="#">Quartz Belt Watch</a></h4>
+                    <p th:text="${'$' + product.price}"class="card-product__price">150.00</p>
+                  </div>
+                </div>
+              </div>
+          </section>
+          <!-- End Products -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+	<!-- ================ category section end ================= -->		  
+
+	<!-- ================ top product area start ================= -->	
+	<section th:replace="/fragments/aroma-main-fragments :: top-product" class="related-product-area">
+	</section>
+	<!-- ================ top product area end ================= -->		
+
+	<!-- ================ Subscribe section start ================= -->		  
+  <section th:replace="/fragments/aroma-main-fragments :: subscription" class="subscribe-position"></section>  
+	<!-- ================ Subscribe section end ================= -->		  
+
+
+  <!--================ Start footer Area  =================-->	
+  <footer th:replace="/fragments/aroma-main-fragments :: footer" class="footer"></footer>
+	<!--================ End footer Area  =================--> 
+
+
+  <div th:replace="/fragments/aroma-main-fragments :: scripts"></div>
+</body>
+</html>

@@ -12,11 +12,11 @@ services:
       - "3306"
   web:  
     image: maven:3.6.1-ibmjava-8-alpine  
-    build: ./geekbrains-spring-2/
-    working_dir: /geekbrains-spring-2/
+    build: ./shop-ui/
+    working_dir: /shop-ui/
     
     volumes:
-      - ./geekbrains-spring-2:/geekbrains-spring-2
+      - ./shop-ui:/shop-ui
       - ~/.m2:/root/.m2
     ports: 
       - "8080:8080"
