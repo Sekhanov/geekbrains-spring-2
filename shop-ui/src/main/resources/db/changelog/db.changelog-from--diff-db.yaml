@@ -1,6 +1,6 @@
 databaseChangeLog:
 - changeSet:
-    id: 1563715424320-2
+    id: 1563716507533-1
     author: sekhanov (generated)
     changes:
     - createTable:
@@ -28,7 +28,7 @@ databaseChangeLog:
             type: INT
         tableName: order_items
 - changeSet:
-    id: 1563715424320-3
+    id: 1563716507533-2
     author: sekhanov (generated)
     changes:
     - createTable:
@@ -51,7 +51,7 @@ databaseChangeLog:
             type: INT
         tableName: orders
 - changeSet:
-    id: 1563715424320-4
+    id: 1563716507533-3
     author: sekhanov (generated)
     changes:
     - createTable:
@@ -77,7 +77,7 @@ databaseChangeLog:
             type: MEDIUMBLOB
         tableName: pictures
 - changeSet:
-    id: 1563715424320-5
+    id: 1563716507533-4
     author: sekhanov (generated)
     changes:
     - createTable:
@@ -96,7 +96,7 @@ databaseChangeLog:
             type: VARCHAR(50)
         tableName: product_brands
 - changeSet:
-    id: 1563715424320-6
+    id: 1563716507533-5
     author: sekhanov (generated)
     changes:
     - createTable:
@@ -115,7 +115,7 @@ databaseChangeLog:
             type: VARCHAR(50)
         tableName: product_colors
 - changeSet:
-    id: 1563715424320-7
+    id: 1563716507533-6
     author: sekhanov (generated)
     changes:
     - createTable:
@@ -134,7 +134,7 @@ databaseChangeLog:
             type: VARCHAR(50)
         tableName: product_types
 - changeSet:
-    id: 1563715424320-8
+    id: 1563716507533-7
     author: sekhanov (generated)
     changes:
     - createTable:
@@ -178,7 +178,7 @@ databaseChangeLog:
             type: INT
         tableName: products
 - changeSet:
-    id: 1563715424320-9
+    id: 1563716507533-8
     author: sekhanov (generated)
     changes:
     - createTable:
@@ -195,23 +195,76 @@ databaseChangeLog:
             type: INT
         tableName: products_pictures
 - changeSet:
-    id: 1563715424320-10
+    id: 1563716507533-9
     author: sekhanov (generated)
     changes:
-    - addPrimaryKey:
-        columnNames: user_id, role_id
-        constraintName: PRIMARY
-        tableName: users_roles
-- changeSet:
-    id: 1563715424320-11
-    author: sekhanov (generated)
-    changes:
-    - addUniqueConstraint:
-        columnNames: name
-        constraintName: name
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+              unique: true
+            name: name
+            type: VARCHAR(50)
         tableName: roles
 - changeSet:
-    id: 1563715424320-12
+    id: 1563716507533-10
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+              unique: true
+            name: username
+            type: VARCHAR(50)
+        - column:
+            constraints:
+              nullable: false
+            name: password
+            type: VARCHAR(512)
+        - column:
+            name: first_name
+            type: VARCHAR(50)
+        - column:
+            name: last_name
+            type: VARCHAR(50)
+        - column:
+            name: email
+            type: VARCHAR(50)
+        tableName: users
+- changeSet:
+    id: 1563716507533-11
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+            name: user_id
+            type: INT
+        - column:
+            constraints:
+              primaryKey: true
+            name: role_id
+            type: INT
+        tableName: users_roles
+- changeSet:
+    id: 1563716507533-12
     author: sekhanov (generated)
     changes:
     - createIndex:
@@ -221,7 +274,7 @@ databaseChangeLog:
         indexName: fk_orders_users
         tableName: orders
 - changeSet:
-    id: 1563715424320-13
+    id: 1563716507533-13
     author: sekhanov (generated)
     changes:
     - createIndex:
@@ -231,7 +284,7 @@ databaseChangeLog:
         indexName: fk_product_brands_products
         tableName: products
 - changeSet:
-    id: 1563715424320-14
+    id: 1563716507533-14
     author: sekhanov (generated)
     changes:
     - createIndex:
@@ -241,7 +294,7 @@ databaseChangeLog:
         indexName: fk_product_colors_products
         tableName: products
 - changeSet:
-    id: 1563715424320-15
+    id: 1563716507533-15
     author: sekhanov (generated)
     changes:
     - createIndex:
@@ -251,7 +304,7 @@ databaseChangeLog:
         indexName: fk_product_pictures_pictures
         tableName: products_pictures
 - changeSet:
-    id: 1563715424320-16
+    id: 1563716507533-16
     author: sekhanov (generated)
     changes:
     - createIndex:
@@ -261,7 +314,17 @@ databaseChangeLog:
         indexName: fk_product_types_products
         tableName: products
 - changeSet:
-    id: 1563715424320-17
+    id: 1563716507533-17
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: role_id
+        indexName: fk_users_roles_roles
+        tableName: users_roles
+- changeSet:
+    id: 1563716507533-18
     author: sekhanov (generated)
     changes:
     - createIndex:
@@ -271,7 +334,7 @@ databaseChangeLog:
         indexName: order_items_orders
         tableName: order_items
 - changeSet:
-    id: 1563715424320-18
+    id: 1563716507533-19
     author: sekhanov (generated)
     changes:
     - createIndex:
@@ -281,7 +344,7 @@ databaseChangeLog:
         indexName: order_items_products
         tableName: order_items
 - changeSet:
-    id: 1563715424320-19
+    id: 1563716507533-20
     author: sekhanov (generated)
     changes:
     - addForeignKeyConstraint:
@@ -296,7 +359,7 @@ databaseChangeLog:
         referencedTableName: users
         validate: true
 - changeSet:
-    id: 1563715424320-20
+    id: 1563716507533-21
     author: sekhanov (generated)
     changes:
     - addForeignKeyConstraint:
@@ -311,7 +374,7 @@ databaseChangeLog:
         referencedTableName: product_brands
         validate: true
 - changeSet:
-    id: 1563715424320-21
+    id: 1563716507533-22
     author: sekhanov (generated)
     changes:
     - addForeignKeyConstraint:
@@ -326,7 +389,7 @@ databaseChangeLog:
         referencedTableName: product_colors
         validate: true
 - changeSet:
-    id: 1563715424320-22
+    id: 1563716507533-23
     author: sekhanov (generated)
     changes:
     - addForeignKeyConstraint:
@@ -341,7 +404,7 @@ databaseChangeLog:
         referencedTableName: pictures
         validate: true
 - changeSet:
-    id: 1563715424320-23
+    id: 1563716507533-24
     author: sekhanov (generated)
     changes:
     - addForeignKeyConstraint:
@@ -356,7 +419,37 @@ databaseChangeLog:
         referencedTableName: product_types
         validate: true
 - changeSet:
-    id: 1563715424320-24
+    id: 1563716507533-25
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: role_id
+        baseTableName: users_roles
+        constraintName: fk_users_roles_roles
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: roles
+        validate: true
+- changeSet:
+    id: 1563716507533-26
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: users_roles
+        constraintName: fk_users_roles_users
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+- changeSet:
+    id: 1563716507533-27
     author: sekhanov (generated)
     changes:
     - addForeignKeyConstraint:
@@ -371,7 +464,7 @@ databaseChangeLog:
         referencedTableName: products
         validate: true
 - changeSet:
-    id: 1563715424320-25
+    id: 1563716507533-28
     author: sekhanov (generated)
     changes:
     - addForeignKeyConstraint:
@@ -386,7 +479,7 @@ databaseChangeLog:
         referencedTableName: orders
         validate: true
 - changeSet:
-    id: 1563715424320-26
+    id: 1563716507533-29
     author: sekhanov (generated)
     changes:
     - addForeignKeyConstraint:
@@ -400,19 +493,4 @@ databaseChangeLog:
         referencedColumnNames: id
         referencedTableName: products
         validate: true
-- changeSet:
-    id: 1563715424320-27
-    author: sekhanov (generated)
-    changes:
-    - dropIndex:
-        indexName: fk_users_roles_users
-        tableName: users_roles
-- changeSet:
-    id: 1563715424320-1
-    author: sekhanov (generated)
-    changes:
-    - modifyDataType:
-        columnName: password
-        newDataType: varchar(512)
-        tableName: users
 
