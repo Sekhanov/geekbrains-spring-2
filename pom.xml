@@ -2,9 +2,12 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.skhanov</groupId>
     <artifactId>geekbrains-spring-2</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    
+    <packaging>pom</packaging>
 
     <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -12,15 +15,29 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath />
 		<!-- lookup parent from repository -->
-	</parent>
-
-
-
-    <packaging>pom</packaging>
+    </parent>
+    
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+    </properties>
 
     <modules>
         <module>shop-ui</module>
+        <module>chatbot</module>
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
 
