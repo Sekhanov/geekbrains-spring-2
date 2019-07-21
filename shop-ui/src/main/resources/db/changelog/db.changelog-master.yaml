@@ -14,7 +14,8 @@ databaseChangeLog:
 
  
   - include:
-      file: insert.sql
+      file: insert.yaml
+    #   file: insert.sql
       relativeToChangelogFile: true
 
   - changeSet:

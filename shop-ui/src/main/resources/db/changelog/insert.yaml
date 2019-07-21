@@ -1,0 +1,102 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
+  - changeSet:
+      id: 1-1
+      author: sekhanov
+      comment: "user 1"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: username
+                  value: "admin"
+              - column:
+                  name: password
+                  value: "$2a$10$/z5jkuuGfN9nlynG3jhlS.YxvTjPniXS3eiQdjVp369jOdKHZKoCe" 
+              - column:
+                  name: first_name
+                  value: "Sergey" 
+              - column:
+                  name: last_name
+                  value: "Khanov"               
+              - column:
+                  name: email
+                  value: "sekhanov@gmail.com" 
+  - changeSet:
+      id: 1-2
+      author: sekhanov
+      comment: "user 2"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user"
+              - column:
+                  name: password
+                  value: "$2a$10$ab8/UIVfC4cSCQgYWvbUluHKXmPxgLuxKJX7E5vGf3Qf.EaUn8Y6."  
+              - column:
+                  name: first_name
+                  value: "Vasiliy" 
+              - column:
+                  name: last_name
+                  value: "Pupkin"               
+              - column:
+                  name: email
+                  value: "vp@gmail.com"                   
+  - changeSet:
+      id: 1-3
+      author: sekhanov
+      comment: "role 1"
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: name
+                  value: "ROLE_ADMIN"
+  - changeSet:
+      id: 1-4
+      author: sekhanov
+      comment: "role 2"
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: name
+                  value: "ROLE_USER"         
+  - changeSet:
+      id: 1-5
+      author: sekhanov
+      comment: "role_admin"
+      changes:
+        - insert:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  value: 1                              
+              - column:
+                  name: role_id
+                  value: 1     
+  - changeSet:
+      id: 1-6
+      author: sekhanov
+      comment: "role_user"
+      changes:
+        - insert:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  value: 2                              
+              - column:
+                  name: role_id
+                  value: 2                                     
+              
