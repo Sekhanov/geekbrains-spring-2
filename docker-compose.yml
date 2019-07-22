@@ -13,7 +13,7 @@ services:
       
   web:  
     build: ./shop-ui
-    container_name: shop-up
+    container_name: shop-ui
     ports: 
       - "8080:8080"
     environment: 

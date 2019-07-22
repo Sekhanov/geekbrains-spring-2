@@ -25,6 +25,7 @@
     <modules>
         <module>shop-ui</module>
         <module>chatbot</module>
+		<module>eureka-server</module>
     </modules>
 
     <build>
