@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="/admin/fragments/admin-main-fragments :: head"></head>
+
+<body class="bg-light">
+
+    <nav th:replace="/admin/fragments/admin-main-fragments :: header"></nav>
+
+    <div class="d-flex">
+        <div th:replace="/admin/fragments/admin-main-fragments :: sidebar" class="sidebar sidebar-dark bg-dark"></div>
+
+        <div class="content p-4">
+            <h2 class="mb-4" th:text="${pageHeader}"></h2>
+
+
+            <form th:object="${product}" method="post" th:action="@{/admin/products}" enctype="multipart/form-data">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <input th:type="hidden" th:field="*{id}">
+
+                        <div class="form-group">
+                            <label for="model">model</label>
+                            <input th:field="*{model}" type="text" class="form-control" id="model" placeholder="model">
+                        </div>
+                        <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea rows="3" th:field="*{shortDescription}" type="text" class="form-control" id="description"
+                                    placeholder="Description"></textarea>
+                            </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea rows="5" th:field="*{description}" type="text" class="form-control" id="description"
+                                placeholder="Description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input th:field="*{price}" type="text" class="form-control" id="price" placeholder="Price">
+                        </div>
+                        <div class="form-group">
+                            <label for="productType">product Type</label>
+                            <select class="form-control" id="productType" th:field="*{productType}" required>
+                                <option th:each="type : ${productTypes}" th:text="${type.name}" th:value="${type.id}"
+                                    th:selected="${type.equals(product.productType)}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productBrand">product Brand</label>
+                            <select class="form-control" id="productBrand" th:field="*{productBrand}" required>
+                                <option th:each="brand : ${productBrands}" th:text="${brand.name}"
+                                    th:value="${brand.id}" th:selected="${brand.equals(product.productBrand)}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productColor">product Color</label>
+                            <select class="form-control" id="productColor" th:field="*{productColor}" required>
+                                <option th:each="color : ${productColors}" th:text="${color.name}"
+                                    th:value="${color.id}" th:selected="${color.equals(product.productColor)}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPictures">Product image</label>
+                        <input th:field="*{newPictures}" type="file" class="form-control" id="newPictures"
+                            placeholder="Upload new product picture" multiple>
+                    </div>
+
+                    <div class="card-footer bg-white">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="container-fluid mb-4">
+                <div class="card-columns" style="column-count: 5">
+                    <div class="card" th:each="pict : ${product.pictures}">
+                        <div class="card-header">Picture</div>
+                        <img class="card-img-bottom" th:src="@{/picture/{pictureId}(pictureId=${pict.id})}"
+                            width="40%" />
+                        <div class="card-footer"><form th:action="@{/admin/products/deletePicture/{pictureId}(pictureId=${pict.id})}"><button class="btn btn-danger">delete picture</button></form></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script th:src="@{/bootadmin/js/jquery.min.js}" src="../static/bootadmin/js/jquery.min.js"></script>
+    <script th:src="@{/bootadmin/js/bootstrap.bundle.min.js}" src="../static/bootadmin/js/bootstrap.bundle.min.js">
+    </script>
+    <script th:src="@{/bootadmin/js/bootadmin.min.js}" src="../static/bootadmin/js/bootadmin.min.js"></script>
+
+</body>
+
+</html>

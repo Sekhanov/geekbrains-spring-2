@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="/admin/fragments/admin-main-fragments :: head"></head>
+<body class="bg-light">
+
+<nav th:replace="/admin/fragments/admin-main-fragments :: header"></nav>
+
+<div class="d-flex">
+    <div th:replace="/admin/fragments/admin-main-fragments :: sidebar" class="sidebar sidebar-dark bg-dark"></div>
+
+    <div class="content p-4">
+        <h2 class="mb-4" th:text="${pageHeader}"></h2>
+        
+
+        <form th:object="${user}" method="post" th:action="@{/admin/users}">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <input th:type="hidden" th:field="*{id}">
+                    <div class="form-group">
+                        <label for="username">User name</label>
+                        <input th:field="*{userName}" type="text" class="form-control" id="username" placeholder="Enter user name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input th:field="*{password}" type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First name</label>
+                        <input th:field="*{firstName}" type="text" class="form-control" id="firstName" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input th:field="*{lastName}" type="text" class="form-control" id="lastName" placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input th:field="*{email}" type="text" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="roles">User roles</label>
+                        <select multiple class="form-control" id="roles" th:field="*{roles}" required>
+                            <option th:each="role : ${roles}"
+                                    th:text="${role.name}"
+                                    th:value="${role.id}"
+                                    th:selected="${user.roles.contains(role)}"></option>
+                        </select>
+                    </div> 
+                </div>
+                <div class="card-footer bg-white">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script th:src="@{/bootadmin/js/jquery.min.js}" src="../static/bootadmin/js/jquery.min.js"></script>
+<script th:src="@{/bootadmin/js/bootstrap.bundle.min.js}" src="../static/bootadmin/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/bootadmin/js/bootadmin.min.js}" src="../static/bootadmin/js/bootadmin.min.js"></script>
+
+</body>
+</html>

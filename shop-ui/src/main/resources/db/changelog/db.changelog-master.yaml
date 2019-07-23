@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+
+  - include:
+      file: db.changelog-from--diff-db.yaml
+      relativeToChangelogFile: true   
+
+  - changeSet:
+      id: from_diff_db
+      author: sekhanov
+      changes:
+        - tagDatabase:
+            tag: from_diff_db    
+
+ 
+  - include:
+      file: insert.yaml
+    #   file: insert.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: insert_data
+      author: sekhanov
+      changes:
+        - tagDatabase:
+            tag: insert_data           

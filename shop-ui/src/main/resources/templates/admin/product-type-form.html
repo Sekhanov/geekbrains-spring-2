@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="/admin/fragments/admin-main-fragments :: head"></head>
+<body class="bg-light">
+
+<nav th:replace="/admin/fragments/admin-main-fragments :: header"></nav>
+
+<div class="d-flex">
+    <div th:replace="/admin/fragments/admin-main-fragments :: sidebar" class="sidebar sidebar-dark bg-dark"></div>
+
+    <div class="content p-4">
+        <h2 class="mb-4" th:text="${pageHeader}"></h2>
+        
+
+        <form th:object="${productType}" method="post" th:action="@{/admin/product-types}">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <input th:type="hidden" th:field="*{id}">
+                    <div class="form-group">
+                        <label for="name">name</label>
+                        <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Enter the name" required>
+                    </div>
+                </div>
+                <div class="card-footer bg-white">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script th:src="@{/bootadmin/js/jquery.min.js}" src="../static/bootadmin/js/jquery.min.js"></script>
+<script th:src="@{/bootadmin/js/bootstrap.bundle.min.js}" src="../static/bootadmin/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/bootadmin/js/bootadmin.min.js}" src="../static/bootadmin/js/bootadmin.min.js"></script>
+
+</body>
+</html>

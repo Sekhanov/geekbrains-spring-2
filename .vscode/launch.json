@@ -2,20 +2,24 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - App",
+            "name": "chatbot",
             "request": "launch",
-            "mainClass": "com.skhanov.geekbrainsspring.App",
-            "projectName": "geekbrains-spring-2"
+            "mainClass": "ru.geekmarket.chatbot.ChatbotApplication",
+            "projectName": "chatbot"
         },
         {
             "type": "java",
-            "name": "Spring Boot-GeekbrainsSpring2Application<geekbrains-spring-2>",
+            "name": "eureka-server",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "mainClass": "com.skhanov.geekbrainsspring.GeekbrainsSpring2Application",
-            "projectName": "geekbrains-spring-2",
-            "args": ""
+            "mainClass": "ru.geekmarket.eureka.EurekaServerApp",
+            "projectName": "eureka-server"
+        },
+        {
+            "type": "java",
+            "name": "shop-ui",
+            "request": "launch",
+            "mainClass": "com.skhanov.geekbrainsspring.App",
+            "projectName": "shop-ui"
         }
     ]
 }

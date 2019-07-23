@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="/admin/fragments/admin-main-fragments :: head"></head>
+<body class="bg-light">
+
+<nav th:replace="/admin/fragments/admin-main-fragments :: header"></nav>
+
+<div class="d-flex">
+    <div th:replace="/admin/fragments/admin-main-fragments :: sidebar" class="sidebar sidebar-dark bg-dark"></div>
+
+    <div class="content p-4">
+        <h2 class="mb-4" th:text="${pageHeader}">Welcome to Admin</h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                
+                <form class="form-group" th:action="@{product-types/create}">
+                    <button type="submit" class="btn btn-primary">Create new</button>
+                </form>
+
+                <table id="product-types" class="table table-hover" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>name</th>
+                        <th class="actions">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="productType : ${productTypes}">
+                        <td th:text="${productType.id}"></td>
+                        <td th:text="${productType.name}">Admin</td>
+                        <td>
+                            <a th:href="@{product-types/edit/{id}(id=${productType.id})}" class="btn btn-icon btn-pill btn-primary" data-toggle="tooltip" title="Edit"><i class="fa fa-fw fa-edit"></i></a>
+                            <a th:href="@{product-types/delete/{id}(id=${productType.id})}" class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete"><i class="fa fa-fw fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/bootadmin/js/jquery.min.js}" src="../static/bootadmin/js/jquery.min.js"></script>
+<script th:src="@{/bootadmin/js/bootstrap.bundle.min.js}" src="../static/bootadmin/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/bootadmin/js/bootadmin.min.js}" src="../static/bootadmin/js/bootadmin.min.js"></script>
+
+</body>
+</html>

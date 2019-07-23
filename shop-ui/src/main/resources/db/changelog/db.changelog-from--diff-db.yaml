@@ -1,0 +1,496 @@
+databaseChangeLog:
+- changeSet:
+    id: 1563716507533-1
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: order_id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: product_id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: quantity
+            type: INT
+        tableName: order_items
+- changeSet:
+    id: 1563716507533-2
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: order_time
+            type: timestamp
+        - column:
+            constraints:
+              nullable: false
+            name: user_id
+            type: INT
+        tableName: orders
+- changeSet:
+    id: 1563716507533-3
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: content_type
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        - column:
+            name: picture_data
+            type: MEDIUMBLOB
+        tableName: pictures
+- changeSet:
+    id: 1563716507533-4
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+              unique: true
+            name: name
+            type: VARCHAR(50)
+        tableName: product_brands
+- changeSet:
+    id: 1563716507533-5
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+              unique: true
+            name: name
+            type: VARCHAR(50)
+        tableName: product_colors
+- changeSet:
+    id: 1563716507533-6
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+              unique: true
+            name: name
+            type: VARCHAR(50)
+        tableName: product_types
+- changeSet:
+    id: 1563716507533-7
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: model
+            type: VARCHAR(100)
+        - column:
+            name: short_description
+            type: VARCHAR(500)
+        - column:
+            name: description
+            type: VARCHAR(2000)
+        - column:
+            constraints:
+              nullable: false
+            name: price
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: product_type_id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: product_brand_id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: product_color_id
+            type: INT
+        tableName: products
+- changeSet:
+    id: 1563716507533-8
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+            name: product_id
+            type: INT
+        - column:
+            constraints:
+              primaryKey: true
+            name: picture_id
+            type: INT
+        tableName: products_pictures
+- changeSet:
+    id: 1563716507533-9
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+              unique: true
+            name: name
+            type: VARCHAR(50)
+        tableName: roles
+- changeSet:
+    id: 1563716507533-10
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+              unique: true
+            name: username
+            type: VARCHAR(50)
+        - column:
+            constraints:
+              nullable: false
+            name: password
+            type: VARCHAR(512)
+        - column:
+            name: first_name
+            type: VARCHAR(50)
+        - column:
+            name: last_name
+            type: VARCHAR(50)
+        - column:
+            name: email
+            type: VARCHAR(50)
+        tableName: users
+- changeSet:
+    id: 1563716507533-11
+    author: sekhanov (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+            name: user_id
+            type: INT
+        - column:
+            constraints:
+              primaryKey: true
+            name: role_id
+            type: INT
+        tableName: users_roles
+- changeSet:
+    id: 1563716507533-12
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: user_id
+        indexName: fk_orders_users
+        tableName: orders
+- changeSet:
+    id: 1563716507533-13
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: product_brand_id
+        indexName: fk_product_brands_products
+        tableName: products
+- changeSet:
+    id: 1563716507533-14
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: product_color_id
+        indexName: fk_product_colors_products
+        tableName: products
+- changeSet:
+    id: 1563716507533-15
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: picture_id
+        indexName: fk_product_pictures_pictures
+        tableName: products_pictures
+- changeSet:
+    id: 1563716507533-16
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: product_type_id
+        indexName: fk_product_types_products
+        tableName: products
+- changeSet:
+    id: 1563716507533-17
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: role_id
+        indexName: fk_users_roles_roles
+        tableName: users_roles
+- changeSet:
+    id: 1563716507533-18
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: order_id
+        indexName: order_items_orders
+        tableName: order_items
+- changeSet:
+    id: 1563716507533-19
+    author: sekhanov (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: product_id
+        indexName: order_items_products
+        tableName: order_items
+- changeSet:
+    id: 1563716507533-20
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: orders
+        constraintName: fk_orders_users
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+- changeSet:
+    id: 1563716507533-21
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: product_brand_id
+        baseTableName: products
+        constraintName: fk_product_brands_products
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: product_brands
+        validate: true
+- changeSet:
+    id: 1563716507533-22
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: product_color_id
+        baseTableName: products
+        constraintName: fk_product_colors_products
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: product_colors
+        validate: true
+- changeSet:
+    id: 1563716507533-23
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: picture_id
+        baseTableName: products_pictures
+        constraintName: fk_product_pictures_pictures
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: pictures
+        validate: true
+- changeSet:
+    id: 1563716507533-24
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: product_type_id
+        baseTableName: products
+        constraintName: fk_product_types_products
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: product_types
+        validate: true
+- changeSet:
+    id: 1563716507533-25
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: role_id
+        baseTableName: users_roles
+        constraintName: fk_users_roles_roles
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: roles
+        validate: true
+- changeSet:
+    id: 1563716507533-26
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: users_roles
+        constraintName: fk_users_roles_users
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: users
+        validate: true
+- changeSet:
+    id: 1563716507533-27
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: product_id
+        baseTableName: products_pictures
+        constraintName: if_product_pictures_product
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: products
+        validate: true
+- changeSet:
+    id: 1563716507533-28
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: order_id
+        baseTableName: order_items
+        constraintName: order_items_orders
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: orders
+        validate: true
+- changeSet:
+    id: 1563716507533-29
+    author: sekhanov (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: product_id
+        baseTableName: order_items
+        constraintName: order_items_products
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: products
+        validate: true
+
