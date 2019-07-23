@@ -1,4 +1,5 @@
-package com.skhanov.geekbrainsspring.WebSocket;
+package com.skhanov.geekbrainsspring.websocket;
+
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -16,8 +17,7 @@ public class ChatController {
 
     @MessageMapping("/chat.addUser")
     @SendTo("/topic/public")
-    public ChatMessage addUser(@Payload ChatMessage chatMessage,
-                               SimpMessageHeaderAccessor headerAccessor) {
+    public ChatMessage addUser(@Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
         // Add username in web socket session
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         return chatMessage;

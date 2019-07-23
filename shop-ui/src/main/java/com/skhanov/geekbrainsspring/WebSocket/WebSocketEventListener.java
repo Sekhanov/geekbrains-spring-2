@@ -1,4 +1,4 @@
-package com.skhanov.geekbrainsspring.WebSocket;
+package com.skhanov.geekbrainsspring.websocket;
 
 
 import org.slf4j.Logger;

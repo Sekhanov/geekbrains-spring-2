@@ -1,4 +1,4 @@
-package com.skhanov.geekbrainsspring.WebSocket;
+package com.skhanov.geekbrainsspring.websocket;
 
 public class ChatMessage {
     private MessageType type;

@@ -6,22 +6,24 @@ import org.alicebot.ab.MagicBooleans;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
 @Service
+@PropertySource("classpath:chat-bot.properties")
 public class ChatBotServiceImpl implements ChatBotService {
 
     private static final Logger logger = LoggerFactory.getLogger(ChatBotServiceImpl.class);
 
-    @Value("${chatbot.name}")
+    @Value("${chat-bot.name}")
     private String botName;
 
-    @Value("${chatbot.trace}")
+    @Value("${chat-bot.trace}")
     private Boolean traceMode;
 
-    @Value("${chatbot.configuration.path}")
+    @Value("${chat-bot.configuration.path}")
     private String configurationPath;
 
     private Chat chatSession;

@@ -2,14 +2,21 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - GeekMarketEurekaApplication",
+            "name": "chatbot",
             "request": "launch",
-            "mainClass": "ru.geekmarket.eureka.GeekMarketEurekaApplication",
+            "mainClass": "ru.geekmarket.chatbot.ChatbotApplication",
+            "projectName": "chatbot"
+        },
+        {
+            "type": "java",
+            "name": "eureka-server",
+            "request": "launch",
+            "mainClass": "ru.geekmarket.eureka.EurekaServerApp",
             "projectName": "eureka-server"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - App",
+            "name": "shop-ui",
             "request": "launch",
             "mainClass": "com.skhanov.geekbrainsspring.App",
             "projectName": "shop-ui"
