@@ -1,5 +1,5 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
+#   - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
   - changeSet:
       id: 1-1
       author: sekhanov
@@ -107,5 +107,5 @@ databaseChangeLog:
                   value: 2                              
               - column:
                   name: role_id
-                  value: 2                                     
+                  value: 2                                 
               

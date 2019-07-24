@@ -1,0 +1,73 @@
+databaseChangeLog: 
+  - changeSet:
+      id: 75478-1
+      author: sekhanov
+      comment: "product colors"
+      changes:
+        - insert:
+            tableName: product_colors
+            columns:
+              - column:
+                  name: id
+                  value: 1               
+              - column:
+                  name: name
+                  value: "black"      
+  - changeSet:
+      id: 75478-2
+      author: sekhanov
+      comment: "product colors"
+      changes:
+        - insert:
+            tableName: product_colors
+            columns:
+              - column:
+                  name: id
+                  value: 2               
+              - column:
+                  name: name
+                  value: "white"     
+  - changeSet:
+      id: 75478-3
+      author: sekhanov
+      comment: "product types"
+      changes:
+        - insert:
+            tableName: product_types
+            columns:
+              - column:
+                  name: id
+                  value: 1               
+              - column:
+                  name: name
+                  value: "Monitor"   
+  - changeSet:
+      id: 75478-4
+      author: sekhanov
+      comment: "product types"
+      changes:
+        - insert:
+            tableName: product_types
+            columns:
+              - column:
+                  name: id
+                  value: 2               
+              - column:
+                  name: name
+                  value: "Keyboard" 
+  - changeSet:
+      id: 75478-5
+      author: sekhanov
+      comment: "product types"
+      changes:
+        - insert:
+            tableName: product_types
+            columns:
+              - column:
+                  name: id
+                  value: 3               
+              - column:
+                  name: name
+                  value: "Mouse" 
+                      
+              
