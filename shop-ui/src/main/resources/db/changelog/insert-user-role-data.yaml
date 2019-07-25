@@ -26,6 +26,7 @@ databaseChangeLog:
               - column:
                   name: email
                   value: "sekhanov@gmail.com" 
+                  
   - changeSet:
       id: 1-2
       author: sekhanov
@@ -107,5 +108,32 @@ databaseChangeLog:
                   value: 2                              
               - column:
                   name: role_id
-                  value: 2                                     
+                  value: 2    
+
+  - changeSet:
+      id: 1-7
+      author: sekhanov
+      comment: "user 3"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: username
+                  value: "1"
+              - column:
+                  name: password
+                  value: "$2a$10$ZOfkJZQq9/TBQscSsQzgsO/ifmg7D7syBJm4kcf2yswXC.hxGyWZO" 
+              - column:
+                  name: first_name
+                  value: "1" 
+              - column:
+                  name: last_name
+                  value: "1"               
+              - column:
+                  name: email
+                  value: "1@1.com"                                                    
               

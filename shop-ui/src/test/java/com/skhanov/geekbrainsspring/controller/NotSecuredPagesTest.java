@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 /**
@@ -23,9 +22,14 @@ public class NotSecuredPagesTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testProductBrandPage() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/"))
-        .andDo(MockMvcResultHandlers.print())
+    public void testIndex() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/index"))
+        .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+    @Test
+    public void testRegister() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/register"))
         .andExpect(MockMvcResultMatchers.status().isOk());
     }
 }
