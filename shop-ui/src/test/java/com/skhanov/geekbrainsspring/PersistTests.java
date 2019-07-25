@@ -6,8 +6,8 @@ import com.skhanov.geekbrainsspring.persist.model.Product;
 import com.skhanov.geekbrainsspring.persist.model.ProductColor;
 import com.skhanov.geekbrainsspring.persist.model.Role;
 import com.skhanov.geekbrainsspring.persist.model.User;
-import com.skhanov.geekbrainsspring.persist.repo.ProductRepository;
 import com.skhanov.geekbrainsspring.persist.repo.ProductColorRepository;
+import com.skhanov.geekbrainsspring.persist.repo.ProductRepository;
 import com.skhanov.geekbrainsspring.persist.repo.RoleRepository;
 import com.skhanov.geekbrainsspring.persist.repo.UserRepository;
 
