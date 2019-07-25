@@ -38,13 +38,13 @@
 							</div>
 							<small class="form-text text-danger" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></small>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="password" name="password" th:field="*{password}"
+								<input type="password" class="form-control" id="password" name="password" th:field="*{password}"
 									placeholder="Password" onfocus="this.placeholder = ''"
 									onblur="this.placeholder = 'Password'">
 							</div>
 							<small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}"
+								<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}"
 									placeholder="Confirm Password" onfocus="this.placeholder = ''"
 									onblur="this.placeholder = 'Confirm Password'">
 							</div>
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>		
 	</section>
 	<!--================End Login Box Area =================-->
 
