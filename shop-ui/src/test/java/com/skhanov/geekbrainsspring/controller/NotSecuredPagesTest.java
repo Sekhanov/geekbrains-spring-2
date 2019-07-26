@@ -28,8 +28,21 @@ public class NotSecuredPagesTest {
     }
 
     @Test
-    public void testRegister() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/register"))
+    public void testLogin() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/login"))
+        .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+    
+    @Test
+    public void testProductCategory() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/category"))
+        .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+    @Test
+    public void testContacts() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/contact"))
         .andExpect(MockMvcResultMatchers.status().isOk());
     }
 }

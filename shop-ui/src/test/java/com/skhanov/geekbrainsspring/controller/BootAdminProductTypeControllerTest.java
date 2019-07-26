@@ -14,14 +14,14 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
- * BootAdminProductBrandControllerTest
+ * BootAdminProductTypeControllerTest
  */
 @RunWith(SpringRunner.class)
 // @WebMvcTest()
 @AutoConfigureMockMvc
 @SpringBootTest
 @WithMockUser(username = "admin", roles = { "ADMIN" })
-public class BootAdminProductBrandControllerTest {
+public class BootAdminProductTypeControllerTest {
 
     private static final String PAGE_HEADER = "pageHeader";
 
@@ -29,17 +29,17 @@ public class BootAdminProductBrandControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testProductBrandPage() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/admin/product-brands")).andDo(MockMvcResultHandlers.print())
-                .andExpect(status().isOk()).andExpect(content().string(Matchers.containsString("Samsung")))
-                .andExpect(model().attribute(PAGE_HEADER, "all product Brands"))
-                .andExpect(model().attributeExists("productBrands"));
+    public void testProductTypePage() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/admin/product-types")).andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk()).andExpect(content().string(Matchers.containsString("Monitor")))
+                .andExpect(model().attribute(PAGE_HEADER, "all product Types"))
+                .andExpect(model().attributeExists("productTypes"));
     }
 
     @Test
-    public void testCreateProductBrand() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/admin/product-brands/create")).andExpect(status().isOk())
-                .andExpect(model().attributeExists("productBrand")).andExpect(view().name("/admin/product-brand-form"));
+    public void testCreateProductType() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/admin/product-types/create")).andExpect(status().isOk())
+                .andExpect(model().attributeExists("productType")).andExpect(view().name("/admin/product-type-form"));
     }
 
 }

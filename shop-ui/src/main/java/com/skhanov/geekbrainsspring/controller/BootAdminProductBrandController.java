@@ -56,7 +56,7 @@ public class BootAdminProductBrandController {
     @PostMapping
     public String persistBrand(@Valid ProductBrand productBrand, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
-            return "admin/product-brand-form";
+            return "/admin/product-brand-form";
         }
         productBrandService.save(productBrand);
         return "redirect:/admin/product-brands";
