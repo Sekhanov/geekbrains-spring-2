@@ -17,7 +17,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * BootAdminProductTypeControllerTest
  */
 @RunWith(SpringRunner.class)
-// @WebMvcTest()
 @AutoConfigureMockMvc
 @SpringBootTest
 @WithMockUser(username = "admin", roles = { "ADMIN" })
