@@ -25,7 +25,9 @@
     <modules>
         <module>shop-ui</module>
         <module>chatbot</module>
-		<module>eureka-server</module>
+        <module>eureka-server</module>
+        <module>rabbitmq-demo</module>
+        <module>amqp-client</module>
     </modules>
 
     <build>

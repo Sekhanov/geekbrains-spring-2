@@ -2,6 +2,21 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AMQP-Receiver",
+            "request": "launch",
+            "mainClass": "com.sekhanov.rabbitmq.consumer.Receiver",
+            "projectName": "amqp-client"
+        },
+        {
+            "type": "java",
+            "name": "AMQP-Publisher",
+            "request": "launch",
+            "mainClass": "com.sekhanov.rabbitmq.producer.Publisher",
+            "projectName": "amqp-client",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "java",
             "name": "chatbot",
             "request": "launch",
             "mainClass": "ru.geekmarket.chatbot.ChatbotApplication",
