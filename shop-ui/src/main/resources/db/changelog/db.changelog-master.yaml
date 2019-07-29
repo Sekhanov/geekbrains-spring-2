@@ -33,6 +33,4 @@ databaseChangeLog:
   - include:
       file: insert-product-data.yaml
     #   file: insert.sql
-      relativeToChangelogFile: true      
-
-      
+      relativeToChangelogFile: true   

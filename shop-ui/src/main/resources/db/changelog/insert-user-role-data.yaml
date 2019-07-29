@@ -1,5 +1,4 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
   - changeSet:
       id: 1-1
       author: sekhanov
@@ -26,7 +25,6 @@ databaseChangeLog:
               - column:
                   name: email
                   value: "sekhanov@gmail.com" 
-                  
   - changeSet:
       id: 1-2
       author: sekhanov
@@ -135,5 +133,5 @@ databaseChangeLog:
                   value: "1"               
               - column:
                   name: email
-                  value: "1@1.com"                                                    
+                  value: "1@1.com"
               

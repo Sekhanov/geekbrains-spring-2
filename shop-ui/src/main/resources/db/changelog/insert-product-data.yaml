@@ -69,7 +69,6 @@ databaseChangeLog:
               - column:
                   name: name
                   value: "Mouse" 
-
   - changeSet:
       id: 75478-6
       author: sekhanov
