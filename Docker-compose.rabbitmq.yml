@@ -1,9 +1,10 @@
 version: '3.7'
 
 services:
-  rabbit1:
+  rabbit1:    
     image: "rabbitmq:3.7.17-rc.2-management-alpine"
-    hostname: "rabbit1"
+    hostname: "my-rabbit"
+    restart: always
     environment:
       RABBITMQ_DEFAULT_USER: "rabbitmq"
       RABBITMQ_DEFAULT_PASS: "rabbitmq"

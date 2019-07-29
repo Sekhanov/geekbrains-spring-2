@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
+            "mainClass": "com.sekhanov.rabbitmqdemo.rabbitmqdemo.DemoApplication",
+            "projectName": "rabbitmq-demo"
+        },
+        {
+            "type": "java",
             "name": "AMQP-Receiver",
             "request": "launch",
             "mainClass": "com.sekhanov.rabbitmq.consumer.Receiver",
