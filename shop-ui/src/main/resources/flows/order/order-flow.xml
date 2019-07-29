@@ -19,7 +19,7 @@
         <transition on="cart" to="cart"></transition>
         <on-exit>            
             <evaluate expression="orderFlowHandler.addCartInfo(flowScope.orderModel, productCart)"></evaluate>
-        </on-exit>
+        </on-exit>  
     </view-state>  
 
     <view-state id="delivery" view="flows/order/delivery" model="deliveryInfo">
@@ -47,11 +47,11 @@
         <evaluate expression="orderFlowHandler.saveOrder(flowScope.orderModel)"></evaluate>
         <transition on="success" to="success"></transition>
     </action-state>
-
-    <end-state id="success" view="flows/order/register-success"/>
-    <end-state id="home" view="externalRedirect:contextRelative:/"></end-state>
+    
+    <end-state id="success" view="flows/order/register-success"></end-state>
+    <end-state id="home" view="/login"></end-state>
 
     <global-transitions>
-        <transition on="home" to="home" validate="false"></transition>
+        <transition on="home" to="home" validate="false"></transition>       
     </global-transitions>
 </flow>

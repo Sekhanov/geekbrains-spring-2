@@ -29,7 +29,7 @@
 				<div class="col-lg-6">
 					<div class="login_form_inner register_form_inner">
 						<h3>Confirm data:</h3>
-						<form th:object="${registrationModel}" class="row login_form" th:action="@{/login}">
+						<form th:object="${registrationModel}" class="row login_form" th:action="@{'~' + ${flowExecutionUrl}}" method="POST">
 							<div class="row">
 								<div class="col">Username:</div>
 								<div class="col">[[${registrationModel.authenticationUserData.userName}]]</div>

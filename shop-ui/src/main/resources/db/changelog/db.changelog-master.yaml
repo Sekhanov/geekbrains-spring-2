@@ -1,23 +1,22 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-master.yaml
 
   - changeSet:
       id: from_diff_db
       author: sekhanov
       changes:
         - tagDatabase:
-            tag: from_diff_db     
+            tag: from_diff_db    
 
   - include:
       file: db.changelog-from--diff-db.yaml
       relativeToChangelogFile: true   
 
   - changeSet:
-      id: insert_user_role_data
+      id: insert_user_role_data 
       author: sekhanov
       changes:
         - tagDatabase:
-            tag: insert_user_role_data 
+            tag: insert_user_role_data  
  
   - include:
       file: insert-user-role-data.yaml
@@ -29,11 +28,9 @@ databaseChangeLog:
       author: sekhanov
       changes:
         - tagDatabase:
-            tag: insert_product_data     
-
+            tag: insert_product_data 
+ 
   - include:
       file: insert-product-data.yaml
     #   file: insert.sql
-      relativeToChangelogFile: true
-
-
+      relativeToChangelogFile: true   

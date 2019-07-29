@@ -1,5 +1,7 @@
 package com.skhanov.geekbrainsspring.controller;
 
+import javax.validation.Valid;
+
 import com.skhanov.geekbrainsspring.aspect.LogAfterExMethod;
 import com.skhanov.geekbrainsspring.persist.model.ProductColor;
 import com.skhanov.geekbrainsspring.persist.service.ProductColorService;
@@ -7,8 +9,10 @@ import com.skhanov.geekbrainsspring.persist.service.ProductColorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -26,29 +30,38 @@ public class BootAdminProductColorController {
     @GetMapping
     @LogAfterExMethod
     public String showProductColors(Model model) {
-        model.addAttribute(PAGE_HEADER, "product colors");
+        model.addAttribute(PAGE_HEADER, "all product Colors");
         model.addAttribute("productColors", productColorService.findAll());
-        return "admin/product-colors";
+        return "/admin/product-colors";
     }
 
     @GetMapping("create")
     public String createColor(Model model) {
         model.addAttribute(PAGE_HEADER, "create new product");
         model.addAttribute("productColor", new ProductColor());
-        return "admin/product-color-form";
+        return "/admin/product-color-form";
     }
 
     @GetMapping("edit/{id}")
     public String editColor(Model model, @PathVariable("id") Long id) {
         model.addAttribute(PAGE_HEADER, "Edit Color");
         model.addAttribute("productColor", productColorService.findById(id));
-        return "admin/product-color-form";
+        return "/admin/product-color-form";
     }
 
     @GetMapping("delete/{id}")
     public String deleteColor(@PathVariable("id") Long id) {
         productColorService.deleteById(id);
-        return "redirect:/product-colors";
+        return "redirect:/admin/product-colors";
 
+    }
+
+    @PostMapping
+    public String persistProductColor(@Valid ProductColor productColor, BindingResult bindingResult) {
+        if(bindingResult.hasErrors())  {
+            return "/admin/product-color-form";
+        }       
+        productColorService.save(productColor);
+        return "redirect:/admin/product-colors";
     }
 }

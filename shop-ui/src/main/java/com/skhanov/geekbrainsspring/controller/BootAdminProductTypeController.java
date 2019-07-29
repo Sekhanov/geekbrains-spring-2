@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("admin/product-types")
+@RequestMapping("/admin/product-types")
 public class BootAdminProductTypeController {
 
     private static final String PAGE_HEADER = "pageHeader";
@@ -25,23 +25,23 @@ public class BootAdminProductTypeController {
 
     @GetMapping
     public String showProductTypes(Model model) {
-        model.addAttribute(PAGE_HEADER, "All product Types");
+        model.addAttribute(PAGE_HEADER, "all product Types");
         model.addAttribute("productTypes", productTypeService.findAll());
-        return "admin/product-types";
+        return "/admin/product-types";
     }
 
     @GetMapping("create")
     public String createProductType(Model model) {
         model.addAttribute(PAGE_HEADER, "Create product-type");
         model.addAttribute("productType", new ProductType());
-        return "admin/product-type-form";
+        return "/admin/product-type-form";
     }
 
     @GetMapping("edit/{id}")
     public String editProductType(Model model, @PathVariable("id") Long id) {
         model.addAttribute(PAGE_HEADER, "edit product type");
         model.addAttribute("productType", productTypeService.findById(id));
-        return "admin/product-type-form";
+        return "/admin/product-type-form";
     }
 
     @GetMapping("delete/{id}")
@@ -53,7 +53,7 @@ public class BootAdminProductTypeController {
     @PostMapping
     public String persistProductType(@Valid ProductType productType, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "admin/product-type-form";
+            return "/admin/product-type-form";
         }
         productTypeService.save(productType);
         return "redirect:/admin/product-types";

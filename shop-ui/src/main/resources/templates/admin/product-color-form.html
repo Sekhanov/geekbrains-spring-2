@@ -13,7 +13,7 @@
         <h2 class="mb-4" th:text="${pageHeader}"></h2>
         
 
-        <form th:object="${productColor}" method="post" th:action="@{/admin/product-types}">
+        <form th:object="${productColor}" method="post" th:action="@{/admin/product-colors}">
             <div class="card mb-4">
                 <div class="card-body">
                     <input th:type="hidden" th:field="*{id}">
