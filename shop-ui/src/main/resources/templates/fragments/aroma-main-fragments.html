@@ -64,7 +64,7 @@
 							<li class="nav-item"><a class="nav-link" th:href="@{/contact}"
 									href="contact.html">Contact</a></li>
 							<li class="nav-item submenu dropdown">
-								<a sec:authorize="isAuthenticated()" sec:authentication="name" th:href="@{/}" href="#"
+								<a sec:authorize="isAuthenticated()" id="logged-in-username" sec:authentication="name" th:href="@{/}" href="#"
 									class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
 									aria-haspopup="true" aria-expanded="false">User</a>
 								<a sec:authorize="!isAuthenticated()" th:href="@{/}" href="#"

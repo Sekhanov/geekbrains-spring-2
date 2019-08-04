@@ -28,6 +28,7 @@
         <module>eureka-server</module>
         <module>rabbitmq-demo</module>
         <module>amqp-client</module>
+        <module>shop-ui-tests</module>
     </modules>
 
     <dependencies>
